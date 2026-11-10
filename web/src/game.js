@@ -144,16 +144,45 @@ export class Game {
       this.camTarget.pos.set(Math.sin(a) * 2.3, 1.65 + Math.sin(t * 0.3) * 0.08, Math.cos(a) * 2.3 + 0.2);
     }
     this.camPose.pos.lerp(this.camTarget.pos, k);
-    this.camPose.look.lerp(this.camTarget.look, k);
+    // occasional look around the garage
+    let look = this.camTarget.look, kl = k;
+    const g = this.glanceAt;
+    if (g) {
+      if (performance.now() > g.until || this.drag || this.state === 'paused') { this.glanceAt = null; if (this.drag) kl = 1 - Math.exp(-dt * 9); }
+      else { look = g.obj ? g.obj.getWorldPosition(new THREE.Vector3()) : g.point; kl = 1 - Math.exp(-dt * 2.0); }
+    } else if (this._wasGlancing) kl = 1 - Math.exp(-dt * 2.6);
+    this._wasGlancing = !!g && this.camPose.look.distanceTo(this.camTarget.look) > 0.05;
+    this.camPose.look.lerp(look, kl);
     // subtle hand-held breathing; more after a few drinks
     const sway = 0.0025 + this.buzz * 0.0016;
     const c = this.camera;
     c.position.copy(this.camPose.pos);
     c.position.x += Math.sin(t * 0.7) * sway + Math.sin(t * 1.9) * sway * 0.3;
     c.position.y += Math.sin(t * 1.1) * sway * 0.8;
-    const look = this.camPose.look.clone();
-    look.x += Math.sin(t * 0.43) * sway * 2;
-    c.lookAt(look);
+    const lookAt = this.camPose.look.clone();
+    lookAt.x += Math.sin(t * 0.43) * sway * 2;
+    c.lookAt(lookAt);
+  }
+
+  /** Turn the player's head toward something in the garage for a moment. */
+  glance(target, ms = rnd(1600, 2600)) {
+    if (!['aim', 'resolve', 'between'].includes(this.state) || this.drag) return;
+    this.glanceAt = { until: performance.now() + ms, obj: target && target.isObject3D ? target : null, point: target && target.isVector3 ? target : null };
+    this.lastGlance = performance.now();
+  }
+  _randomGlance() {
+    const P = this.people;
+    const spots = [
+      new THREE.Vector3(2.75, 1.25, -1.35),  // fridge
+      new THREE.Vector3(-2.9, 1.3, -2.3),    // workbench / pegboard
+      new THREE.Vector3(2.9, 1.2, -3.0),     // shelves
+      new THREE.Vector3(-1.2, 2.3, -4.9),    // string lights over the door
+      new THREE.Vector3(1.35, 0.4, 0.75),    // cooler
+      new THREE.Vector3(-2.4, 0.5, 0.9),     // trash can
+    ];
+    const heads = P && P.ready ? P.guests.map(x => x.bones.Head).filter(Boolean) : [];
+    const t = heads.length && Math.random() < 0.55 ? heads[(Math.random() * heads.length) | 0] : spots[(Math.random() * spots.length) | 0];
+    this.glance(t);
   }
 
   // ---------------- UI ----------------
@@ -189,6 +218,9 @@ export class Game {
     window.onAppResume = () => { this.audio.resume(); };
   }
   _save() { try { localStorage.setItem(SETTINGS_KEY, JSON.stringify(this.settings)); } catch { } }
+
+  // state changes from async game flow must not un-pause the game
+  _set(st) { if (this.state === 'paused') this.prevState = st; else this.state = st; }
 
   pause() {
     if (this.state === 'paused' || this.state === 'title' || this.state === 'over') return;
@@ -304,7 +336,7 @@ export class Game {
     clearTimeout(this._chatT);
     const loop = () => {
       if (this.state !== 'paused' && this.state !== 'title' && performance.now() > this.speakingUntil) this.voice.chatter();
-      this._chatT = setTimeout(loop, rnd(3500, 8000));
+      this._chatT = setTimeout(loop, rnd(5000, 11000));
     };
     this._chatT = setTimeout(loop, 4000);
   }
@@ -348,7 +380,7 @@ export class Game {
   }
 
   _readyPlayerBall() {
-    this.state = 'aim';
+    this._set('aim');
     this.aimSince = performance.now();
     this.ball.active = false;
     this.ballMesh.visible = true;
@@ -436,14 +468,14 @@ export class Game {
     this.ball.launch(from, v);
     this.ballMesh.visible = true;
     this.ballMesh.position.copy(from);
-    this.state = 'flight';
+    this._set('flight');
     this.shooter = shooter;
     this.audio.whoosh();
   }
 
   async _aiThrow() {
     const gid = this.gameId;
-    this.state = 'ai';
+    this._set('ai');
     const P = this.people && this.people.ready ? this.people : null;
     const origin = new THREE.Vector3(rnd(-0.14, 0.14), rnd(1.33, 1.45), -TABLE.halfL - rnd(0.3, 0.42));
     this.ballMesh.visible = true;
@@ -509,7 +541,7 @@ export class Game {
 
   async _resolve(res) {
     const gid = this.gameId;
-    this.state = 'resolve';
+    this._set('resolve');
     const shooter = this.shooter;
     const t = this.turn;
     t.shots--;
@@ -546,6 +578,7 @@ export class Game {
           this.voice.laugh(4, 0.45); this.talk('playerMiss', false, 0.95);
           if (P) { P.oppGesture('yes'); P.react('laugh'); }
           setTimeout(() => (Math.random() < 0.6 ? this.voice.heckle() : this.voice.react('miss')), 700);
+          if (P && Math.random() < 0.5) setTimeout(() => this.glance(P.guests[(Math.random() * P.guests.length) | 0].bones.Head, 1500), 600);
         } else {
           this.talk('playerMiss', false, 0.75);
           if (P) P.oppGesture('yes');
@@ -569,7 +602,7 @@ export class Game {
     if (aLeft === 0 || pLeft === 0) return this._gameOver(aLeft === 0 ? PLAYER : AI);
 
     if (t.shots > 0) {
-      this.state = 'between';
+      this._set('between');
       if (shooter === PLAYER) this._readyPlayerBall(); else this._aiThrow();
       return;
     }
@@ -671,7 +704,7 @@ export class Game {
       }
     }
     this._updateCam(dt, t);
-    if (this.people) this.people.update(paused ? 0 : dt, this.camera.position, this.ball.active ? this.ball.pos : null);
+    if (this.people && !paused) this.people.update(dt, this.camera.position, this.ball.active ? this.ball.pos : null);
 
     // held ball follows finger
     if (this.state === 'aim') {
@@ -681,6 +714,11 @@ export class Game {
       this.ballMesh.position.lerp(hp, 0.5);
       if (d) this._updateMeter(d);
       if (!this.slowNagged && performance.now() - this.aimSince > 11000) { this.slowNagged = true; this.talk('slow', false, 1); }
+      const now = performance.now();
+      if (!d && !this.glanceAt && now - this.aimSince > 2500 && now - (this.lastGlance || 0) > (this.nextGlanceGap || 7000)) {
+        this.nextGlanceGap = rnd(7000, 14000);
+        this._randomGlance();
+      }
     }
     if (this.state === 'ai' && this.aiHolding && this.people) {
       this.ballMesh.position.copy(this.people.handPos());

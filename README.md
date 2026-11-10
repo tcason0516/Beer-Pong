@@ -19,7 +19,9 @@ Every push to `main` rebuilds the APK through GitHub Actions (`.github/workflows
 
 ## People
 
-Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench.
+Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench. The men wear ball caps, beards, tees and jeans. These are generated at load time in `people.js`, and the repainted textures come from `web/tools/make_textures.py`.
+
+Your own view drifts around the garage now and then, toward the guests, the fridge or the workbench, and snaps back the moment you touch the screen.
 
 ## Sound
 

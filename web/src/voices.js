@@ -215,18 +215,28 @@ export class VoiceManager {
     if (this.clipCache.size > 90) this.clipCache.delete(this.clipCache.keys().next().value);
     return p;
   }
+  // shuffle-bag: every line plays once before any line repeats
+  _draw(key, arr, avoidText) {
+    this.bags = this.bags || {};
+    let bag = this.bags[key];
+    if (!bag || !bag.length) {
+      bag = arr.slice();
+      for (let i = bag.length - 1; i > 0; i--) { const j = (Math.random() * (i + 1)) | 0; [bag[i], bag[j]] = [bag[j], bag[i]]; }
+      this.bags[key] = bag;
+    }
+    let i = bag.length - 1;
+    if (avoidText && bag.length > 1 && bag[i].t === avoidText) i--;
+    return bag.splice(i, 1)[0];
+  }
   _preselect(cat) {
     const arr = this.lines[cat]; if (!arr || !arr.length) return;
-    let it = pick(arr), n = 0;
-    while (arr.length > 2 && it === this.lastLine[cat] && n++ < 6) it = pick(arr);
+    const it = this._draw('opp:' + this.opp.key + ':' + cat, arr);
     this.next[cat] = it; this._clip(it.f);
   }
   _crowdItem(cat, avoid) {
     const arr = this.bank.crowd[cat] || [];
-    let it = pick(arr), n = 0;
-    while (arr.length > 2 && (it.t === avoid || it.f === this.lastCrowd) && n++ < 6) it = pick(arr);
-    this.lastCrowd = it.f;
-    return it;
+    if (!arr.length) return null;
+    return this._draw('crowd:' + cat, arr, avoid);
   }
   async _playCrowd(cat, { gain = 0.7, delay = 0, lowpass = 0, avoid } = {}) {
     const it = this._crowdItem(cat, avoid);

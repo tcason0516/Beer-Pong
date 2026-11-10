@@ -58,7 +58,7 @@ SHARED = {
         "That had no business going in.",
         "Wow, you finally hit one. You want a trophy?",
         "Enjoy it, that's the last one you're getting.",
-        "God damn it.",
+        "Oh, come on!",
         "Pure luck. Everybody saw that.",
     ],
     'aiMake': [
@@ -144,7 +144,7 @@ CROWD_VOICES = [
 ]
 CROWD = {
     'make': ["Let's go!", "Oh! No way!", "Drink!", "Oh shit!", "Yeah!", "Get wrecked!", "Oh snap!", "Holy shit!"],
-    'miss': ["Oof!", "Oh, no.", "Brutal.", "Yikes.", "Oh my god, that was awful.", "Ha! Terrible."],
+    'miss': ["Oof!", "Oh, no.", "Brutal.", "Yikes.", "Dude, that was awful.", "Ha! Terrible."],
     'heckle': [
         "You suck!", "Air ball! Air ball!", "Somebody sub this guy out!", "Wow, that was trash.",
         "Drink, loser!", "Bury him!", "Bro can't hit water from a boat.", "That's so sad.",
@@ -157,7 +157,25 @@ CROWD = {
         "No way!", "Is the pizza here yet?", "I'm telling you, it was this big.", "Did you text Jess?",
         "Who parked behind me?", "That's what I said!", "Hold on, I gotta hear this.",
         "Somebody close the door, it's freezing.", "Wait, are we out of beer already?", "Pass me the bottle opener.",
-        "Oh my god, stop, I'm dying.", "He did not say that.", "Dude, I'm so full.", "Who invited Kevin?",
+        "Stop, stop, I'm dying.", "He did not say that.", "Dude, I'm so full.", "Who invited Kevin?",
+        "So then the cop just walks up to the window.", "I swear that dog understands English.",
+        "We're doing the lake this summer, right?", "My boss emailed me at eleven last night. Eleven!",
+        "You still got that old Mustang?", "No, the other Mike. Tall Mike.", "I haven't slept since Tuesday.",
+        "Is that my hoodie?", "Hey, you want a burger? Grill's still hot.", "I need to get my oil changed.",
+        "Did anybody feed the dog?", "Whose phone keeps buzzing?", "Remember when Danny fell off the roof?",
+        "That was the best concert I've ever been to.", "I'm not drunk, I'm just happy.", "Who took the last slice?",
+        "Bro, you gotta try this IPA.", "Fantasy league is killing me this year.", "We should get a dart board in here.",
+        "She said yes! Finally!", "I'm getting a new truck next month.", "This garage is nicer than my apartment.",
+        "Wait, you guys went fishing without me?", "Turn it up, I love this song.", "Who's driving home tonight?",
+        "My mom keeps calling me.", "Hey, is the bathroom open?", "Ugh, I have work at seven.",
+        "Did you see what Carl posted?", "That's a terrible idea. I'm in.", "We are not doing karaoke again.",
+        "How long have you two been dating?", "I bet you twenty bucks he chokes.", "Someone grab more ice from the gas station.",
+        "Look at this guy, he thinks he's a pro.", "Okay, one more and then I'm going home.", "Who left the side door open?",
+        "My knee's been killing me since the softball game.", "You remember Coach Davis?", "Wait, it's already midnight?",
+        "Bro, I ran into your ex at the store.", "I'm starving. Are there any wings left?", "Who brought the light beer? Seriously.",
+        "Dude, this is my song!", "I think I left my keys in your car.", "How's the new job going?",
+        "We should do this every weekend.", "Nah, he's all talk.", "That's crazy. That's actually crazy.",
+        "Who's got a lighter?", "I'm telling you, the Bears are gonna be good this year.", "Can you believe it's November already?",
     ],
 }
 

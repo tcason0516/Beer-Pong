@@ -197,8 +197,8 @@
      "t": "Enjoy it, that's the last one you're getting."
     },
     {
-     "f": "rick/973473f9392e.ogg",
-     "t": "God damn it."
+     "f": "rick/fbf4ff1ee050.ogg",
+     "t": "Oh, come on!"
     },
     {
      "f": "rick/98bdb6f28aa2.ogg",
@@ -575,8 +575,8 @@
      "t": "Enjoy it, that's the last one you're getting."
     },
     {
-     "f": "tyler/12412de717a8.ogg",
-     "t": "God damn it."
+     "f": "tyler/af56fc86d4b9.ogg",
+     "t": "Oh, come on!"
     },
     {
      "f": "tyler/f6c33ebe6560.ogg",
@@ -953,8 +953,8 @@
      "t": "Enjoy it, that's the last one you're getting."
     },
     {
-     "f": "mike/98a54379eed9.ogg",
-     "t": "God damn it."
+     "f": "mike/6af092c722fa.ogg",
+     "t": "Oh, come on!"
     },
     {
      "f": "mike/ccf31173fbfa.ogg",
@@ -1260,13 +1260,13 @@
     "v": 0
    },
    {
-    "f": "crowd/a060dd9613af.ogg",
-    "t": "Oh my god, that was awful.",
+    "f": "crowd/c43ccdbef498.ogg",
+    "t": "Dude, that was awful.",
     "v": 4
    },
    {
-    "f": "crowd/e45b62a3f110.ogg",
-    "t": "Oh my god, that was awful.",
+    "f": "crowd/cd759ab819e2.ogg",
+    "t": "Dude, that was awful.",
     "v": 1
    },
    {
@@ -1479,8 +1479,8 @@
     "v": 4
    },
    {
-    "f": "crowd/e83f4f5dfca0.ogg",
-    "t": "Oh my god, stop, I'm dying.",
+    "f": "crowd/88c8a1b05305.ogg",
+    "t": "Stop, stop, I'm dying.",
     "v": 5
    },
    {
@@ -1497,6 +1497,266 @@
     "f": "crowd/c87c02b10978.ogg",
     "t": "Who invited Kevin?",
     "v": 2
+   },
+   {
+    "f": "crowd/2d7c57d3efe5.ogg",
+    "t": "So then the cop just walks up to the window.",
+    "v": 3
+   },
+   {
+    "f": "crowd/316a8ea35a73.ogg",
+    "t": "I swear that dog understands English.",
+    "v": 4
+   },
+   {
+    "f": "crowd/fc004df5647a.ogg",
+    "t": "We're doing the lake this summer, right?",
+    "v": 5
+   },
+   {
+    "f": "crowd/23857cddd553.ogg",
+    "t": "My boss emailed me at eleven last night. Eleven!",
+    "v": 0
+   },
+   {
+    "f": "crowd/ec839250a3d4.ogg",
+    "t": "You still got that old Mustang?",
+    "v": 1
+   },
+   {
+    "f": "crowd/4fd60320cafb.ogg",
+    "t": "No, the other Mike. Tall Mike.",
+    "v": 2
+   },
+   {
+    "f": "crowd/00a6bb69dafd.ogg",
+    "t": "I haven't slept since Tuesday.",
+    "v": 3
+   },
+   {
+    "f": "crowd/ab0a4748d6f5.ogg",
+    "t": "Is that my hoodie?",
+    "v": 4
+   },
+   {
+    "f": "crowd/2d0a7706c939.ogg",
+    "t": "Hey, you want a burger? Grill's still hot.",
+    "v": 5
+   },
+   {
+    "f": "crowd/ce956235d0fa.ogg",
+    "t": "I need to get my oil changed.",
+    "v": 0
+   },
+   {
+    "f": "crowd/2b592d8a624e.ogg",
+    "t": "Did anybody feed the dog?",
+    "v": 1
+   },
+   {
+    "f": "crowd/c3cbfa8d0b64.ogg",
+    "t": "Whose phone keeps buzzing?",
+    "v": 2
+   },
+   {
+    "f": "crowd/9388372dc7c6.ogg",
+    "t": "Remember when Danny fell off the roof?",
+    "v": 3
+   },
+   {
+    "f": "crowd/a99913a53e2b.ogg",
+    "t": "That was the best concert I've ever been to.",
+    "v": 4
+   },
+   {
+    "f": "crowd/e750625404e5.ogg",
+    "t": "I'm not drunk, I'm just happy.",
+    "v": 5
+   },
+   {
+    "f": "crowd/0b3cd44ae5f5.ogg",
+    "t": "Who took the last slice?",
+    "v": 0
+   },
+   {
+    "f": "crowd/d692ab685ab4.ogg",
+    "t": "Bro, you gotta try this IPA.",
+    "v": 1
+   },
+   {
+    "f": "crowd/8ee445765fc0.ogg",
+    "t": "Fantasy league is killing me this year.",
+    "v": 2
+   },
+   {
+    "f": "crowd/745a056fe712.ogg",
+    "t": "We should get a dart board in here.",
+    "v": 3
+   },
+   {
+    "f": "crowd/b8d21bcf9e86.ogg",
+    "t": "She said yes! Finally!",
+    "v": 4
+   },
+   {
+    "f": "crowd/933c2658d043.ogg",
+    "t": "I'm getting a new truck next month.",
+    "v": 5
+   },
+   {
+    "f": "crowd/7688988b0c3c.ogg",
+    "t": "This garage is nicer than my apartment.",
+    "v": 0
+   },
+   {
+    "f": "crowd/c600d1641642.ogg",
+    "t": "Wait, you guys went fishing without me?",
+    "v": 1
+   },
+   {
+    "f": "crowd/899d2f6ff92e.ogg",
+    "t": "Turn it up, I love this song.",
+    "v": 2
+   },
+   {
+    "f": "crowd/2ae789da0bee.ogg",
+    "t": "Who's driving home tonight?",
+    "v": 3
+   },
+   {
+    "f": "crowd/6811ae99c101.ogg",
+    "t": "My mom keeps calling me.",
+    "v": 4
+   },
+   {
+    "f": "crowd/9ad23f713f22.ogg",
+    "t": "Hey, is the bathroom open?",
+    "v": 5
+   },
+   {
+    "f": "crowd/0b0c7989cd84.ogg",
+    "t": "Ugh, I have work at seven.",
+    "v": 0
+   },
+   {
+    "f": "crowd/2a4a499d2333.ogg",
+    "t": "Did you see what Carl posted?",
+    "v": 1
+   },
+   {
+    "f": "crowd/cb793206963e.ogg",
+    "t": "That's a terrible idea. I'm in.",
+    "v": 2
+   },
+   {
+    "f": "crowd/3df0b788be55.ogg",
+    "t": "We are not doing karaoke again.",
+    "v": 3
+   },
+   {
+    "f": "crowd/02fec8bcc6d3.ogg",
+    "t": "How long have you two been dating?",
+    "v": 4
+   },
+   {
+    "f": "crowd/ba7f5f9ecd86.ogg",
+    "t": "I bet you twenty bucks he chokes.",
+    "v": 5
+   },
+   {
+    "f": "crowd/1d83333803cf.ogg",
+    "t": "Someone grab more ice from the gas station.",
+    "v": 0
+   },
+   {
+    "f": "crowd/0dbc99e10180.ogg",
+    "t": "Look at this guy, he thinks he's a pro.",
+    "v": 1
+   },
+   {
+    "f": "crowd/6dcc7e2d594b.ogg",
+    "t": "Okay, one more and then I'm going home.",
+    "v": 2
+   },
+   {
+    "f": "crowd/7672954fdda7.ogg",
+    "t": "Who left the side door open?",
+    "v": 3
+   },
+   {
+    "f": "crowd/282d5b13c9a9.ogg",
+    "t": "My knee's been killing me since the softball game.",
+    "v": 4
+   },
+   {
+    "f": "crowd/0738460fc54d.ogg",
+    "t": "You remember Coach Davis?",
+    "v": 5
+   },
+   {
+    "f": "crowd/79dd3f624137.ogg",
+    "t": "Wait, it's already midnight?",
+    "v": 0
+   },
+   {
+    "f": "crowd/4b8ba201ae9a.ogg",
+    "t": "Bro, I ran into your ex at the store.",
+    "v": 1
+   },
+   {
+    "f": "crowd/1b146d3948a1.ogg",
+    "t": "I'm starving. Are there any wings left?",
+    "v": 2
+   },
+   {
+    "f": "crowd/2b8f72efed73.ogg",
+    "t": "Who brought the light beer? Seriously.",
+    "v": 3
+   },
+   {
+    "f": "crowd/51aa6212f01b.ogg",
+    "t": "Dude, this is my song!",
+    "v": 4
+   },
+   {
+    "f": "crowd/bc042b809ed0.ogg",
+    "t": "I think I left my keys in your car.",
+    "v": 5
+   },
+   {
+    "f": "crowd/58ba5aa364d3.ogg",
+    "t": "How's the new job going?",
+    "v": 0
+   },
+   {
+    "f": "crowd/1cdf2a10ca2c.ogg",
+    "t": "We should do this every weekend.",
+    "v": 1
+   },
+   {
+    "f": "crowd/481a0f98e216.ogg",
+    "t": "Nah, he's all talk.",
+    "v": 2
+   },
+   {
+    "f": "crowd/05cd59ebdc28.ogg",
+    "t": "That's crazy. That's actually crazy.",
+    "v": 3
+   },
+   {
+    "f": "crowd/9ac21296ac8b.ogg",
+    "t": "Who's got a lighter?",
+    "v": 4
+   },
+   {
+    "f": "crowd/d6ae391bd5ae.ogg",
+    "t": "I'm telling you, the Bears are gonna be good this year.",
+    "v": 5
+   },
+   {
+    "f": "crowd/a2b6d8170f16.ogg",
+    "t": "Can you believe it's November already?",
+    "v": 0
    }
   ]
  }

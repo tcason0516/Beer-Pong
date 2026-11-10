@@ -121,6 +121,8 @@ class Person {
           const tint = opts.tint && opts.tint[o.name];
           if (tint === null) o.visible = false;
           else if (tint) o.material.color.setHex(tint);
+          const map = opts.maps && opts.maps[o.name];
+          if (map) { o.material.map = map; o.material.needsUpdate = true; }
           o.material.envMapIntensity = 0.6;
         }
       }
@@ -132,7 +134,8 @@ class Person {
     this.play('idle', 0);
     this.mixer.setTime(Math.random() * 5);
     this.bones = {};
-    for (const b of ['Hips', 'Spine2', 'Neck', 'Head', 'RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'LeftArm', 'LeftForeArm', 'LeftHand'])
+    for (const b of ['Hips', 'Spine2', 'Neck', 'Head', 'RightShoulder', 'RightArm', 'RightForeArm', 'RightHand', 'LeftArm', 'LeftForeArm', 'LeftHand',
+      'RightHandMiddle1', 'RightHandMiddle2', 'RightHandThumb1', 'RightHandThumb2'])
       this.bones[b] = findBone(this.root, b);
     this.heading = 0;
     this.lookTarget = null;
@@ -240,6 +243,11 @@ export class People {
       for (const [k, n] of Object.entries(want)) if (byName[n]) out[k] = retarget(byName[n], src, dst);
       return out;
     };
+    const tl = new THREE.TextureLoader();
+    const tex = async (f) => { const t = await tl.loadAsync(base + 'tex/' + f); t.flipY = false; t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 4; return t; };
+    [this.texTee, this.texJeans, this.texGirlBrown, this.texGirlBlonde] = await Promise.all(
+      ['tee.jpg', 'jeans.jpg', 'girl_brown.jpg', 'girl_blonde.jpg'].map(tex));
+    outfitGuy(guy.scene, this.texTee, this.texJeans);
     this.tplGuy = tplOf(guy, 1.8);
     this.tplGirl = tplOf(girl, 1.66);
     this.clipsGuy = mk(guy.scene);
@@ -275,38 +283,37 @@ export class People {
     this.opp.setPos(0.05, -1.42, 0);
     this.opp.home = new THREE.Vector3(0.05, 0, -1.42);
 
+    const guy = (tee, jeans, cap, beard, h) => ({ kind: 'guy', h,
+      tint: { Wolf3D_Outfit_Top: tee, Wolf3D_Outfit_Bottom: jeans, Cap: cap, Beard3D: beard, Wolf3D_Beard: beard } });
     const looks = [
-      { kind: 'guy', tint: { Wolf3D_Outfit_Top: 0x7a2a22, Wolf3D_Outfit_Bottom: 0x3b3b3b, Wolf3D_Beard: null, Wolf3D_Headwear: null }, h: 0.97 },
-      { kind: 'girl', tint: {}, h: 1.0 },
-      { kind: 'guy', tint: { Wolf3D_Outfit_Top: 0x3d5a3a, Wolf3D_Outfit_Bottom: 0x5a4b3a }, h: 1.03 },
-      { kind: 'guy', tint: { Wolf3D_Outfit_Top: 0x9a9488, Wolf3D_Outfit_Bottom: 0x2b3448, Wolf3D_Headwear: null }, h: 0.95 },
+      guy(0x8c2b2b, 0xffffff, 0x1d2a44, 0x7a5235, 0.97),       // red tee, navy cap
+      { kind: 'girl', maps: { Ch03: this.texGirlBrown }, h: 1.0 },
+      guy(0x4d5b3f, 0xc8d4ff, 0xb9b2a3, 0x5a3d26, 1.03),       // olive tee, khaki cap
+      { kind: 'girl', maps: { Ch03: this.texGirlBlonde }, h: 0.97 },
     ];
+    const mk = (L) => this._person(L.kind, { tint: L.tint || {}, maps: L.maps, heightMul: L.h });
     // two people chatting behind the opponent on the left
-    const a = this._person(looks[0].kind, { tint: looks[0].tint, heightMul: looks[0].h });
-    a.setPos(-1.25, -2.75, 1.2); a.mode = 'talk';
-    const b = this._person(looks[1].kind, { tint: looks[1].tint, heightMul: looks[1].h });
-    b.setPos(-0.55, -2.95, -1.0); b.mode = 'talk';
+    const a = mk(looks[0]); a.setPos(-1.25, -2.75, 1.2); a.mode = 'talk';
+    const b = mk(looks[1]); b.setPos(-0.55, -2.95, -1.0); b.mode = 'talk';
     a.partner = b; b.partner = a;
     // a spectator on the right watching the game
-    const c = this._person(looks[2].kind, { tint: looks[2].tint, heightMul: looks[2].h });
-    c.setPos(1.25, -2.35, -0.7); c.mode = 'watch';
+    const c = mk(looks[2]); c.setPos(1.25, -2.35, -0.7); c.mode = 'watch';
     // someone wandering between the fridge, the door and the workbench
-    const d = this._person(looks[3].kind, { tint: looks[3].tint, heightMul: looks[3].h });
-    d.setPos(2.3, -1.9, Math.PI); d.mode = 'walk';
+    const d = mk(looks[3]); d.setPos(2.3, -1.9, Math.PI); d.mode = 'walk';
     d.route = [new THREE.Vector3(2.25, 0, -1.4), new THREE.Vector3(1.6, 0, -3.6), new THREE.Vector3(-0.2, 0, -4.1),
       new THREE.Vector3(-2.2, 0, -3.3), new THREE.Vector3(-2.2, 0, -1.7), new THREE.Vector3(-1.4, 0, -3.9), new THREE.Vector3(1.0, 0, -3.8)];
     d.leg = 0; d.wait = 1;
     this.guests = [a, b, c, d];
-    for (const g of [a, b, c, d]) this._cupInHand(g);
+    for (const g of this.guests) this._cupInHand(g);
     for (const g of this.guests) g.nextGesture = rnd(2, 6);
   }
 
   /** Dress the opponent for who you're playing. */
   setOpponentLook(key) {
     const L = {
-      rick: { top: 0x6b4a2e, bottom: 0x3a3836, hat: true, beard: true, h: 0.97 },
-      tyler: { top: 0x26375a, bottom: 0x5a6878, hat: false, beard: false, h: 1.0 },
-      mike: { top: 0x1e1e20, bottom: 0x2c2c2e, hat: false, beard: true, h: 1.07 },
+      rick: { top: 0x8a8d90, bottom: 0xd6dcff, cap: 0x7a1f1f, beard: 0xb0aaa2, h: 0.97 },
+      tyler: { top: 0xf2f2f0, bottom: 0xffffff, cap: 0x26375a, beard: 0x8a5a36, h: 1.0 },
+      mike: { top: 0x232325, bottom: 0xaab4d8, cap: 0x151515, beard: 0x4a3324, h: 1.07 },
     }[key] || {};
     const o = this.opp; if (!o) return;
     o.root.scale.setScalar(this.tplGuy.scale * (L.h || 1));
@@ -314,8 +321,8 @@ export class People {
       if (!m.isMesh) return;
       if (m.name === 'Wolf3D_Outfit_Top') m.material.color.setHex(L.top);
       if (m.name === 'Wolf3D_Outfit_Bottom') m.material.color.setHex(L.bottom);
-      if (m.name === 'Wolf3D_Headwear') m.visible = !!L.hat;
-      if (m.name === 'Wolf3D_Beard') m.visible = !!L.beard;
+      if (m.name === 'Cap') m.material.color.setHex(L.cap);
+      if (m.name === 'Beard3D' || m.name === 'Wolf3D_Beard') m.material.color.setHex(L.beard);
     });
   }
   /** Stereo position (-1..1) of a world point as seen from the camera. */
@@ -349,15 +356,21 @@ export class People {
   /** Release: arm snaps forward. */
   release() { const o = this.opp; o.throwing = 'release'; o.throwT = 0; }
   handPos(out = new THREE.Vector3()) {
-    const h = this.opp && this.opp.bones.RightHand;
-    if (!h) return out.set(0.1, 1.42, -1.25);
-    h.getWorldPosition(out);
-    // palm is a little in front of the wrist joint
-    return out.add(new THREE.Vector3(0, 0.02, 0.06));
+    const b = this.opp && this.opp.bones;
+    if (!b || !b.RightHand) return out.set(0.1, 1.42, -1.25);
+    // ball sits between the thumb and the index/middle fingers
+    const f = b.RightHandMiddle2 || b.RightHandMiddle1, th = b.RightHandThumb2 || b.RightHandThumb1;
+    if (!f || !th) return b.RightHand.getWorldPosition(out);
+    const pf = f.getWorldPosition(new THREE.Vector3()), pt = th.getWorldPosition(new THREE.Vector3());
+    const wrist = b.RightHand.getWorldPosition(new THREE.Vector3());
+    out.copy(pf).lerp(pt, 0.45);
+    // push out of the palm, away from the wrist
+    out.addScaledVector(out.clone().sub(wrist).normalize(), 0.012);
+    return out;
   }
 
   update(dt, camPos, ballPos) {
-    if (!this.ready) return;
+    if (!this.ready || !(dt > 0)) return;
     this.time += dt;
     for (const g of this.guests) this._updateGuest(g, dt, camPos, ballPos);
     this._updateOpp(dt, camPos, ballPos);
@@ -458,4 +471,174 @@ function worldScaleOf(obj, stop) {
   let s = 1, o = obj;
   while (o && o !== stop) { s *= o.scale.x; o = o.parent; }
   return s;
+}
+
+// ---------- men's outfit: tee, jeans, ball cap, full beard ----------
+function skinnedWorldPositions(mesh) {
+  const pos = mesh.geometry.attributes.position, out = new Float32Array(pos.count * 3), v = new THREE.Vector3();
+  mesh.updateMatrixWorld(true);
+  for (let i = 0; i < pos.count; i++) {
+    mesh.getVertexPosition(i, v); v.applyMatrix4(mesh.matrixWorld); v.toArray(out, i * 3);
+  }
+  return out;
+}
+function boxOf(arr, filter) {
+  const b = new THREE.Box3(), v = new THREE.Vector3();
+  for (let i = 0; i < arr.length; i += 3) { v.fromArray(arr, i); if (!filter || filter(v)) b.expandByPoint(v); }
+  return b;
+}
+
+function outfitGuy(root, tee, jeans) {
+  root.updateMatrixWorld(true);
+  const meshes = {};
+  root.traverse(o => { if (o.isMesh) meshes[o.name] = o; });
+  if (meshes.Wolf3D_Outfit_Top) { meshes.Wolf3D_Outfit_Top.material.map = tee; meshes.Wolf3D_Outfit_Top.material.color.setHex(0xffffff); }
+  if (meshes.Wolf3D_Outfit_Bottom) { meshes.Wolf3D_Outfit_Bottom.material.map = jeans; meshes.Wolf3D_Outfit_Bottom.material.color.setHex(0xffffff); }
+  if (meshes.Wolf3D_Headwear) meshes.Wolf3D_Headwear.visible = false;
+  if (meshes.Wolf3D_Outfit_Top && meshes.Wolf3D_Outfit_Bottom) {
+    const top = meshes.Wolf3D_Outfit_Top, tp = skinnedWorldPositions(top);
+    const pants = boxOf(skinnedWorldPositions(meshes.Wolf3D_Outfit_Bottom));
+    const cut = pants.max.y - 0.07; // a little below the waistband
+    const g = top.geometry, idx = g.index.array, keep = [];
+    for (let t = 0; t < idx.length; t += 3) {
+      const a = idx[t], b = idx[t + 1], c = idx[t + 2];
+      if (Math.max(tp[a * 3 + 1], tp[b * 3 + 1], tp[c * 3 + 1]) > cut) keep.push(a, b, c);
+    }
+    // drop the bow tie: the front-most geometry just under the chin
+    const eb = boxOf(skinnedWorldPositions(meshes.EyeLeft));
+    const neckY = (eb.min.y + eb.max.y) / 2 - 0.15;
+    let maxZ = -Infinity;
+    for (let i = 0; i < tp.length; i += 3) if (tp[i + 1] < neckY + 0.02 && tp[i + 1] > neckY - 0.12 && Math.abs(tp[i]) < 0.08) maxZ = Math.max(maxZ, tp[i + 2]);
+    const inTie = (i) => tp[i * 3 + 1] < neckY + 0.02 && tp[i * 3 + 1] > neckY - 0.12 && Math.abs(tp[i * 3]) < 0.085 && tp[i * 3 + 2] > maxZ - 0.03;
+    const keep2 = [];
+    for (let t = 0; t < keep.length; t += 3) if (!(inTie(keep[t]) && inTie(keep[t + 1]) && inTie(keep[t + 2]))) keep2.push(keep[t], keep[t + 1], keep[t + 2]);
+    g.setIndex(keep2);
+  }
+  const head = meshes.Wolf3D_Head; if (!head) return;
+  const hp = skinnedWorldPositions(head);
+  const eyes = boxOf(skinnedWorldPositions(meshes.EyeLeft)).union(boxOf(skinnedWorldPositions(meshes.EyeRight)));
+  const eyeY = (eyes.min.y + eyes.max.y) / 2;
+  const skull = boxOf(hp, v => v.y > eyeY);
+  const cx = (skull.min.x + skull.max.x) / 2, cz = (skull.min.z + skull.max.z) / 2;
+  const rx = (skull.max.x - skull.min.x) / 2, rz = (skull.max.z - skull.min.z) / 2;
+  const front = boxOf(hp).max.z;
+
+  // ---- ball cap (child of the Head bone) ----
+  let headBone = null; root.traverse(o => { if (o.isBone && baseName(o.name) === 'Head') headBone = o; });
+  const capMat = new THREE.MeshStandardMaterial({ color: 0x1d2a44, roughness: 0.85, side: THREE.DoubleSide });
+  const cap = new THREE.Group();
+  const baseY = eyeY + 0.019;
+  const crownH = skull.max.y - baseY + 0.012;
+  const prof = [[1.0, 0], [1.0, 0.3], [0.96, 0.55], [0.86, 0.75], [0.66, 0.9], [0.36, 0.985], [0.001, 1.0]]
+    .map(([r, y]) => new THREE.Vector2(r, y));
+  const crownGeo = new THREE.LatheGeometry(prof, 40);
+  const crown = new THREE.Mesh(crownGeo, capMat);
+  crown.name = 'Cap';
+  const crx = rx + 0.014, crz = rz + 0.014;
+  crown.scale.set(crx, crownH, crz);
+  crown.position.set(cx, baseY, cz - 0.004);
+  crown.rotation.x = 0.02;
+  const ext = 0;
+  // brim: half-ellipse sticking out of the front of the crown, curved down at the sides
+  const sh = new THREE.Shape();
+  sh.absellipse(0, 0, crx * 0.92, 0.078, 0, Math.PI, false);
+  const billGeo = new THREE.ExtrudeGeometry(sh, { depth: 0.006, bevelEnabled: false, curveSegments: 24 });
+  billGeo.rotateX(Math.PI / 2); // shape y -> world z forward... flip to point forward
+  const bp = billGeo.attributes.position, v = new THREE.Vector3();
+  for (let i = 0; i < bp.count; i++) {
+    v.fromBufferAttribute(bp, i);
+    v.y -= (v.x * v.x) * 1.6 + Math.max(0, v.z) * 0.12; // curve
+    bp.setXYZ(i, v.x, v.y, v.z);
+  }
+  billGeo.computeVertexNormals();
+  const bill = new THREE.Mesh(billGeo, capMat);
+  bill.name = 'Cap';
+  bill.position.set(cx, baseY + 0.021, cz + crz * 0.93);
+  bill.rotation.x = 0.16;
+  const button = new THREE.Mesh(new THREE.SphereGeometry(0.0065, 10, 6), capMat);
+  button.name = 'Cap'; button.position.set(cx, crown.position.y + crownH - 0.003, cz - 0.01);
+  cap.add(crown, bill, button);
+  cap.traverse(o => { if (o.isMesh) { o.castShadow = true; } });
+  if (headBone) {
+    headBone.updateMatrixWorld(true);
+    const inv = headBone.matrixWorld.clone().invert();
+    cap.applyMatrix4(inv);
+    headBone.add(cap);
+  }
+
+  // ---- full beard: a thin shell over the jaw, cheeks and chin of the head mesh ----
+  const must = meshes.Wolf3D_Beard ? boxOf(skinnedWorldPositions(meshes.Wolf3D_Beard)) : null;
+  const mustMid = meshes.Wolf3D_Beard ? boxOf(skinnedWorldPositions(meshes.Wolf3D_Beard), p => Math.abs(p.x - cx) < 0.008) : null;
+  const mouthY = mustMid && !mustMid.isEmpty() ? mustMid.min.y - 0.011 : eyeY - 0.085;
+  const noseBaseY = must ? must.max.y : eyeY - 0.06;
+  const chin = boxOf(hp, p => p.z > front - 0.03 && Math.abs(p.x - cx) < 0.02 && p.y < mouthY);
+  const chinY = chin.isEmpty() ? mouthY - 0.05 : chin.min.y;
+  const inBeard = (x, y, z) => {
+    const dx = Math.abs(x - cx);
+    // cheek line: from the corners of the mustache up to the sideburns by the ears
+    const top = THREE.MathUtils.lerp(noseBaseY - 0.012, eyeY - 0.012, THREE.MathUtils.clamp((dx - 0.025) / 0.05, 0, 1));
+    if (y > top || y < chinY - 0.03) return false;
+    if (z < cz - 0.035) return false;                                  // not the back of the head
+    if (y < chinY + 0.005 && z < front - 0.075) return false;          // only a little under the chin
+    if (Math.abs(x - cx) < 0.03 && y > noseBaseY - 0.004) return false;  // nose
+    if (y > noseBaseY + 0.004 && z > front - 0.05 && Math.abs(x - cx) < 0.045) return false; // upper cheeks by the nose
+    const ex = (x - cx) / 0.026, ey = (y - mouthY) / 0.011;
+    if (ex * ex + ey * ey < 1 && z > front - 0.04) return false;      // keep the lips clear
+    return true;
+  };
+  const g = head.geometry, idx = g.index ? g.index.array : null;
+  const triCount = (idx ? idx.length : g.attributes.position.count) / 3;
+  const sel = [];
+  const vin = new Uint8Array(g.attributes.position.count);
+  for (let i = 0; i < vin.length; i++) vin[i] = inBeard(hp[i * 3], hp[i * 3 + 1], hp[i * 3 + 2]) ? 1 : 0;
+  const edge = new Uint8Array(vin.length);
+  for (let t = 0; t < triCount; t++) {
+    const a = idx ? idx[t * 3] : t * 3, b = idx ? idx[t * 3 + 1] : t * 3 + 1, c = idx ? idx[t * 3 + 2] : t * 3 + 2;
+    const n = vin[a] + vin[b] + vin[c];
+    if (n === 3) sel.push(a, b, c);
+    else if (n > 0) { edge[a] = edge[b] = edge[c] = 1; }
+  }
+  if (sel.length) {
+    const ng = new THREE.BufferGeometry();
+    for (const name of ['position', 'normal', 'uv', 'skinIndex', 'skinWeight']) {
+      const src = g.attributes[name]; if (!src) continue;
+      const arr = new (src.array.constructor)(sel.length * src.itemSize);
+      sel.forEach((vi, k) => { for (let c = 0; c < src.itemSize; c++) arr[k * src.itemSize + c] = src.getComponent ? src.getComponent(vi, c) : src.array[vi * src.itemSize + c]; });
+      ng.setAttribute(name, new THREE.BufferAttribute(arr, src.itemSize, src.normalized));
+    }
+    // push out along the normal; fade alpha at the edge of the beard
+    const P = ng.attributes.position, N = ng.attributes.normal;
+    const col = new Float32Array(sel.length * 4);
+    sel.forEach((vi, k) => {
+      const thick = edge[vi] ? 0.0015 : 0.005;
+      P.setXYZ(k, P.getX(k) + N.getX(k) * thick, P.getY(k) + N.getY(k) * thick, P.getZ(k) + N.getZ(k) * thick);
+      col[k * 4] = col[k * 4 + 1] = col[k * 4 + 2] = 1; col[k * 4 + 3] = edge[vi] ? 0.15 : 1;
+    });
+    ng.setAttribute('color', new THREE.BufferAttribute(col, 4));
+    const bm = new THREE.MeshStandardMaterial({ color: 0x4a3020, roughness: 0.95, map: beardTexture(), vertexColors: true, transparent: true, alphaTest: 0.05 });
+    const beard = new THREE.SkinnedMesh(ng, bm);
+    beard.name = 'Beard3D';
+    beard.bind(head.skeleton, head.bindMatrix);
+    beard.castShadow = true;
+    head.parent.add(beard);
+  }
+}
+
+let _beardTex = null;
+function beardTexture() {
+  if (_beardTex) return _beardTex;
+  const c = document.createElement('canvas'); c.width = c.height = 256;
+  const x = c.getContext('2d');
+  x.fillStyle = '#9a9a9a'; x.fillRect(0, 0, 256, 256);
+  for (let i = 0; i < 5000; i++) {
+    const px = Math.random() * 256, py = Math.random() * 256, a = Math.PI / 2 + (Math.random() - 0.5) * 0.9, l = 3 + Math.random() * 6;
+    const g = 90 + Math.random() * 140;
+    x.strokeStyle = `rgba(${g},${g},${g},0.8)`; x.lineWidth = 0.8;
+    x.beginPath(); x.moveTo(px, py); x.lineTo(px + Math.cos(a) * l, py + Math.sin(a) * l); x.stroke();
+  }
+  _beardTex = new THREE.CanvasTexture(c);
+  _beardTex.colorSpace = THREE.SRGBColorSpace;
+  _beardTex.wrapS = _beardTex.wrapT = THREE.RepeatWrapping;
+  _beardTex.repeat.set(6, 6);
+  return _beardTex;
 }
