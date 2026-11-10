@@ -166,7 +166,8 @@ export class Game {
 
   /** Turn the player's head toward something in the garage for a moment. */
   glance(target, ms = rnd(1600, 2600)) {
-    if (!['aim', 'resolve', 'between'].includes(this.state) || this.drag) return;
+    if (this.state !== 'ai' || this.drag) return;
+    ms = Math.min(ms, 1100); // back in time to watch the throw
     this.glanceAt = { until: performance.now() + ms, obj: target && target.isObject3D ? target : null, point: target && target.isVector3 ? target : null };
     this.lastGlance = performance.now();
   }
@@ -482,6 +483,8 @@ export class Game {
     this.aiOrigin = origin;
     this.aiHolding = !!P;
     if (P) P.startWindup(); else this.ballMesh.position.copy(origin);
+    // rarely (about 5% of the opponent's throws) the player glances around the garage
+    if (Math.random() < 0.05) setTimeout(() => this._randomGlance(), 150);
     await sleep(rnd(1300, 2000));
     if (gid !== this.gameId) return;
     while (this.state === 'paused') { await sleep(100); if (gid !== this.gameId) return; }
@@ -578,7 +581,6 @@ export class Game {
           this.voice.laugh(4, 0.45); this.talk('playerMiss', false, 0.95);
           if (P) { P.oppGesture('yes'); P.react('laugh'); }
           setTimeout(() => (Math.random() < 0.6 ? this.voice.heckle() : this.voice.react('miss')), 700);
-          if (P && Math.random() < 0.5) setTimeout(() => this.glance(P.guests[(Math.random() * P.guests.length) | 0].bones.Head, 1500), 600);
         } else {
           this.talk('playerMiss', false, 0.75);
           if (P) P.oppGesture('yes');
@@ -714,11 +716,7 @@ export class Game {
       this.ballMesh.position.lerp(hp, 0.5);
       if (d) this._updateMeter(d);
       if (!this.slowNagged && performance.now() - this.aimSince > 11000) { this.slowNagged = true; this.talk('slow', false, 1); }
-      const now = performance.now();
-      if (!d && !this.glanceAt && now - this.aimSince > 2500 && now - (this.lastGlance || 0) > (this.nextGlanceGap || 7000)) {
-        this.nextGlanceGap = rnd(7000, 14000);
-        this._randomGlance();
-      }
+
     }
     if (this.state === 'ai' && this.aiHolding && this.people) {
       this.ballMesh.position.copy(this.people.handPos());

@@ -51,12 +51,36 @@ def make_human(cfg):
     m['proportions'] = 0.6
     m['race'] = {'asian': 0.0, 'caucasian': 1.0, 'african': 0.0}
     h = HumanService.create_human(macro_detail_dict=m)
+    vary_face(h, cfg['seed'])
     rig = HumanService.add_builtin_rig(h, 'mixamo')
     TargetService.bake_targets(h)
     for mod in list(h.modifiers):
         if mod.type == 'MASK':
             h.modifiers.remove(mod)
     return h, rig
+
+
+FACE_GROUPS = ['nose', 'mouth', 'chin', 'head', 'cheek', 'eyes', 'eyebrows', 'forehead', 'ears', 'neck']
+
+
+def vary_face(h, seed):
+    """Give every character a distinct face with a random mix of MakeHuman face morphs."""
+    import random, glob
+    rng = random.Random(seed * 7919)
+    tdir = os.path.join(os.path.dirname(sys.modules['mpfb'].__file__), 'data', 'targets')
+    files = []
+    for g in FACE_GROUPS:
+        files += sorted(glob.glob(os.path.join(tdir, g, '*.target.gz')))
+    # pick one side of each incr/decr pair
+    pairs = {}
+    for f in files:
+        base = os.path.basename(f).replace('.target.gz', '')
+        stem = base.rsplit('-', 1)[0] if base.split('-')[-1] in ('incr', 'decr', 'in', 'out', 'up', 'down', 'forward', 'backward') else base
+        pairs.setdefault(stem, []).append(f)
+    stems = sorted(pairs)
+    for stem in rng.sample(stems, min(16, len(stems))):
+        f = rng.choice(pairs[stem])
+        TargetService.load_target(h, f, weight=rng.uniform(0.15, 0.55))
 
 
 def weights_of(obj):
@@ -233,7 +257,8 @@ def build(key, cfg, tex_dir, mh_data, out_dir):
         return seg_t(p, a, b)
 
     def is_arm(w):
-        return sum(w.get(B(s + n), 0) for s in ('Left', 'Right') for n in ('Arm', 'ForeArm', 'Hand')) > 0.5
+        # arm, forearm, hand and every finger bone (all contain "Arm" or "Hand")
+        return sum(v for k, v in w.items() if k.startswith('mixamorig:') and ('Arm' in k or 'Hand' in k)) > 0.5
 
     def side_of(p):
         return 'Left' if p.x > 0 else 'Right'
@@ -287,13 +312,30 @@ def build(key, cfg, tex_dir, mh_data, out_dir):
             v.co.z = 0.0  # flat sole
     bm.to_mesh(shoes.data); bm.free()
 
+    # protect the hands geometrically, whatever the skin weights say
+    hand_segs = []
+    for sd in ('Left', 'Right'):
+        a = bone_head(rig, sd + 'Hand')
+        tip = bone_tail(rig, sd + 'HandMiddle3') if B(sd + 'HandMiddle3') in rig.data.bones else bone_tail(rig, sd + 'Hand')
+        hand_segs.append((a, a + (tip - a) * 1.15))
+
+    def near_hand(p):
+        for a, b in hand_segs:
+            t = max(0.0, min(1.0, seg_t(p, a, b)))
+            if (p - a.lerp(b, t)).length < 0.075:
+                return True
+        return False
+
     # ---- body: drop helpers and everything hidden under the clothes
     drop = []
     for i in range(len(co)):
         if not body[i]:
             drop.append(True); continue
         p = co[i]
-        hidden = in_shirt(i, margin=0.02) or (ankle_z + 0.01 < p.z < waist_z - 0.03) or p.z < ankle_z - 0.01
+        if near_hand(p):
+            drop.append(False); continue
+        arm = is_arm(W[i])
+        hidden = in_shirt(i, margin=0.02) or (not arm and ankle_z + 0.01 < p.z < waist_z - 0.03) or p.z < ankle_z - 0.01
         drop.append(hidden)
     bodyo = duplicate(h, 'Body')
     delete_faces(bodyo, drop)
@@ -302,6 +344,11 @@ def build(key, cfg, tex_dir, mh_data, out_dir):
     hair = None
     if cfg['hair'] in ('bob', 'ponytail'):
         hair = make_hair(bodyo, L, rig, cfg['hair'])
+
+    # ---- eyelashes (basemesh helper strips)
+    lash_groups = ['helper-l-eyelashes-1', 'helper-r-eyelashes-1']
+    lashes = duplicate(h, 'Lashes')
+    keep_verts(lashes, [any(in_group(W[i], g) for g in lash_groups) for i in range(len(co))])
 
     # ---- eyes (MakeHuman high-poly eye proxy)
     eyes = HumanService.add_mhclo_asset(os.path.join(mh_data, 'eyes/high-poly/high-poly.mhclo'), h, asset_type='Eyes', subdiv_levels=0)
@@ -358,6 +405,7 @@ def build(key, cfg, tex_dir, mh_data, out_dir):
     assign(bodyo, material('Skin', os.path.join(out_dir, key + '_skin.jpg'), rough=0.62))
     assign(shirt, material('Tee', os.path.join(tex_dir, 'cotton.jpg'), rough=0.95, normal=os.path.join(tex_dir, 'cotton_n.jpg'), vcol=True))
     assign(jeans, material('Denim', os.path.join(tex_dir, 'denim.jpg'), rough=0.9, normal=os.path.join(tex_dir, 'denim_n.jpg'), vcol=True))
+    assign(lashes, material('Lashes', color=(0.16, 0.11, 0.08, 1), rough=0.95))
     assign(shoes, material('Sneaker', os.path.join(tex_dir, 'sneaker.jpg'), rough=0.7))
     if hair:
         assign(hair, material('Hair', os.path.join(tex_dir, 'hair_%s.png' % ('brown' if cfg['seed'] % 2 == 0 else 'blonde')), rough=0.55, alpha_clip=True))
@@ -367,7 +415,7 @@ def build(key, cfg, tex_dir, mh_data, out_dir):
     # ---- export
     for o in bpy.data.objects:
         o.select_set(False)
-    objs = [rig, bodyo, shirt, jeans, shoes, eyes] + ([hair] if hair else []) + (cap if cap else [])
+    objs = [rig, bodyo, shirt, jeans, shoes, eyes, lashes] + ([hair] if hair else []) + (cap if cap else [])
     for o in objs:
         o.select_set(True)
     h.hide_set(True)

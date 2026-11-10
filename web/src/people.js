@@ -114,14 +114,20 @@ class Person {
     this.root = SkeletonUtils.clone(tpl.scene);
     this.root.traverse(o => {
       if (o.isMesh) {
-        // cast shadows only: self-shadowing from the overhead spot causes acne on skin
-        o.castShadow = true; o.receiveShadow = false; o.frustumCulled = false;
-        const mt = o.material = o.material.clone();
+        o.castShadow = true; o.frustumCulled = false;
+        let mt = o.material.clone();
+        if (mt.name === 'Skin') {
+          // fine pore detail; standard shading keeps the skin tone true
+          mt.roughness = 0.6;
+          if (skinNormal()) { mt.normalMap = skinNormal(); mt.normalScale = new THREE.Vector2(0.18, 0.18); }
+        }
+        o.material = mt;
+        // skin skips shadow receiving (acne from the steep overhead spot); clothes keep it
+        o.receiveShadow = mt.name !== 'Skin' && mt.name !== 'Lashes';
         const tint = opts.tint && opts.tint[mt.name];
         if (tint) mt.color.setHex(tint);
         if (/Tee|Denim|Cap|Hair|Sneaker/.test(mt.name)) mt.side = THREE.DoubleSide;
         if (mt.name === 'Hair') { mt.alphaTest = 0.5; mt.transparent = false; }
-        if (mt.name === 'Skin') { mt.roughness = 0.6; }
         mt.envMapIntensity = 0.55;
       }
     });
@@ -175,6 +181,17 @@ class Person {
 }
 const wrap = (a) => Math.atan2(Math.sin(a), Math.cos(a));
 
+let _skinN = null;
+async function skinNormalReady() {
+  if (_skinN) return;
+  try {
+    _skinN = await new THREE.TextureLoader().loadAsync('models/people/skin_n.jpg');
+    _skinN.wrapS = _skinN.wrapT = THREE.RepeatWrapping;
+    _skinN.repeat.set(14, 14);
+  } catch { _skinN = null; }
+}
+function skinNormal() { return _skinN; }
+
 // rotate `bone` (world space) so the direction to `childWorld` points at `targetWorld`
 function aimBone(bone, childWorld, targetWorld, weight = 1) {
   const bp = bone.getWorldPosition(new THREE.Vector3());
@@ -227,6 +244,7 @@ export class People {
     const names = ['rick', 'tyler', 'mike', 'guest_m1', 'guest_m2', 'guest_f1', 'guest_f2'];
     const [anim, ...chars] = await Promise.all([
       loader.loadAsync(base + 'anims.glb'), ...names.map(n => loader.loadAsync(base + 'people/' + n + '.glb'))]);
+    await skinNormalReady();
     const src = anim.scene;
     const byName = Object.fromEntries(anim.animations.map(a => [a.name, a]));
     this.tpl = {};

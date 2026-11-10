@@ -19,7 +19,7 @@ Every push to `main` rebuilds the APK through GitHub Actions (`.github/workflows
 
 ## People
 
-Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench. Every so often your own view drifts toward something in the garage, and it snaps back the moment you touch the screen.
+Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench. Once in a while (about 1 in 20 of the opponent's throws) your view briefly drifts around the garage, then returns in time to watch the shot.
 
 The characters are built from [MakeHuman](http://www.makehumancommunity.org) (CC0) bodies with a Mixamo-compatible rig. Everyone wears a modelled t-shirt, blue jeans and sneakers. The men wear ball caps and beards, and the women have shoulder-length hair or a ponytail. To regenerate them, see `web/tools/people/`:
 

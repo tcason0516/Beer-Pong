@@ -235,7 +235,7 @@ export function buildGarage(scene, onProgress = () => {}) {
   key.castShadow = true;
   key.shadow.mapSize.set(2048, 2048);
   key.shadow.camera.near = 0.5; key.shadow.camera.far = 4;
-  key.shadow.bias = -0.0004; key.shadow.normalBias = 0.01; key.shadow.radius = 3;
+  key.shadow.bias = -0.0004; key.shadow.normalBias = 0.02; key.shadow.radius = 3;
   g.add(key, key.target);
   const hemi = new THREE.HemisphereLight(0xfff4e6, 0x3a3530, 0.35);
   g.add(hemi);
