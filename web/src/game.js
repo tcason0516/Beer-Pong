@@ -144,14 +144,30 @@ export class Game {
       this.camTarget.pos.set(Math.sin(a) * 2.3, 1.65 + Math.sin(t * 0.3) * 0.08, Math.cos(a) * 2.3 + 0.2);
     }
     this.camPose.pos.lerp(this.camTarget.pos, k);
-    // occasional look around the garage
+    // opponent's turn: watch him line up, then follow his ball wherever it goes
     let look = this.camTarget.look, kl = k;
-    const g = this.glanceAt;
-    if (g) {
-      if (performance.now() > g.until || this.drag || this.state === 'paused') { this.glanceAt = null; if (this.drag) kl = 1 - Math.exp(-dt * 9); }
-      else { look = g.obj ? g.obj.getWorldPosition(new THREE.Vector3()) : g.point; kl = 1 - Math.exp(-dt * 2.0); }
-    } else if (this._wasGlancing) kl = 1 - Math.exp(-dt * 2.6);
-    this._wasGlancing = !!g && this.camPose.look.distanceTo(this.camTarget.look) > 0.05;
+    if (this.camKind === 'ai') {
+      const P = this.people && this.people.ready ? this.people : null;
+      const followDt = Math.max(dt, this.rawDt || 0);
+      if (this.shooter === AI && (this.state === 'flight' || this.state === 'resolve') && this.ballMesh.visible) {
+        this._watch = (this._watch || new THREE.Vector3()).copy(this.ballMesh.position);
+        kl = 1 - Math.exp(-followDt * 7);
+      } else if (this.state === 'ai' && P) {
+        this._watch = (this._watch || new THREE.Vector3()).copy(P.handPos());
+        this._watch.y -= 0.12; // frame his throwing hand and upper body
+        kl = 1 - Math.exp(-followDt * 3);
+      } else if (!this._watch || this.state !== 'resolve') {
+        this._watch = null;
+      }
+      if (this._watch) {
+        look = this._watch.clone();
+        // never turn around: keep the point in front of the camera and above the floor
+        look.z = Math.min(look.z, this.camPose.pos.z - 0.6);
+        look.y = Math.max(look.y, 0.15);
+      }
+    } else {
+      this._watch = null;
+    }
     this.camPose.look.lerp(look, kl);
     // subtle hand-held breathing; more after a few drinks
     const sway = 0.0025 + this.buzz * 0.0016;
@@ -162,28 +178,6 @@ export class Game {
     const lookAt = this.camPose.look.clone();
     lookAt.x += Math.sin(t * 0.43) * sway * 2;
     c.lookAt(lookAt);
-  }
-
-  /** Turn the player's head toward something in the garage for a moment. */
-  glance(target, ms = rnd(1600, 2600)) {
-    if (this.state !== 'ai' || this.drag) return;
-    ms = Math.min(ms, 1100); // back in time to watch the throw
-    this.glanceAt = { until: performance.now() + ms, obj: target && target.isObject3D ? target : null, point: target && target.isVector3 ? target : null };
-    this.lastGlance = performance.now();
-  }
-  _randomGlance() {
-    const P = this.people;
-    const spots = [
-      new THREE.Vector3(2.75, 1.25, -1.35),  // fridge
-      new THREE.Vector3(-2.9, 1.3, -2.3),    // workbench / pegboard
-      new THREE.Vector3(2.9, 1.2, -3.0),     // shelves
-      new THREE.Vector3(-1.2, 2.3, -4.9),    // string lights over the door
-      new THREE.Vector3(1.35, 0.4, 0.75),    // cooler
-      new THREE.Vector3(-2.4, 0.5, 0.9),     // trash can
-    ];
-    const heads = P && P.ready ? P.guests.map(x => x.bones.Head).filter(Boolean) : [];
-    const t = heads.length && Math.random() < 0.55 ? heads[(Math.random() * heads.length) | 0] : spots[(Math.random() * spots.length) | 0];
-    this.glance(t);
   }
 
   // ---------------- UI ----------------
@@ -204,7 +198,7 @@ export class Game {
       this.audio.vol[k] = s[k];
       el.addEventListener('input', () => { s[k] = +el.value; this.audio.setVolume(k, s[k]); this._save(); });
     }
-    for (const k of ['captions', 'meter']) {
+    for (const k of ['meter']) {
       const el = $('opt_' + k);
       el.checked = s[k];
       el.addEventListener('change', () => { s[k] = el.checked; this._save(); });
@@ -242,24 +236,13 @@ export class Game {
     this._setCam('title');
   }
 
-  caption(text, who) {
-    if (!this.settings.captions || !text) return;
-    const el = $('caption');
-    el.innerHTML = `<b>${who}</b> ${text}`;
-    el.classList.add('show');
-    clearTimeout(this._capT);
-    this._capT = setTimeout(() => el.classList.remove('show'), 1400 + text.length * 55);
-  }
-  banner(text, ms = 1400) {
-    const el = $('banner');
-    el.textContent = text; el.classList.add('show');
-    clearTimeout(this._banT);
-    this._banT = setTimeout(() => el.classList.remove('show'), ms);
-  }
-  hint(text) {
-    const el = $('hint');
-    el.textContent = text || ''; el.classList.toggle('show', !!text);
-  }
+  // on-screen text (captions, banners, hints) is turned off; the game speaks for itself
+  caption() {}
+  banner() {}
+  hint() {}
+
+
+
   async talk(cat, force = false, chance = 1) {
     const now = performance.now();
     if (!force && (now < this.speakingUntil || Math.random() > chance)) return;
@@ -483,8 +466,6 @@ export class Game {
     this.aiOrigin = origin;
     this.aiHolding = !!P;
     if (P) P.startWindup(); else this.ballMesh.position.copy(origin);
-    // rarely (about 5% of the opponent's throws) the player glances around the garage
-    if (Math.random() < 0.05) setTimeout(() => this._randomGlance(), 150);
     await sleep(rnd(1300, 2000));
     if (gid !== this.gameId) return;
     while (this.state === 'paused') { await sleep(100); if (gid !== this.gameId) return; }
