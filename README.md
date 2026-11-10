@@ -17,10 +17,14 @@ Every push to `main` rebuilds the APK through GitHub Actions (`.github/workflows
 - Opponents: **Uncle Rick** (casual), **Tyler** (regular), **Big Mike** (frat legend).
 - Every cup your opponent makes adds to your buzz, and your aim gets a little shakier.
 
+## People
+
+Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench.
+
 ## Sound
 
-- **Trash talk & party chatter:** the game writes each line of dialogue to a WAV with your phone's built-in text-to-speech voices (`VoiceBank.kt`), then plays it through a garage reverb, panned around the room. Different people get different voices and pitches. If your phone has more voices installed (Settings → Text-to-speech → Google → Install voice data), you'll hear more variety. The first launch takes a few seconds to render the lines. After that they're cached.
-- **Laughing, "ooohs", cheers, the murmur of conversation, the fridge hum, cans cracking, ball/table/cup/splash sounds** are all synthesized live with Web Audio.
+- **Voices:** every line of trash talk, heckling and party chatter is pre-recorded with the **Kokoro** neural text-to-speech model, with a different voice for each opponent and six crowd voices. The clips live in `app/src/main/assets/game/voices/`. To change the dialogue, edit `web/tools/render_voices.py` and re-run it (instructions at the top of the file). If that folder is missing, the game falls back to the phone's own text-to-speech.
+- **Laughing, "ooohs", cheers, background murmur, the fridge hum, cans cracking, and ball/table/cup/splash sounds** are synthesized live with Web Audio.
 
 ### Use real recordings (recommended)
 
@@ -36,7 +40,7 @@ Put your own audio files in `app/src/main/assets/game/sounds/` and list them in 
 }
 ```
 
-Opponent categories: `opp_start`, `opp_playerMiss`, `opp_playerRimOut`, `opp_playerMake`, `opp_aiMake`, `opp_aiMiss`, `opp_ballsBackAi`, `opp_rerack`, `opp_slow`, `opp_aiLastCup`, `opp_aiWin`, `opp_playerWin`. Crowd categories: `crowd_make`, `crowd_miss`.
+Real recordings beat generated audio for laughter in particular. Opponent categories: `opp_start`, `opp_playerMiss`, `opp_playerRimOut`, `opp_playerMake`, `opp_aiMake`, `opp_aiMiss`, `opp_ballsBackAi`, `opp_rerack`, `opp_slow`, `opp_aiLastCup`, `opp_aiWin`, `opp_playerWin`. Crowd categories: `crowd_make`, `crowd_miss`, `crowd_heckle`.
 
 ## Project layout
 
@@ -49,7 +53,9 @@ web/src/                game source (Three.js)
   physics.js            ball flight with drag, bounces, cup rim collisions
   audio.js              mixer, reverb, synthesized SFX, laughter, crowd
   voices.js             trash-talk lines, chatter, voice playback
+  people.js             characters, animation retargeting, opponent throwing arm
   game.js               rules, AI, controls, HUD
+web/tools/render_voices.py   dialogue + neural voice rendering
 ```
 
 ### Build locally
@@ -60,3 +66,9 @@ cd .. && ./gradlew assembleRelease     # needs the Android SDK (or open the fold
 ```
 
 To try the game in a desktop browser, serve `app/src/main/assets/game/` (for example `python3 -m http.server`) and use the mouse to swipe. Voices fall back to the browser's speech engine there.
+
+## Credits
+
+- Voices: [Kokoro-82M](https://github.com/thewh1teagle/kokoro-onnx) (Apache-2.0).
+- Characters and animations come from the [three.js examples](https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf): a Ready Player Me avatar (`guy.glb`), plus Michelle (`girl.glb`) and X Bot (animation source, `anims.glb`) from Adobe Mixamo. Check those providers' terms before you publish the game commercially.
+- 3D engine: [three.js](https://threejs.org) (MIT).

@@ -1,0 +1,1503 @@
+{
+ "opponents": {
+  "rick": {
+   "aiLastCup": [
+    {
+     "f": "rick/907f320a1d2c.ogg",
+     "t": "One more and you're done."
+    },
+    {
+     "f": "rick/af06743cc053.ogg",
+     "t": "Last cup. Say goodnight."
+    },
+    {
+     "f": "rick/b678bc71cca6.ogg",
+     "t": "Island time, baby. One left. Start crying."
+    }
+   ],
+   "aiMake": [
+    {
+     "f": "rick/55924b94195a.ogg",
+     "t": "Still got it! Old man strength, baby!"
+    },
+    {
+     "f": "rick/0fcf222f29cd.ogg",
+     "t": "Forty years of practice, kid. Drink."
+    },
+    {
+     "f": "rick/ba2f025f4e4e.ogg",
+     "t": "Drink up, buttercup!"
+    },
+    {
+     "f": "rick/d771add324c6.ogg",
+     "t": "Nothing but beer, baby!"
+    },
+    {
+     "f": "rick/1211719ef8ae.ogg",
+     "t": "Too easy. Is this your first time?"
+    },
+    {
+     "f": "rick/2002c3f1fb69.ogg",
+     "t": "Get used to that feeling."
+    },
+    {
+     "f": "rick/eaebd9f4dec6.ogg",
+     "t": "Splash! Chug it, loser."
+    },
+    {
+     "f": "rick/5fb6a91ee83c.ogg",
+     "t": "Bottoms up, champ. You're gonna be doing a lot of that."
+    },
+    {
+     "f": "rick/6709cc510d02.ogg",
+     "t": "Did you see that? Of course you did. Now drink."
+    },
+    {
+     "f": "rick/79596d148580.ogg",
+     "t": "That's called skill. Look it up."
+    },
+    {
+     "f": "rick/eaea71e94b80.ogg",
+     "t": "Cash that cup and cry about it."
+    },
+    {
+     "f": "rick/ef59f553a44a.ogg",
+     "t": "You're getting smoked in front of everybody."
+    },
+    {
+     "f": "rick/3895669b09da.ogg",
+     "t": "Drink! Drink! Drink!"
+    },
+    {
+     "f": "rick/5cdf43afbb56.ogg",
+     "t": "I could do this with my eyes closed. Wanna see?"
+    }
+   ],
+   "aiMiss": [
+    {
+     "f": "rick/965411693e50.ogg",
+     "t": "The table's crooked, man."
+    },
+    {
+     "f": "rick/5e23cf4f9da9.ogg",
+     "t": "Somebody bumped the damn table!"
+    },
+    {
+     "f": "rick/0b98730734d9.ogg",
+     "t": "I'm giving you a chance. You need it."
+    },
+    {
+     "f": "rick/1ef4335bf1f3.ogg",
+     "t": "Ugh, the light got in my eyes."
+    },
+    {
+     "f": "rick/427907649a35.ogg",
+     "t": "That's on purpose. Strategy."
+    },
+    {
+     "f": "rick/b1ca358313f1.ogg",
+     "t": "Okay, that one slipped. Don't get excited."
+    },
+    {
+     "f": "rick/427bab34b145.ogg",
+     "t": "Who moved the cups? Seriously, who moved them?"
+    },
+    {
+     "f": "rick/b84616f5357d.ogg",
+     "t": "Shut up. Nobody say anything."
+    }
+   ],
+   "aiWin": [
+    {
+     "f": "rick/5e5793f903b1.ogg",
+     "t": "Game! Sit your ass down."
+    },
+    {
+     "f": "rick/434efd3c67b8.ogg",
+     "t": "Get off my table."
+    },
+    {
+     "f": "rick/b9b518904330.ogg",
+     "t": "That's how it's done in this garage."
+    },
+    {
+     "f": "rick/9f061954e556.ogg",
+     "t": "Next! Who's got next? This guy's done."
+    },
+    {
+     "f": "rick/1993a6d35833.ogg",
+     "t": "Thanks for the free beer, loser."
+    }
+   ],
+   "ballsBackAi": [
+    {
+     "f": "rick/fe0537405354.ogg",
+     "t": "Balls back, baby!"
+    },
+    {
+     "f": "rick/0d4dac5102b9.ogg",
+     "t": "Run it back! Gimme those balls."
+    },
+    {
+     "f": "rick/94e27b007e54.ogg",
+     "t": "Two for two! Sit down."
+    }
+   ],
+   "ballsBackPlayer": [
+    {
+     "f": "rick/c2fc2cab9920.ogg",
+     "t": "Seriously? Balls back. Whatever."
+    },
+    {
+     "f": "rick/b04a01823380.ogg",
+     "t": "Fine, take your stupid balls back."
+    }
+   ],
+   "playerLastCup": [
+    {
+     "f": "rick/fa966f33d74d.ogg",
+     "t": "Okay. I'm locked in now."
+    },
+    {
+     "f": "rick/13bfba8a732e.ogg",
+     "t": "Pressure's on you, buddy. One cup."
+    },
+    {
+     "f": "rick/da9b304182c8.ogg",
+     "t": "I've come back from worse. Way worse."
+    }
+   ],
+   "playerMake": [
+    {
+     "f": "rick/76099085b769.ogg",
+     "t": "Okay, okay. Lucky shot."
+    },
+    {
+     "f": "rick/4434e303484b.ogg",
+     "t": "Even a broken clock is right twice a day."
+    },
+    {
+     "f": "rick/8b484a352ca1.ogg",
+     "t": "Alright, you got one. Don't get cocky."
+    },
+    {
+     "f": "rick/8dc92992eb9d.ogg",
+     "t": "Ugh. Fine. Whatever."
+    },
+    {
+     "f": "rick/6f773d18c3d8.ogg",
+     "t": "That had no business going in."
+    },
+    {
+     "f": "rick/2cf8daa93bd6.ogg",
+     "t": "Wow, you finally hit one. You want a trophy?"
+    },
+    {
+     "f": "rick/ce6127a6371b.ogg",
+     "t": "Enjoy it, that's the last one you're getting."
+    },
+    {
+     "f": "rick/973473f9392e.ogg",
+     "t": "God damn it."
+    },
+    {
+     "f": "rick/98bdb6f28aa2.ogg",
+     "t": "Pure luck. Everybody saw that."
+    }
+   ],
+   "playerMiss": [
+    {
+     "f": "rick/068d77ddb9c7.ogg",
+     "t": "Back in my day we had a word for shots like that. Garbage."
+    },
+    {
+     "f": "rick/07a58ad61dd9.ogg",
+     "t": "Son, I've had hip surgery and I still throw better than you."
+    },
+    {
+     "f": "rick/3d619acd6e52.ogg",
+     "t": "Air ball! Holy shit, you missed the whole table."
+    },
+    {
+     "f": "rick/065eae29b7fc.ogg",
+     "t": "Were you aiming for the fridge, dumbass?"
+    },
+    {
+     "f": "rick/8b5afe80787f.ogg",
+     "t": "My grandma throws better than that, and she's dead."
+    },
+    {
+     "f": "rick/1876c647ee71.ogg",
+     "t": "That's not even close. That's not even in the same zip code."
+    },
+    {
+     "f": "rick/629a6e0c1d15.ogg",
+     "t": "Hey genius, the cups are over here!"
+    },
+    {
+     "f": "rick/4ab02e5abf2b.ogg",
+     "t": "Did you close your eyes? Be honest."
+    },
+    {
+     "f": "rick/980e60128501.ogg",
+     "t": "That was embarrassing. For all of us."
+    },
+    {
+     "f": "rick/6d92ee8b107b.ogg",
+     "t": "Brick! Absolute brick!"
+    },
+    {
+     "f": "rick/55e900281c7e.ogg",
+     "t": "You throw like you've never seen a ball before."
+    },
+    {
+     "f": "rick/8e3a3849aea6.ogg",
+     "t": "That one's gonna be under the fridge till Christmas."
+    },
+    {
+     "f": "rick/80094e616544.ogg",
+     "t": "Somebody get this clown some glasses."
+    },
+    {
+     "f": "rick/f09dc2cf2d44.ogg",
+     "t": "Wow. Just wow. That was pathetic."
+    },
+    {
+     "f": "rick/4348b368b3a2.ogg",
+     "t": "Is your arm broken, or are you just bad?"
+    },
+    {
+     "f": "rick/14cf31d79cf2.ogg",
+     "t": "You suck at this. Like, genuinely."
+    },
+    {
+     "f": "rick/6b2b85cafd19.ogg",
+     "t": "I've seen better aim from a drunk raccoon."
+    },
+    {
+     "f": "rick/d87198fabaf3.ogg",
+     "t": "Keep shooting like that and I'll never have to drink."
+    },
+    {
+     "f": "rick/a2c07ec84199.ogg",
+     "t": "That's the worst shot I've seen all year, and I've watched Kevin play."
+    },
+    {
+     "f": "rick/e124836889a0.ogg",
+     "t": "Nice. Real nice. Go fetch it, bitch."
+    }
+   ],
+   "playerRimOut": [
+    {
+     "f": "rick/3647308ed1a4.ogg",
+     "t": "Rimmed out! Even the cup thinks you're a loser."
+    },
+    {
+     "f": "rick/313a86f5e6fc.ogg",
+     "t": "Ooh, so close. Still sucks to be you."
+    },
+    {
+     "f": "rick/79b08c177fab.ogg",
+     "t": "The cup said hell no!"
+    },
+    {
+     "f": "rick/f80a5ab23ee7.ogg",
+     "t": "Rejected! Get that weak shit out of here."
+    },
+    {
+     "f": "rick/c55daacb30eb.ogg",
+     "t": "Almost doesn't count, sweetheart."
+    }
+   ],
+   "playerWin": [
+    {
+     "f": "rick/9a651b8c7ddd.ogg",
+     "t": "Rematch. Right now. Rack 'em."
+    },
+    {
+     "f": "rick/95b79b57ae1d.ogg",
+     "t": "You got lucky and you know it."
+    },
+    {
+     "f": "rick/a9f548c8cd08.ogg",
+     "t": "No way. No way! Best two out of three."
+    },
+    {
+     "f": "rick/4493cc466b3f.ogg",
+     "t": "Fine. Good game. I hate you."
+    }
+   ],
+   "rerack": [
+    {
+     "f": "rick/5afc046007fc.ogg",
+     "t": "Re-rack it. Let's go."
+    },
+    {
+     "f": "rick/adf876868477.ogg",
+     "t": "Tighten that up. Re-rack."
+    },
+    {
+     "f": "rick/8ee4bf404d34.ogg",
+     "t": "Re-rack! Make it pretty for me."
+    }
+   ],
+   "slow": [
+    {
+     "f": "rick/588a071265f8.ogg",
+     "t": "Any day now!"
+    },
+    {
+     "f": "rick/8e6950a1f09a.ogg",
+     "t": "Shoot already, my beer's getting warm!"
+    },
+    {
+     "f": "rick/09aa978119ef.ogg",
+     "t": "Are you throwing or proposing?"
+    },
+    {
+     "f": "rick/7f08bd392109.ogg",
+     "t": "Tick tock, dumbass."
+    },
+    {
+     "f": "rick/fbb1118b48a6.ogg",
+     "t": "We don't have all night. Throw the damn ball."
+    }
+   ],
+   "start": [
+    {
+     "f": "rick/9c733210b4d0.ogg",
+     "t": "Alright kiddo, let's see what you got."
+    },
+    {
+     "f": "rick/61788b7da241.ogg",
+     "t": "I was the champ of this garage before you could walk."
+    },
+    {
+     "f": "rick/cbc249d6e28f.ogg",
+     "t": "Your dad couldn't beat me either. Runs in the family, I guess."
+    }
+   ]
+  },
+  "tyler": {
+   "aiLastCup": [
+    {
+     "f": "tyler/653c47604d1e.ogg",
+     "t": "One more and you're done."
+    },
+    {
+     "f": "tyler/b9b7b4aa8c3b.ogg",
+     "t": "Last cup. Say goodnight."
+    },
+    {
+     "f": "tyler/ea13cfdd8b19.ogg",
+     "t": "Island time, baby. One left. Start crying."
+    }
+   ],
+   "aiMake": [
+    {
+     "f": "tyler/c1e7dd401e75.ogg",
+     "t": "Let's goooo! Too easy, bro!"
+    },
+    {
+     "f": "tyler/999b3e405f70.ogg",
+     "t": "Somebody film this, I'm on fire!"
+    },
+    {
+     "f": "tyler/588861cc4a49.ogg",
+     "t": "Drink up, buttercup!"
+    },
+    {
+     "f": "tyler/71518754ef9f.ogg",
+     "t": "Nothing but beer, baby!"
+    },
+    {
+     "f": "tyler/5bb1bd198e40.ogg",
+     "t": "Too easy. Is this your first time?"
+    },
+    {
+     "f": "tyler/d95c904eef79.ogg",
+     "t": "Get used to that feeling."
+    },
+    {
+     "f": "tyler/fd5628d048fa.ogg",
+     "t": "Splash! Chug it, loser."
+    },
+    {
+     "f": "tyler/83159dbc76f5.ogg",
+     "t": "Bottoms up, champ. You're gonna be doing a lot of that."
+    },
+    {
+     "f": "tyler/7e22ee243543.ogg",
+     "t": "Did you see that? Of course you did. Now drink."
+    },
+    {
+     "f": "tyler/3063f2697ab1.ogg",
+     "t": "That's called skill. Look it up."
+    },
+    {
+     "f": "tyler/f3b4c413f17d.ogg",
+     "t": "Cash that cup and cry about it."
+    },
+    {
+     "f": "tyler/828b541e6019.ogg",
+     "t": "You're getting smoked in front of everybody."
+    },
+    {
+     "f": "tyler/2574ee25bef3.ogg",
+     "t": "Drink! Drink! Drink!"
+    },
+    {
+     "f": "tyler/577406994de4.ogg",
+     "t": "I could do this with my eyes closed. Wanna see?"
+    }
+   ],
+   "aiMiss": [
+    {
+     "f": "tyler/32a7129ad208.ogg",
+     "t": "The table's crooked, man."
+    },
+    {
+     "f": "tyler/05c52b82dd55.ogg",
+     "t": "Somebody bumped the damn table!"
+    },
+    {
+     "f": "tyler/b2cf6966429f.ogg",
+     "t": "I'm giving you a chance. You need it."
+    },
+    {
+     "f": "tyler/610c54f663ac.ogg",
+     "t": "Ugh, the light got in my eyes."
+    },
+    {
+     "f": "tyler/54cba71fc56b.ogg",
+     "t": "That's on purpose. Strategy."
+    },
+    {
+     "f": "tyler/a0f5bab4527d.ogg",
+     "t": "Okay, that one slipped. Don't get excited."
+    },
+    {
+     "f": "tyler/9ec6b25a3df7.ogg",
+     "t": "Who moved the cups? Seriously, who moved them?"
+    },
+    {
+     "f": "tyler/0f3e5b47e098.ogg",
+     "t": "Shut up. Nobody say anything."
+    }
+   ],
+   "aiWin": [
+    {
+     "f": "tyler/e4dc6ace41dc.ogg",
+     "t": "Game! Sit your ass down."
+    },
+    {
+     "f": "tyler/fffaa5d69131.ogg",
+     "t": "Get off my table."
+    },
+    {
+     "f": "tyler/cf60f4bccd94.ogg",
+     "t": "That's how it's done in this garage."
+    },
+    {
+     "f": "tyler/7801fad707a1.ogg",
+     "t": "Next! Who's got next? This guy's done."
+    },
+    {
+     "f": "tyler/7a059fc61c70.ogg",
+     "t": "Thanks for the free beer, loser."
+    }
+   ],
+   "ballsBackAi": [
+    {
+     "f": "tyler/5d46658519cc.ogg",
+     "t": "Balls back, baby!"
+    },
+    {
+     "f": "tyler/cd3c2aaa9ed1.ogg",
+     "t": "Run it back! Gimme those balls."
+    },
+    {
+     "f": "tyler/8e6c7f3928c7.ogg",
+     "t": "Two for two! Sit down."
+    }
+   ],
+   "ballsBackPlayer": [
+    {
+     "f": "tyler/a760bb42bdb5.ogg",
+     "t": "Seriously? Balls back. Whatever."
+    },
+    {
+     "f": "tyler/a0a112f35cb9.ogg",
+     "t": "Fine, take your stupid balls back."
+    }
+   ],
+   "playerLastCup": [
+    {
+     "f": "tyler/9134f3a98824.ogg",
+     "t": "Okay. I'm locked in now."
+    },
+    {
+     "f": "tyler/3728ab657819.ogg",
+     "t": "Pressure's on you, buddy. One cup."
+    },
+    {
+     "f": "tyler/f428ec324565.ogg",
+     "t": "I've come back from worse. Way worse."
+    }
+   ],
+   "playerMake": [
+    {
+     "f": "tyler/3059a79810b8.ogg",
+     "t": "Okay, okay. Lucky shot."
+    },
+    {
+     "f": "tyler/fa3571271ba4.ogg",
+     "t": "Even a broken clock is right twice a day."
+    },
+    {
+     "f": "tyler/d20ed2c50628.ogg",
+     "t": "Alright, you got one. Don't get cocky."
+    },
+    {
+     "f": "tyler/d2b8dea3e182.ogg",
+     "t": "Ugh. Fine. Whatever."
+    },
+    {
+     "f": "tyler/10296e7245fe.ogg",
+     "t": "That had no business going in."
+    },
+    {
+     "f": "tyler/1263d849d39e.ogg",
+     "t": "Wow, you finally hit one. You want a trophy?"
+    },
+    {
+     "f": "tyler/9d7b860a0ff6.ogg",
+     "t": "Enjoy it, that's the last one you're getting."
+    },
+    {
+     "f": "tyler/12412de717a8.ogg",
+     "t": "God damn it."
+    },
+    {
+     "f": "tyler/f6c33ebe6560.ogg",
+     "t": "Pure luck. Everybody saw that."
+    }
+   ],
+   "playerMiss": [
+    {
+     "f": "tyler/b163708c458b.ogg",
+     "t": "Bro. Bro! What was that?"
+    },
+    {
+     "f": "tyler/c59fa097ee2c.ogg",
+     "t": "Dude, that was so bad I'm actually embarrassed for you."
+    },
+    {
+     "f": "tyler/5c0bff7b8eb2.ogg",
+     "t": "Air ball! Holy shit, you missed the whole table."
+    },
+    {
+     "f": "tyler/d16715c0756b.ogg",
+     "t": "Were you aiming for the fridge, dumbass?"
+    },
+    {
+     "f": "tyler/92e8d7a13e88.ogg",
+     "t": "My grandma throws better than that, and she's dead."
+    },
+    {
+     "f": "tyler/8f5079abf4a7.ogg",
+     "t": "That's not even close. That's not even in the same zip code."
+    },
+    {
+     "f": "tyler/77492da9a62f.ogg",
+     "t": "Hey genius, the cups are over here!"
+    },
+    {
+     "f": "tyler/b9c6b267015a.ogg",
+     "t": "Did you close your eyes? Be honest."
+    },
+    {
+     "f": "tyler/db7fb1051198.ogg",
+     "t": "That was embarrassing. For all of us."
+    },
+    {
+     "f": "tyler/368e8196bd50.ogg",
+     "t": "Brick! Absolute brick!"
+    },
+    {
+     "f": "tyler/6a36165a4384.ogg",
+     "t": "You throw like you've never seen a ball before."
+    },
+    {
+     "f": "tyler/2e8cbc6b287e.ogg",
+     "t": "That one's gonna be under the fridge till Christmas."
+    },
+    {
+     "f": "tyler/d39af07397fb.ogg",
+     "t": "Somebody get this clown some glasses."
+    },
+    {
+     "f": "tyler/13d00f342216.ogg",
+     "t": "Wow. Just wow. That was pathetic."
+    },
+    {
+     "f": "tyler/c7aafeafcde5.ogg",
+     "t": "Is your arm broken, or are you just bad?"
+    },
+    {
+     "f": "tyler/c455bde268a8.ogg",
+     "t": "You suck at this. Like, genuinely."
+    },
+    {
+     "f": "tyler/ac29f006e5a2.ogg",
+     "t": "I've seen better aim from a drunk raccoon."
+    },
+    {
+     "f": "tyler/78c6424f68da.ogg",
+     "t": "Keep shooting like that and I'll never have to drink."
+    },
+    {
+     "f": "tyler/a927d7171da5.ogg",
+     "t": "That's the worst shot I've seen all year, and I've watched Kevin play."
+    },
+    {
+     "f": "tyler/3087ccc6d709.ogg",
+     "t": "Nice. Real nice. Go fetch it, bitch."
+    }
+   ],
+   "playerRimOut": [
+    {
+     "f": "tyler/3e96d8457198.ogg",
+     "t": "Rimmed out! Even the cup thinks you're a loser."
+    },
+    {
+     "f": "tyler/1a795e770b01.ogg",
+     "t": "Ooh, so close. Still sucks to be you."
+    },
+    {
+     "f": "tyler/7b4c257326c2.ogg",
+     "t": "The cup said hell no!"
+    },
+    {
+     "f": "tyler/d8ad2361f94f.ogg",
+     "t": "Rejected! Get that weak shit out of here."
+    },
+    {
+     "f": "tyler/5be34fa09fef.ogg",
+     "t": "Almost doesn't count, sweetheart."
+    }
+   ],
+   "playerWin": [
+    {
+     "f": "tyler/89cb5f604cb4.ogg",
+     "t": "Rematch. Right now. Rack 'em."
+    },
+    {
+     "f": "tyler/ad8a512dd09d.ogg",
+     "t": "You got lucky and you know it."
+    },
+    {
+     "f": "tyler/9acd0b0e0f42.ogg",
+     "t": "No way. No way! Best two out of three."
+    },
+    {
+     "f": "tyler/d6906b02970f.ogg",
+     "t": "Fine. Good game. I hate you."
+    }
+   ],
+   "rerack": [
+    {
+     "f": "tyler/09cae95ab7fe.ogg",
+     "t": "Re-rack it. Let's go."
+    },
+    {
+     "f": "tyler/6019157e7f4b.ogg",
+     "t": "Tighten that up. Re-rack."
+    },
+    {
+     "f": "tyler/3ebc171a60e1.ogg",
+     "t": "Re-rack! Make it pretty for me."
+    }
+   ],
+   "slow": [
+    {
+     "f": "tyler/8af01ab8d8d0.ogg",
+     "t": "Any day now!"
+    },
+    {
+     "f": "tyler/cfb17330e135.ogg",
+     "t": "Shoot already, my beer's getting warm!"
+    },
+    {
+     "f": "tyler/de6812ec8a98.ogg",
+     "t": "Are you throwing or proposing?"
+    },
+    {
+     "f": "tyler/34422c541ac2.ogg",
+     "t": "Tick tock, dumbass."
+    },
+    {
+     "f": "tyler/62ea7a3654e9.ogg",
+     "t": "We don't have all night. Throw the damn ball."
+    }
+   ],
+   "start": [
+    {
+     "f": "tyler/535a48d72d60.ogg",
+     "t": "Let's go! Loser buys the next case."
+    },
+    {
+     "f": "tyler/76263a3e71be.ogg",
+     "t": "Rack 'em up, bro. I'm feeling dangerous tonight."
+    },
+    {
+     "f": "tyler/ad7772c8d22c.ogg",
+     "t": "Hope you stretched, 'cause this is gonna hurt."
+    }
+   ]
+  },
+  "mike": {
+   "aiLastCup": [
+    {
+     "f": "mike/2cf204fd369d.ogg",
+     "t": "One more and you're done."
+    },
+    {
+     "f": "mike/75ff4b3e161a.ogg",
+     "t": "Last cup. Say goodnight."
+    },
+    {
+     "f": "mike/729d299ec74a.ogg",
+     "t": "Island time, baby. One left. Start crying."
+    }
+   ],
+   "aiMake": [
+    {
+     "f": "mike/2a5df863c508.ogg",
+     "t": "That's ten years of practice, rookie. Drink."
+    },
+    {
+     "f": "mike/4b8bcc9605fb.ogg",
+     "t": "Legend. Says it right on the table."
+    },
+    {
+     "f": "mike/6937d25cba9f.ogg",
+     "t": "Drink up, buttercup!"
+    },
+    {
+     "f": "mike/427be00f92c9.ogg",
+     "t": "Nothing but beer, baby!"
+    },
+    {
+     "f": "mike/69986da124e4.ogg",
+     "t": "Too easy. Is this your first time?"
+    },
+    {
+     "f": "mike/e02397da6414.ogg",
+     "t": "Get used to that feeling."
+    },
+    {
+     "f": "mike/751aae743770.ogg",
+     "t": "Splash! Chug it, loser."
+    },
+    {
+     "f": "mike/d225ec7a8626.ogg",
+     "t": "Bottoms up, champ. You're gonna be doing a lot of that."
+    },
+    {
+     "f": "mike/4dacab1d025e.ogg",
+     "t": "Did you see that? Of course you did. Now drink."
+    },
+    {
+     "f": "mike/3ff62b394882.ogg",
+     "t": "That's called skill. Look it up."
+    },
+    {
+     "f": "mike/2908e22e95fd.ogg",
+     "t": "Cash that cup and cry about it."
+    },
+    {
+     "f": "mike/ac646dbc5975.ogg",
+     "t": "You're getting smoked in front of everybody."
+    },
+    {
+     "f": "mike/3a611790795a.ogg",
+     "t": "Drink! Drink! Drink!"
+    },
+    {
+     "f": "mike/155f816ac65f.ogg",
+     "t": "I could do this with my eyes closed. Wanna see?"
+    }
+   ],
+   "aiMiss": [
+    {
+     "f": "mike/3333abee9797.ogg",
+     "t": "The table's crooked, man."
+    },
+    {
+     "f": "mike/116cf7b4d674.ogg",
+     "t": "Somebody bumped the damn table!"
+    },
+    {
+     "f": "mike/a103c8997903.ogg",
+     "t": "I'm giving you a chance. You need it."
+    },
+    {
+     "f": "mike/31de53642cab.ogg",
+     "t": "Ugh, the light got in my eyes."
+    },
+    {
+     "f": "mike/87f1b8950f3b.ogg",
+     "t": "That's on purpose. Strategy."
+    },
+    {
+     "f": "mike/465f930f8b07.ogg",
+     "t": "Okay, that one slipped. Don't get excited."
+    },
+    {
+     "f": "mike/1aa0bf020421.ogg",
+     "t": "Who moved the cups? Seriously, who moved them?"
+    },
+    {
+     "f": "mike/4dac82731eef.ogg",
+     "t": "Shut up. Nobody say anything."
+    }
+   ],
+   "aiWin": [
+    {
+     "f": "mike/8b284772e8f3.ogg",
+     "t": "Game! Sit your ass down."
+    },
+    {
+     "f": "mike/8214d6df2cf8.ogg",
+     "t": "Get off my table."
+    },
+    {
+     "f": "mike/ea918966ad79.ogg",
+     "t": "That's how it's done in this garage."
+    },
+    {
+     "f": "mike/c75664816496.ogg",
+     "t": "Next! Who's got next? This guy's done."
+    },
+    {
+     "f": "mike/4347668ef598.ogg",
+     "t": "Thanks for the free beer, loser."
+    }
+   ],
+   "ballsBackAi": [
+    {
+     "f": "mike/fd9fd5807985.ogg",
+     "t": "Balls back, baby!"
+    },
+    {
+     "f": "mike/adfe32632b70.ogg",
+     "t": "Run it back! Gimme those balls."
+    },
+    {
+     "f": "mike/351b44041357.ogg",
+     "t": "Two for two! Sit down."
+    }
+   ],
+   "ballsBackPlayer": [
+    {
+     "f": "mike/d80feca3f64d.ogg",
+     "t": "Seriously? Balls back. Whatever."
+    },
+    {
+     "f": "mike/f2dce9e16df8.ogg",
+     "t": "Fine, take your stupid balls back."
+    }
+   ],
+   "playerLastCup": [
+    {
+     "f": "mike/a52c3e3ff19c.ogg",
+     "t": "Okay. I'm locked in now."
+    },
+    {
+     "f": "mike/53bdc0545f90.ogg",
+     "t": "Pressure's on you, buddy. One cup."
+    },
+    {
+     "f": "mike/2926f7eb2ef9.ogg",
+     "t": "I've come back from worse. Way worse."
+    }
+   ],
+   "playerMake": [
+    {
+     "f": "mike/c72afee7947d.ogg",
+     "t": "Okay, okay. Lucky shot."
+    },
+    {
+     "f": "mike/7a424175e6dd.ogg",
+     "t": "Even a broken clock is right twice a day."
+    },
+    {
+     "f": "mike/828c487fd0e4.ogg",
+     "t": "Alright, you got one. Don't get cocky."
+    },
+    {
+     "f": "mike/a7c7f6f490cc.ogg",
+     "t": "Ugh. Fine. Whatever."
+    },
+    {
+     "f": "mike/ddb6c1e28a64.ogg",
+     "t": "That had no business going in."
+    },
+    {
+     "f": "mike/97d59f1d935f.ogg",
+     "t": "Wow, you finally hit one. You want a trophy?"
+    },
+    {
+     "f": "mike/3a8ef696e18d.ogg",
+     "t": "Enjoy it, that's the last one you're getting."
+    },
+    {
+     "f": "mike/98a54379eed9.ogg",
+     "t": "God damn it."
+    },
+    {
+     "f": "mike/ccf31173fbfa.ogg",
+     "t": "Pure luck. Everybody saw that."
+    }
+   ],
+   "playerMiss": [
+    {
+     "f": "mike/d0aa16103276.ogg",
+     "t": "Pathetic. I've seen better from freshmen."
+    },
+    {
+     "f": "mike/3acd7b72d844.ogg",
+     "t": "You're not even worth warming up for."
+    },
+    {
+     "f": "mike/49ad44d4c600.ogg",
+     "t": "Air ball! Holy shit, you missed the whole table."
+    },
+    {
+     "f": "mike/770bea3ff1f6.ogg",
+     "t": "Were you aiming for the fridge, dumbass?"
+    },
+    {
+     "f": "mike/dc9ba4d1ffa7.ogg",
+     "t": "My grandma throws better than that, and she's dead."
+    },
+    {
+     "f": "mike/26d03bea9238.ogg",
+     "t": "That's not even close. That's not even in the same zip code."
+    },
+    {
+     "f": "mike/c2a46308cbeb.ogg",
+     "t": "Hey genius, the cups are over here!"
+    },
+    {
+     "f": "mike/a8c1aa3e9282.ogg",
+     "t": "Did you close your eyes? Be honest."
+    },
+    {
+     "f": "mike/750f5d4eec60.ogg",
+     "t": "That was embarrassing. For all of us."
+    },
+    {
+     "f": "mike/85fb404ca976.ogg",
+     "t": "Brick! Absolute brick!"
+    },
+    {
+     "f": "mike/1bc9c2d457ae.ogg",
+     "t": "You throw like you've never seen a ball before."
+    },
+    {
+     "f": "mike/8fce1f65bd42.ogg",
+     "t": "That one's gonna be under the fridge till Christmas."
+    },
+    {
+     "f": "mike/60a0a2e9fed1.ogg",
+     "t": "Somebody get this clown some glasses."
+    },
+    {
+     "f": "mike/61f29fb865fe.ogg",
+     "t": "Wow. Just wow. That was pathetic."
+    },
+    {
+     "f": "mike/f5e31056d619.ogg",
+     "t": "Is your arm broken, or are you just bad?"
+    },
+    {
+     "f": "mike/3560b1c0ebf1.ogg",
+     "t": "You suck at this. Like, genuinely."
+    },
+    {
+     "f": "mike/1e580af064aa.ogg",
+     "t": "I've seen better aim from a drunk raccoon."
+    },
+    {
+     "f": "mike/382e4fff466e.ogg",
+     "t": "Keep shooting like that and I'll never have to drink."
+    },
+    {
+     "f": "mike/7483ecff2ec0.ogg",
+     "t": "That's the worst shot I've seen all year, and I've watched Kevin play."
+    },
+    {
+     "f": "mike/4d7e0c5703c9.ogg",
+     "t": "Nice. Real nice. Go fetch it, bitch."
+    }
+   ],
+   "playerRimOut": [
+    {
+     "f": "mike/d971853642cd.ogg",
+     "t": "Rimmed out! Even the cup thinks you're a loser."
+    },
+    {
+     "f": "mike/6142fb518fa0.ogg",
+     "t": "Ooh, so close. Still sucks to be you."
+    },
+    {
+     "f": "mike/af999c34c077.ogg",
+     "t": "The cup said hell no!"
+    },
+    {
+     "f": "mike/ff696a4a1796.ogg",
+     "t": "Rejected! Get that weak shit out of here."
+    },
+    {
+     "f": "mike/a3dfad05247f.ogg",
+     "t": "Almost doesn't count, sweetheart."
+    }
+   ],
+   "playerWin": [
+    {
+     "f": "mike/cdd89387663d.ogg",
+     "t": "Rematch. Right now. Rack 'em."
+    },
+    {
+     "f": "mike/24244616be8c.ogg",
+     "t": "You got lucky and you know it."
+    },
+    {
+     "f": "mike/ed5df8dc6d5f.ogg",
+     "t": "No way. No way! Best two out of three."
+    },
+    {
+     "f": "mike/f5bf44c8cfef.ogg",
+     "t": "Fine. Good game. I hate you."
+    }
+   ],
+   "rerack": [
+    {
+     "f": "mike/a82b4d824373.ogg",
+     "t": "Re-rack it. Let's go."
+    },
+    {
+     "f": "mike/1d4188dc8792.ogg",
+     "t": "Tighten that up. Re-rack."
+    },
+    {
+     "f": "mike/f65976655d87.ogg",
+     "t": "Re-rack! Make it pretty for me."
+    }
+   ],
+   "slow": [
+    {
+     "f": "mike/8dfee7c0fe5e.ogg",
+     "t": "Any day now!"
+    },
+    {
+     "f": "mike/4a5e936d70bc.ogg",
+     "t": "Shoot already, my beer's getting warm!"
+    },
+    {
+     "f": "mike/5ec475bd2fa6.ogg",
+     "t": "Are you throwing or proposing?"
+    },
+    {
+     "f": "mike/c8686a25f3c2.ogg",
+     "t": "Tick tock, dumbass."
+    },
+    {
+     "f": "mike/f47073f12530.ogg",
+     "t": "We don't have all night. Throw the damn ball."
+    }
+   ],
+   "start": [
+    {
+     "f": "mike/2d1e5a71f446.ogg",
+     "t": "Welcome to my house. You're gonna lose in it."
+    },
+    {
+     "f": "mike/61deefed1ac6.ogg",
+     "t": "I haven't lost on this table since college. You're not gonna be the first."
+    },
+    {
+     "f": "mike/aaf116185039.ogg",
+     "t": "Take a good look at those cups. You're gonna be drinking all of 'em."
+    }
+   ]
+  }
+ },
+ "crowd": {
+  "make": [
+   {
+    "f": "crowd/d64b8fe934b1.ogg",
+    "t": "Let's go!",
+    "v": 0
+   },
+   {
+    "f": "crowd/cf9adb05422d.ogg",
+    "t": "Let's go!",
+    "v": 3
+   },
+   {
+    "f": "crowd/c79f289ceb1a.ogg",
+    "t": "Oh! No way!",
+    "v": 1
+   },
+   {
+    "f": "crowd/34ccb3e88c32.ogg",
+    "t": "Oh! No way!",
+    "v": 4
+   },
+   {
+    "f": "crowd/bbd67e8ecafb.ogg",
+    "t": "Drink!",
+    "v": 2
+   },
+   {
+    "f": "crowd/bd618c62c51a.ogg",
+    "t": "Drink!",
+    "v": 5
+   },
+   {
+    "f": "crowd/efd9382ed169.ogg",
+    "t": "Oh shit!",
+    "v": 3
+   },
+   {
+    "f": "crowd/4293b917a8ce.ogg",
+    "t": "Oh shit!",
+    "v": 0
+   },
+   {
+    "f": "crowd/9d5b18923b91.ogg",
+    "t": "Yeah!",
+    "v": 4
+   },
+   {
+    "f": "crowd/4b3b46050ee0.ogg",
+    "t": "Yeah!",
+    "v": 1
+   },
+   {
+    "f": "crowd/c58b70c7d1ed.ogg",
+    "t": "Get wrecked!",
+    "v": 5
+   },
+   {
+    "f": "crowd/cc88f3dd2c2a.ogg",
+    "t": "Get wrecked!",
+    "v": 2
+   },
+   {
+    "f": "crowd/1979ed30f230.ogg",
+    "t": "Oh snap!",
+    "v": 0
+   },
+   {
+    "f": "crowd/5a908f599a20.ogg",
+    "t": "Oh snap!",
+    "v": 3
+   },
+   {
+    "f": "crowd/141070f3c99f.ogg",
+    "t": "Holy shit!",
+    "v": 1
+   },
+   {
+    "f": "crowd/beebfd3adf4e.ogg",
+    "t": "Holy shit!",
+    "v": 4
+   }
+  ],
+  "miss": [
+   {
+    "f": "crowd/55629d392a68.ogg",
+    "t": "Oof!",
+    "v": 0
+   },
+   {
+    "f": "crowd/66af3d6ca44c.ogg",
+    "t": "Oof!",
+    "v": 3
+   },
+   {
+    "f": "crowd/2bf67d7b5536.ogg",
+    "t": "Oh, no.",
+    "v": 1
+   },
+   {
+    "f": "crowd/07bcf7d86a40.ogg",
+    "t": "Oh, no.",
+    "v": 4
+   },
+   {
+    "f": "crowd/9cc19c7c26bc.ogg",
+    "t": "Brutal.",
+    "v": 2
+   },
+   {
+    "f": "crowd/596da13b05b6.ogg",
+    "t": "Brutal.",
+    "v": 5
+   },
+   {
+    "f": "crowd/324bdda3842a.ogg",
+    "t": "Yikes.",
+    "v": 3
+   },
+   {
+    "f": "crowd/c398c6de5f5b.ogg",
+    "t": "Yikes.",
+    "v": 0
+   },
+   {
+    "f": "crowd/a060dd9613af.ogg",
+    "t": "Oh my god, that was awful.",
+    "v": 4
+   },
+   {
+    "f": "crowd/e45b62a3f110.ogg",
+    "t": "Oh my god, that was awful.",
+    "v": 1
+   },
+   {
+    "f": "crowd/1c6319f77673.ogg",
+    "t": "Ha! Terrible.",
+    "v": 5
+   },
+   {
+    "f": "crowd/ab7c0c2e5fdc.ogg",
+    "t": "Ha! Terrible.",
+    "v": 2
+   }
+  ],
+  "heckle": [
+   {
+    "f": "crowd/0acb6003b4a7.ogg",
+    "t": "You suck!",
+    "v": 0
+   },
+   {
+    "f": "crowd/c7b43643dd4a.ogg",
+    "t": "You suck!",
+    "v": 3
+   },
+   {
+    "f": "crowd/bd13c42b56ab.ogg",
+    "t": "Air ball! Air ball!",
+    "v": 1
+   },
+   {
+    "f": "crowd/f85ad00a9981.ogg",
+    "t": "Air ball! Air ball!",
+    "v": 4
+   },
+   {
+    "f": "crowd/d56a9e42eca5.ogg",
+    "t": "Somebody sub this guy out!",
+    "v": 2
+   },
+   {
+    "f": "crowd/df898ebf1f8a.ogg",
+    "t": "Somebody sub this guy out!",
+    "v": 5
+   },
+   {
+    "f": "crowd/3b904ff104a3.ogg",
+    "t": "Wow, that was trash.",
+    "v": 3
+   },
+   {
+    "f": "crowd/1f7c5354ff95.ogg",
+    "t": "Wow, that was trash.",
+    "v": 0
+   },
+   {
+    "f": "crowd/ca412ddcf26e.ogg",
+    "t": "Drink, loser!",
+    "v": 4
+   },
+   {
+    "f": "crowd/e7719fb70705.ogg",
+    "t": "Drink, loser!",
+    "v": 1
+   },
+   {
+    "f": "crowd/81afbec0db47.ogg",
+    "t": "Bury him!",
+    "v": 5
+   },
+   {
+    "f": "crowd/9e2f99dc0c97.ogg",
+    "t": "Bury him!",
+    "v": 2
+   },
+   {
+    "f": "crowd/ce71cf85914e.ogg",
+    "t": "Bro can't hit water from a boat.",
+    "v": 0
+   },
+   {
+    "f": "crowd/43938db40c2a.ogg",
+    "t": "Bro can't hit water from a boat.",
+    "v": 3
+   },
+   {
+    "f": "crowd/e517427e4267.ogg",
+    "t": "That's so sad.",
+    "v": 1
+   },
+   {
+    "f": "crowd/f1b631e40ca2.ogg",
+    "t": "That's so sad.",
+    "v": 4
+   }
+  ],
+  "chatter": [
+   {
+    "f": "crowd/c559ca419c58.ogg",
+    "t": "Who brought the chips?",
+    "v": 0
+   },
+   {
+    "f": "crowd/2b209110da69.ogg",
+    "t": "Dude, did you see the game last night?",
+    "v": 1
+   },
+   {
+    "f": "crowd/67b4ef5a5f1a.ogg",
+    "t": "Is there any more ice?",
+    "v": 2
+   },
+   {
+    "f": "crowd/9f125b35c422.ogg",
+    "t": "Hey, grab me one from the fridge.",
+    "v": 3
+   },
+   {
+    "f": "crowd/cdd30291d3bf.ogg",
+    "t": "Wait, whose turn is it?",
+    "v": 4
+   },
+   {
+    "f": "crowd/423cac7e8af0.ogg",
+    "t": "I got next game!",
+    "v": 5
+   },
+   {
+    "f": "crowd/3a107084173c.ogg",
+    "t": "Somebody turn the music up.",
+    "v": 0
+   },
+   {
+    "f": "crowd/961f7da2efe7.ogg",
+    "t": "My truck's making that noise again.",
+    "v": 1
+   },
+   {
+    "f": "crowd/aeae35b81e36.ogg",
+    "t": "Are you staying for the fire pit later?",
+    "v": 2
+   },
+   {
+    "f": "crowd/13eb2c53f529.ogg",
+    "t": "Who's winning?",
+    "v": 3
+   },
+   {
+    "f": "crowd/923a7906fbcb.ogg",
+    "t": "Okay but hear me out.",
+    "v": 4
+   },
+   {
+    "f": "crowd/f60390bf6e8d.ogg",
+    "t": "Bro, that's my cup.",
+    "v": 5
+   },
+   {
+    "f": "crowd/05c64729865a.ogg",
+    "t": "Yeah, he always does that.",
+    "v": 0
+   },
+   {
+    "f": "crowd/4eab56e604ee.ogg",
+    "t": "No way!",
+    "v": 1
+   },
+   {
+    "f": "crowd/c18fe4b14fdd.ogg",
+    "t": "Is the pizza here yet?",
+    "v": 2
+   },
+   {
+    "f": "crowd/7e8459d9563a.ogg",
+    "t": "I'm telling you, it was this big.",
+    "v": 3
+   },
+   {
+    "f": "crowd/17dadd2ebd34.ogg",
+    "t": "Did you text Jess?",
+    "v": 4
+   },
+   {
+    "f": "crowd/02e2e5e46992.ogg",
+    "t": "Who parked behind me?",
+    "v": 5
+   },
+   {
+    "f": "crowd/a5ab4dda2096.ogg",
+    "t": "That's what I said!",
+    "v": 0
+   },
+   {
+    "f": "crowd/f2acba5dbb10.ogg",
+    "t": "Hold on, I gotta hear this.",
+    "v": 1
+   },
+   {
+    "f": "crowd/f8aa72f9ccf5.ogg",
+    "t": "Somebody close the door, it's freezing.",
+    "v": 2
+   },
+   {
+    "f": "crowd/5c2203e307ba.ogg",
+    "t": "Wait, are we out of beer already?",
+    "v": 3
+   },
+   {
+    "f": "crowd/8ed04c1c2d69.ogg",
+    "t": "Pass me the bottle opener.",
+    "v": 4
+   },
+   {
+    "f": "crowd/e83f4f5dfca0.ogg",
+    "t": "Oh my god, stop, I'm dying.",
+    "v": 5
+   },
+   {
+    "f": "crowd/a299727b1613.ogg",
+    "t": "He did not say that.",
+    "v": 0
+   },
+   {
+    "f": "crowd/d54e6e1a1d30.ogg",
+    "t": "Dude, I'm so full.",
+    "v": 1
+   },
+   {
+    "f": "crowd/c87c02b10978.ogg",
+    "t": "Who invited Kevin?",
+    "v": 2
+   }
+  ]
+ }
+}

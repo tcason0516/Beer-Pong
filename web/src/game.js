@@ -3,6 +3,7 @@ import { buildGarage, buildTable, makeCup, makeBall, rackPositions } from './sce
 import { Ball, stepBall, solveLaunch, gaussian, TABLE, CUP, BALL_R } from './physics.js';
 import { AudioEngine } from './audio.js';
 import { VoiceManager, OPPONENTS } from './voices.js';
+import { People } from './people.js';
 
 const $ = (id) => document.getElementById(id);
 const rnd = (a, b) => a + Math.random() * (b - a);
@@ -95,6 +96,8 @@ export class Game {
     this._bindInput();
 
     status('Inviting people over');
+    this.people = new People(scene);
+    try { await this.people.load(); } catch (e) { console.warn('people failed to load', e); }
     await this.voice.init(status);
 
     this._setCam('title', true);
@@ -126,8 +129,8 @@ export class Game {
   _setCam(kind, snap = false) {
     const P = {
       title: [new THREE.Vector3(1.6, 1.75, 2.0), new THREE.Vector3(0, 0.8, -0.5)],
-      player: [new THREE.Vector3(0, 1.55, 1.32), new THREE.Vector3(0, 0.76, -0.7)],
-      ai: [new THREE.Vector3(0.0, 1.62, 1.85), new THREE.Vector3(0, 0.84, -0.1)],
+      player: [new THREE.Vector3(0, 1.55, 1.32), new THREE.Vector3(0, 0.86, -0.8)],
+      ai: [new THREE.Vector3(0.0, 1.6, 1.85), new THREE.Vector3(0, 0.95, -0.35)],
       over: [new THREE.Vector3(-1.2, 1.7, 1.9), new THREE.Vector3(0, 0.8, 0)],
     }[kind];
     this.camKind = kind;
@@ -257,6 +260,16 @@ export class Game {
     this.oppKey = key;
     this.opp = { ...OPPONENTS[key], key };
     this.voice.setOpponent(this.opp);
+    if (this.people && this.people.ready) {
+      const P = this.people;
+      P.setOpponentLook(key);
+      this.voice.oppPan = () => P.panOf(P.opp.bones.Head, this.camera);
+      // female voices (even indices) come from the woman or from people off to the sides
+      this.voice.panFor = (v) => {
+        const g = v % 2 === 0 ? (Math.random() < 0.5 ? P.guests[1] : null) : P.guests[[0, 2, 3][(v >> 1) % 3]];
+        return g ? P.panOf(g.bones.Head, this.camera) : (Math.random() < 0.5 ? -0.9 : 0.9);
+      };
+    }
     this.buzz = 0;
     this.reracked = { [PLAYER]: {}, [AI]: {} };
     // reset cups
@@ -431,25 +444,29 @@ export class Game {
   async _aiThrow() {
     const gid = this.gameId;
     this.state = 'ai';
+    const P = this.people && this.people.ready ? this.people : null;
     const origin = new THREE.Vector3(rnd(-0.14, 0.14), rnd(1.33, 1.45), -TABLE.halfL - rnd(0.3, 0.42));
     this.ballMesh.visible = true;
-    this.ballMesh.position.copy(origin);
     this.aiOrigin = origin;
-    this.aiWindup = { t: 0 };
-    await sleep(rnd(1100, 1800));
+    this.aiHolding = !!P;
+    if (P) P.startWindup(); else this.ballMesh.position.copy(origin);
+    await sleep(rnd(1300, 2000));
     if (gid !== this.gameId) return;
     while (this.state === 'paused') { await sleep(100); if (gid !== this.gameId) return; }
+    if (P) { P.release(); await sleep(140); if (gid !== this.gameId) return; }
+    this.aiHolding = false;
+    const from = P ? P.handPos() : this.ballMesh.position.clone();
     const targets = this.cups.filter(c => c.side === PLAYER && c.active);
     if (!targets.length) return;
     // front cups are a bit more tempting
     targets.sort((a, b) => a.z - b.z);
     const cup = Math.random() < 0.5 ? targets[0] : targets[(Math.random() * targets.length) | 0];
-    let sigma = this.opp.sigma * (1 + this.buzz * 0.0);
+    let sigma = this.opp.sigma;
     if (Math.random() < 0.06) sigma *= 3; // the occasional brick
     const target = new THREE.Vector3(cup.x + gaussian() * sigma, TABLE.y + CUP.H, cup.z + gaussian() * sigma * 1.2);
-    const angle = THREE.MathUtils.degToRad(rnd(46, 60));
-    const v = solveLaunch(this.ballMesh.position, target, angle);
-    this._launch(this.ballMesh.position.clone(), v, AI);
+    const angle = THREE.MathUtils.degToRad(rnd(42, 56));
+    const v = solveLaunch(from, target, angle);
+    this._launch(from, v, AI);
   }
 
   // ---------------- simulation ----------------
@@ -500,12 +517,15 @@ export class Game {
       t.makes++;
       const cup = res.cup;
       cup.active = false;
+      const P = this.people;
       if (shooter === PLAYER) {
+        if (P) { P.oppGesture('no'); P.react('make'); }
         this.audio.crowdReact('cheer', 0.5);
         this.voice.react('make');
         this.banner('SPLASH!', 1000);
         if (cup.side === AI) this.talk('playerMake', false, 0.75);
       } else {
+        if (P) { P.oppGesture('celebrate'); P.react('make'); }
         this.audio.crowdReact('cheer', 0.45);
         setTimeout(() => this.voice.react('make'), 300);
         this.buzz++;
@@ -519,13 +539,23 @@ export class Game {
       this._updateHud();
       await sleep(500);
     } else {
+      const P = this.people;
       if (shooter === PLAYER) {
-        if (res.rim) { this.audio.crowdReact('ooh', 0.5); this.talk('playerRimOut', false, 0.85); }
-        else if (res.air) { this.voice.laugh(4, 0.45); this.talk('playerMiss', false, 0.9); this.voice.react('miss'); }
-        else { this.talk('playerMiss', false, 0.6); if (Math.random() < 0.4) this.voice.laugh(2, 0.3); }
+        if (res.rim) { this.audio.crowdReact('ooh', 0.5); this.talk('playerRimOut', false, 0.85); if (P) P.react('miss'); }
+        else if (res.air) {
+          this.voice.laugh(4, 0.45); this.talk('playerMiss', false, 0.95);
+          if (P) { P.oppGesture('yes'); P.react('laugh'); }
+          setTimeout(() => (Math.random() < 0.6 ? this.voice.heckle() : this.voice.react('miss')), 700);
+        } else {
+          this.talk('playerMiss', false, 0.75);
+          if (P) P.oppGesture('yes');
+          if (Math.random() < 0.4) this.voice.laugh(2, 0.3);
+          if (Math.random() < 0.35) setTimeout(() => this.voice.heckle(), 900);
+        }
       } else {
         if (res.rim) this.audio.crowdReact('ooh', 0.4);
-        this.talk('aiMiss', false, 0.45);
+        if (P) P.oppGesture('no');
+        this.talk('aiMiss', false, 0.5);
       }
       await sleep(900);
       if (gid !== this.gameId) return;
@@ -601,6 +631,7 @@ export class Game {
     const gid = this.gameId;
     this.state = 'over';
     this._setCam('over');
+    if (this.people) { this.people.oppGesture(winner === PLAYER ? 'no' : 'celebrate'); this.people.react(winner === PLAYER ? 'make' : 'laugh'); }
     if (winner === PLAYER) {
       this.audio.crowdReact('cheer', 0.7, 9);
       this.voice.react('make');
@@ -640,6 +671,7 @@ export class Game {
       }
     }
     this._updateCam(dt, t);
+    if (this.people) this.people.update(paused ? 0 : dt, this.camera.position, this.ball.active ? this.ball.pos : null);
 
     // held ball follows finger
     if (this.state === 'aim') {
@@ -650,7 +682,9 @@ export class Game {
       if (d) this._updateMeter(d);
       if (!this.slowNagged && performance.now() - this.aimSince > 11000) { this.slowNagged = true; this.talk('slow', false, 1); }
     }
-    if (this.state === 'ai' && this.aiOrigin) {
+    if (this.state === 'ai' && this.aiHolding && this.people) {
+      this.ballMesh.position.copy(this.people.handPos());
+    } else if (this.state === 'ai' && this.aiOrigin) {
       // opponent lining up the shot
       this.ballMesh.position.set(this.aiOrigin.x + Math.sin(t * 2.3) * 0.01, this.aiOrigin.y + Math.sin(t * 5) * 0.015, this.aiOrigin.z);
     }

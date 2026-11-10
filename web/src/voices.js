@@ -84,6 +84,13 @@ export class VoiceManager {
 
   async init(onStatus = () => {}) {
     await this._loadCustom();
+    try {
+      const r = await fetch('voices/index.json');
+      if (r.ok) this.bank = await r.json();
+    } catch { this.bank = null; }
+    this.clipCache = new Map();
+    this.panFor = () => (Math.random() - 0.5) * 1.6;
+    if (this.bank) { this.native = null; this.ready = true; return; }
     if (!this.native) { this.ready = true; return; }
     onStatus('Warming up voices');
     for (let i = 0; i < 100; i++) { // wait up to ~10s for TTS engine
@@ -113,6 +120,13 @@ export class VoiceManager {
   }
 
   setOpponent(opp) {
+    this.opp = opp;
+    if (this.bank) {
+      this.lines = this.bank.opponents[opp.key] || this.bank.opponents.mike;
+      this.next = {};
+      for (const cat of Object.keys(this.lines)) this._preselect(cat);
+      return;
+    }
     const pool = this.maleVoices || [{ name: '' }];
     const idx = { rick: 2, tyler: 1, mike: 0 }[opp.key] || 0;
     this.oppProfile = { voice: pool[idx % pool.length].name, pitch: opp.pitch, rate: opp.rate };
@@ -193,8 +207,46 @@ export class VoiceManager {
     return t;
   }
 
+  // ---- pre-rendered neural voice bank ----
+  _clip(file) {
+    if (this.clipCache.has(file)) return this.clipCache.get(file);
+    const p = fetch('voices/' + file).then(r => r.arrayBuffer()).then(b => this.audio.decode(b)).catch(() => null);
+    this.clipCache.set(file, p);
+    if (this.clipCache.size > 90) this.clipCache.delete(this.clipCache.keys().next().value);
+    return p;
+  }
+  _preselect(cat) {
+    const arr = this.lines[cat]; if (!arr || !arr.length) return;
+    let it = pick(arr), n = 0;
+    while (arr.length > 2 && it === this.lastLine[cat] && n++ < 6) it = pick(arr);
+    this.next[cat] = it; this._clip(it.f);
+  }
+  _crowdItem(cat, avoid) {
+    const arr = this.bank.crowd[cat] || [];
+    let it = pick(arr), n = 0;
+    while (arr.length > 2 && (it.t === avoid || it.f === this.lastCrowd) && n++ < 6) it = pick(arr);
+    this.lastCrowd = it.f;
+    return it;
+  }
+  async _playCrowd(cat, { gain = 0.7, delay = 0, lowpass = 0, avoid } = {}) {
+    const it = this._crowdItem(cat, avoid);
+    if (!it) return null;
+    const buf = await this._clip(it.f);
+    if (buf) this.audio.playVoice(buf, { bus: 'crowd', gain, delay, lowpass, pan: this.panFor(it.v) });
+    return it;
+  }
+
   /** Opponent speaks a line from a category. Returns the text (for captions). */
   async say(cat, { text } = {}) {
+    if (this.bank && this.lines && !this.hasCustom('opp_' + cat)) {
+      let it = this.next[cat];
+      if (text) it = (this.lines[cat] || []).find(x => x.t === text) || it;
+      if (!it) return { text: null, dur: 0 };
+      this.lastLine[cat] = it; this._preselect(cat);
+      const buf = await Promise.race([this._clip(it.f), new Promise(r => setTimeout(() => r(null), 2000))]);
+      if (buf) this.audio.playVoice(buf, { pan: this.oppPan ? this.oppPan() : 0, gain: 1.3 });
+      return { text: it.t, dur: buf ? buf.duration : 2 };
+    }
     if (this.hasCustom('opp_' + cat)) {
       const src = this.playCustom('opp_' + cat, { pan: 0, gain: 1.2 });
       return { text: null, dur: src && src.buffer ? src.buffer.duration : 2 };
@@ -214,6 +266,11 @@ export class VoiceManager {
   /** Someone in the crowd shouts a reaction. */
   async react(kind) {
     if (this.hasCustom('crowd_' + kind)) { this.playCustom('crowd_' + kind, { bus: 'crowd', gain: 0.9, pan: (Math.random() - 0.5) * 1.6 }); return; }
+    if (this.bank) {
+      const first = await this._playCrowd(kind, { gain: 0.75 });
+      if (kind === 'make') this._playCrowd(kind, { gain: 0.6, delay: 0.25 + Math.random() * 0.2, avoid: first && first.t });
+      return;
+    }
     if (!this.native || !this.crowdProfiles.length) return;
     const n = kind === 'make' ? 2 : 1;
     for (let i = 0; i < n; i++) {
@@ -237,6 +294,7 @@ export class VoiceManager {
       this.playCustom('chatter', { bus: 'crowd', gain: 0.45, pan: (Math.random() - 0.5) * 1.8, lowpass: 3000 });
       return;
     }
+    if (this.bank) { this._playCrowd('chatter', { gain: 0.38, lowpass: 3200 }); return; }
     if (!this.native) return;
     const found = [];
     CHATTER.forEach((t, i) => {
@@ -247,6 +305,11 @@ export class VoiceManager {
     if (!found.length) return;
     const { b, prof } = pick(found);
     this.audio.playVoice(b, { bus: 'crowd', gain: 0.32, pan: prof.pan * 0.9, lowpass: 2800 });
+  }
+  /** Someone in the crowd heckles the player. */
+  heckle() {
+    if (this.hasCustom('crowd_heckle')) { this.playCustom('crowd_heckle', { bus: 'crowd', gain: 0.8, pan: (Math.random() - 0.5) * 1.4 }); return; }
+    if (this.bank) this._playCrowd('heckle', { gain: 0.8 });
   }
   /** Real laugh recording if provided, otherwise synthesized laughter. */
   laugh(size = 3, gain = 0.45) {
