@@ -19,13 +19,23 @@ Every push to `main` rebuilds the APK through GitHub Actions (`.github/workflows
 
 ## People
 
-Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench. The men wear ball caps, beards, tees and jeans. These are generated at load time in `people.js`, and the repainted textures come from `web/tools/make_textures.py`.
+Your opponent stands at the far end of the table. He winds up, throws with his arm, celebrates his makes, shakes his head at his misses and watches the ball. A few guests stand around holding drinks, talk to each other, react to big shots, and one wanders between the fridge, the garage door and the workbench. Every so often your own view drifts toward something in the garage, and it snaps back the moment you touch the screen.
 
-Your own view drifts around the garage now and then, toward the guests, the fridge or the workbench, and snaps back the moment you touch the screen.
+The characters are built from [MakeHuman](http://www.makehumancommunity.org) (CC0) bodies with a Mixamo-compatible rig. Everyone wears a modelled t-shirt, blue jeans and sneakers. The men wear ball caps and beards, and the women have shoulder-length hair or a ponytail. To regenerate them, see `web/tools/people/`:
+
+```bash
+pip install bpy kokoro-onnx soundfile          # Blender 5 as a Python module
+# copy MPFB2 (github.com/makehumancommunity/mpfb2, src/mpfb) into Blender's addons folder
+python3 web/tools/people/paint_textures.py fabrics /tmp/tex
+python3 web/tools/people/build_people.py --mh-data <makehuman>/makehuman/data --tex /tmp/tex --out /tmp/people
+python3 web/tools/people/paint_textures.py skins /tmp/people <mpfb2>/src/mpfb/data/textures
+python3 web/tools/people/build_people.py ...   # run again to pick up the painted skins
+cp /tmp/people/*.glb app/src/main/assets/game/models/people/
+```
 
 ## Sound
 
-- **Voices:** every line of trash talk, heckling and party chatter is pre-recorded with the **Kokoro** neural text-to-speech model, with a different voice for each opponent and six crowd voices. The clips live in `app/src/main/assets/game/voices/`. To change the dialogue, edit `web/tools/render_voices.py` and re-run it (instructions at the top of the file). If that folder is missing, the game falls back to the phone's own text-to-speech.
+- **Voices:** every line of trash talk, heckling and party chatter is pre-recorded with the **Kokoro** neural text-to-speech model. Each character's voice is a blend of two Kokoro speakers, and the clips get natural pacing variation, occasional breaths and live-voice processing. Each opponent has his own voice, and there are six crowd voices. The clips live in `app/src/main/assets/game/voices/`. To change the dialogue, edit `web/tools/render_voices.py` and re-run it (instructions at the top of the file). If that folder is missing, the game falls back to the phone's own text-to-speech.
 - **Laughing, "ooohs", cheers, background murmur, the fridge hum, cans cracking, and ball/table/cup/splash sounds** are synthesized live with Web Audio.
 
 ### Use real recordings (recommended)
@@ -72,5 +82,6 @@ To try the game in a desktop browser, serve `app/src/main/assets/game/` (for exa
 ## Credits
 
 - Voices: [Kokoro-82M](https://github.com/thewh1teagle/kokoro-onnx) (Apache-2.0).
-- Characters and animations come from the [three.js examples](https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf): a Ready Player Me avatar (`guy.glb`), plus Michelle (`girl.glb`) and X Bot (animation source, `anims.glb`) from Adobe Mixamo. Check those providers' terms before you publish the game commercially.
+- Characters: MakeHuman base mesh, eyes and rig via [MPFB2](https://github.com/makehumancommunity/mpfb2) (CC0 assets); clothes, hair, caps and skins made by the scripts in `web/tools/people/`.
+- Animations: idle/walk/nod/head-shake clips from the X Bot model in the [three.js examples](https://github.com/mrdoob/three.js/tree/dev/examples/models/gltf) (Adobe Mixamo), retargeted at load time. Check Mixamo's terms before you publish commercially.
 - 3D engine: [three.js](https://threejs.org) (MIT).

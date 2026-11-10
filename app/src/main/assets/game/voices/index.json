@@ -3,377 +3,377 @@
   "rick": {
    "aiLastCup": [
     {
-     "f": "rick/907f320a1d2c.ogg",
+     "f": "rick/e3dc52304adf.ogg",
      "t": "One more and you're done."
     },
     {
-     "f": "rick/af06743cc053.ogg",
+     "f": "rick/f0620f48454b.ogg",
      "t": "Last cup. Say goodnight."
     },
     {
-     "f": "rick/b678bc71cca6.ogg",
+     "f": "rick/af428828e656.ogg",
      "t": "Island time, baby. One left. Start crying."
     }
    ],
    "aiMake": [
     {
-     "f": "rick/55924b94195a.ogg",
+     "f": "rick/cff877ceed72.ogg",
      "t": "Still got it! Old man strength, baby!"
     },
     {
-     "f": "rick/0fcf222f29cd.ogg",
+     "f": "rick/269eb60891f3.ogg",
      "t": "Forty years of practice, kid. Drink."
     },
     {
-     "f": "rick/ba2f025f4e4e.ogg",
+     "f": "rick/96f796243045.ogg",
      "t": "Drink up, buttercup!"
     },
     {
-     "f": "rick/d771add324c6.ogg",
+     "f": "rick/d737116043ee.ogg",
      "t": "Nothing but beer, baby!"
     },
     {
-     "f": "rick/1211719ef8ae.ogg",
+     "f": "rick/3ef2e47b2d1f.ogg",
      "t": "Too easy. Is this your first time?"
     },
     {
-     "f": "rick/2002c3f1fb69.ogg",
+     "f": "rick/917b04e0cc7c.ogg",
      "t": "Get used to that feeling."
     },
     {
-     "f": "rick/eaebd9f4dec6.ogg",
+     "f": "rick/c06859c25010.ogg",
      "t": "Splash! Chug it, loser."
     },
     {
-     "f": "rick/5fb6a91ee83c.ogg",
+     "f": "rick/8473c26d6f61.ogg",
      "t": "Bottoms up, champ. You're gonna be doing a lot of that."
     },
     {
-     "f": "rick/6709cc510d02.ogg",
+     "f": "rick/a895f29a8943.ogg",
      "t": "Did you see that? Of course you did. Now drink."
     },
     {
-     "f": "rick/79596d148580.ogg",
+     "f": "rick/fa68bcf0fe2c.ogg",
      "t": "That's called skill. Look it up."
     },
     {
-     "f": "rick/eaea71e94b80.ogg",
+     "f": "rick/bc1bab06190f.ogg",
      "t": "Cash that cup and cry about it."
     },
     {
-     "f": "rick/ef59f553a44a.ogg",
+     "f": "rick/bc997ab92544.ogg",
      "t": "You're getting smoked in front of everybody."
     },
     {
-     "f": "rick/3895669b09da.ogg",
+     "f": "rick/d0412a38116a.ogg",
      "t": "Drink! Drink! Drink!"
     },
     {
-     "f": "rick/5cdf43afbb56.ogg",
+     "f": "rick/b8edeaffff6f.ogg",
      "t": "I could do this with my eyes closed. Wanna see?"
     }
    ],
    "aiMiss": [
     {
-     "f": "rick/965411693e50.ogg",
+     "f": "rick/0d217bc81f92.ogg",
      "t": "The table's crooked, man."
     },
     {
-     "f": "rick/5e23cf4f9da9.ogg",
+     "f": "rick/53c11e5255b6.ogg",
      "t": "Somebody bumped the damn table!"
     },
     {
-     "f": "rick/0b98730734d9.ogg",
+     "f": "rick/0fa2f1882694.ogg",
      "t": "I'm giving you a chance. You need it."
     },
     {
-     "f": "rick/1ef4335bf1f3.ogg",
+     "f": "rick/3adf49227da6.ogg",
      "t": "Ugh, the light got in my eyes."
     },
     {
-     "f": "rick/427907649a35.ogg",
+     "f": "rick/4749925515b3.ogg",
      "t": "That's on purpose. Strategy."
     },
     {
-     "f": "rick/b1ca358313f1.ogg",
+     "f": "rick/dc1fb578706a.ogg",
      "t": "Okay, that one slipped. Don't get excited."
     },
     {
-     "f": "rick/427bab34b145.ogg",
+     "f": "rick/94521401bcbb.ogg",
      "t": "Who moved the cups? Seriously, who moved them?"
     },
     {
-     "f": "rick/b84616f5357d.ogg",
+     "f": "rick/055aad91949c.ogg",
      "t": "Shut up. Nobody say anything."
     }
    ],
    "aiWin": [
     {
-     "f": "rick/5e5793f903b1.ogg",
+     "f": "rick/4e3c5293bd21.ogg",
      "t": "Game! Sit your ass down."
     },
     {
-     "f": "rick/434efd3c67b8.ogg",
+     "f": "rick/711cd42525ce.ogg",
      "t": "Get off my table."
     },
     {
-     "f": "rick/b9b518904330.ogg",
+     "f": "rick/544c62b5190f.ogg",
      "t": "That's how it's done in this garage."
     },
     {
-     "f": "rick/9f061954e556.ogg",
+     "f": "rick/e322110d3b78.ogg",
      "t": "Next! Who's got next? This guy's done."
     },
     {
-     "f": "rick/1993a6d35833.ogg",
+     "f": "rick/aa2401762378.ogg",
      "t": "Thanks for the free beer, loser."
     }
    ],
    "ballsBackAi": [
     {
-     "f": "rick/fe0537405354.ogg",
+     "f": "rick/2ee84dc57189.ogg",
      "t": "Balls back, baby!"
     },
     {
-     "f": "rick/0d4dac5102b9.ogg",
+     "f": "rick/9bf57c916d6d.ogg",
      "t": "Run it back! Gimme those balls."
     },
     {
-     "f": "rick/94e27b007e54.ogg",
+     "f": "rick/03006cc8f6df.ogg",
      "t": "Two for two! Sit down."
     }
    ],
    "ballsBackPlayer": [
     {
-     "f": "rick/c2fc2cab9920.ogg",
+     "f": "rick/995e8de856b3.ogg",
      "t": "Seriously? Balls back. Whatever."
     },
     {
-     "f": "rick/b04a01823380.ogg",
+     "f": "rick/e0ffeec2ad03.ogg",
      "t": "Fine, take your stupid balls back."
     }
    ],
    "playerLastCup": [
     {
-     "f": "rick/fa966f33d74d.ogg",
+     "f": "rick/bd67eef66313.ogg",
      "t": "Okay. I'm locked in now."
     },
     {
-     "f": "rick/13bfba8a732e.ogg",
+     "f": "rick/4f31fd2a51f2.ogg",
      "t": "Pressure's on you, buddy. One cup."
     },
     {
-     "f": "rick/da9b304182c8.ogg",
+     "f": "rick/ffb895bb3f8e.ogg",
      "t": "I've come back from worse. Way worse."
     }
    ],
    "playerMake": [
     {
-     "f": "rick/76099085b769.ogg",
+     "f": "rick/672cf94a9072.ogg",
      "t": "Okay, okay. Lucky shot."
     },
     {
-     "f": "rick/4434e303484b.ogg",
+     "f": "rick/ffaf43895c40.ogg",
      "t": "Even a broken clock is right twice a day."
     },
     {
-     "f": "rick/8b484a352ca1.ogg",
+     "f": "rick/f09902b7ed1b.ogg",
      "t": "Alright, you got one. Don't get cocky."
     },
     {
-     "f": "rick/8dc92992eb9d.ogg",
+     "f": "rick/9e1cf06f843b.ogg",
      "t": "Ugh. Fine. Whatever."
     },
     {
-     "f": "rick/6f773d18c3d8.ogg",
+     "f": "rick/758788d0e132.ogg",
      "t": "That had no business going in."
     },
     {
-     "f": "rick/2cf8daa93bd6.ogg",
+     "f": "rick/36a36217f04e.ogg",
      "t": "Wow, you finally hit one. You want a trophy?"
     },
     {
-     "f": "rick/ce6127a6371b.ogg",
+     "f": "rick/e8a7f7b9d0f7.ogg",
      "t": "Enjoy it, that's the last one you're getting."
     },
     {
-     "f": "rick/fbf4ff1ee050.ogg",
+     "f": "rick/49ec015179a9.ogg",
      "t": "Oh, come on!"
     },
     {
-     "f": "rick/98bdb6f28aa2.ogg",
+     "f": "rick/32865a6187c8.ogg",
      "t": "Pure luck. Everybody saw that."
     }
    ],
    "playerMiss": [
     {
-     "f": "rick/068d77ddb9c7.ogg",
+     "f": "rick/8ecb12b6347e.ogg",
      "t": "Back in my day we had a word for shots like that. Garbage."
     },
     {
-     "f": "rick/07a58ad61dd9.ogg",
+     "f": "rick/22825e3f58d0.ogg",
      "t": "Son, I've had hip surgery and I still throw better than you."
     },
     {
-     "f": "rick/3d619acd6e52.ogg",
+     "f": "rick/738c8d6d5496.ogg",
      "t": "Air ball! Holy shit, you missed the whole table."
     },
     {
-     "f": "rick/065eae29b7fc.ogg",
+     "f": "rick/5cc467a3c13a.ogg",
      "t": "Were you aiming for the fridge, dumbass?"
     },
     {
-     "f": "rick/8b5afe80787f.ogg",
+     "f": "rick/3c2528e95b85.ogg",
      "t": "My grandma throws better than that, and she's dead."
     },
     {
-     "f": "rick/1876c647ee71.ogg",
+     "f": "rick/61227e6bd187.ogg",
      "t": "That's not even close. That's not even in the same zip code."
     },
     {
-     "f": "rick/629a6e0c1d15.ogg",
+     "f": "rick/c402d14495c3.ogg",
      "t": "Hey genius, the cups are over here!"
     },
     {
-     "f": "rick/4ab02e5abf2b.ogg",
+     "f": "rick/82715f7b6880.ogg",
      "t": "Did you close your eyes? Be honest."
     },
     {
-     "f": "rick/980e60128501.ogg",
+     "f": "rick/c11d47d9560f.ogg",
      "t": "That was embarrassing. For all of us."
     },
     {
-     "f": "rick/6d92ee8b107b.ogg",
+     "f": "rick/a05fabf1c3f4.ogg",
      "t": "Brick! Absolute brick!"
     },
     {
-     "f": "rick/55e900281c7e.ogg",
+     "f": "rick/a9d1f710541e.ogg",
      "t": "You throw like you've never seen a ball before."
     },
     {
-     "f": "rick/8e3a3849aea6.ogg",
+     "f": "rick/1d4777d7ac1a.ogg",
      "t": "That one's gonna be under the fridge till Christmas."
     },
     {
-     "f": "rick/80094e616544.ogg",
+     "f": "rick/3b15f30049e8.ogg",
      "t": "Somebody get this clown some glasses."
     },
     {
-     "f": "rick/f09dc2cf2d44.ogg",
+     "f": "rick/abbee9c59406.ogg",
      "t": "Wow. Just wow. That was pathetic."
     },
     {
-     "f": "rick/4348b368b3a2.ogg",
+     "f": "rick/19bb42f60c5f.ogg",
      "t": "Is your arm broken, or are you just bad?"
     },
     {
-     "f": "rick/14cf31d79cf2.ogg",
+     "f": "rick/3078baa588cc.ogg",
      "t": "You suck at this. Like, genuinely."
     },
     {
-     "f": "rick/6b2b85cafd19.ogg",
+     "f": "rick/0965f6d22804.ogg",
      "t": "I've seen better aim from a drunk raccoon."
     },
     {
-     "f": "rick/d87198fabaf3.ogg",
+     "f": "rick/a707e49837aa.ogg",
      "t": "Keep shooting like that and I'll never have to drink."
     },
     {
-     "f": "rick/a2c07ec84199.ogg",
+     "f": "rick/085ca426a456.ogg",
      "t": "That's the worst shot I've seen all year, and I've watched Kevin play."
     },
     {
-     "f": "rick/e124836889a0.ogg",
+     "f": "rick/f8e624ad0d5d.ogg",
      "t": "Nice. Real nice. Go fetch it, bitch."
     }
    ],
    "playerRimOut": [
     {
-     "f": "rick/3647308ed1a4.ogg",
+     "f": "rick/20dff12f3165.ogg",
      "t": "Rimmed out! Even the cup thinks you're a loser."
     },
     {
-     "f": "rick/313a86f5e6fc.ogg",
+     "f": "rick/0db0c09aeeb5.ogg",
      "t": "Ooh, so close. Still sucks to be you."
     },
     {
-     "f": "rick/79b08c177fab.ogg",
+     "f": "rick/ea2bf481f3ba.ogg",
      "t": "The cup said hell no!"
     },
     {
-     "f": "rick/f80a5ab23ee7.ogg",
+     "f": "rick/f8e7162b1245.ogg",
      "t": "Rejected! Get that weak shit out of here."
     },
     {
-     "f": "rick/c55daacb30eb.ogg",
+     "f": "rick/fdebc2a4b71d.ogg",
      "t": "Almost doesn't count, sweetheart."
     }
    ],
    "playerWin": [
     {
-     "f": "rick/9a651b8c7ddd.ogg",
+     "f": "rick/f777f4ca5002.ogg",
      "t": "Rematch. Right now. Rack 'em."
     },
     {
-     "f": "rick/95b79b57ae1d.ogg",
+     "f": "rick/832062a9ab28.ogg",
      "t": "You got lucky and you know it."
     },
     {
-     "f": "rick/a9f548c8cd08.ogg",
+     "f": "rick/3e44f148c38b.ogg",
      "t": "No way. No way! Best two out of three."
     },
     {
-     "f": "rick/4493cc466b3f.ogg",
+     "f": "rick/b00f29771d82.ogg",
      "t": "Fine. Good game. I hate you."
     }
    ],
    "rerack": [
     {
-     "f": "rick/5afc046007fc.ogg",
+     "f": "rick/86e0d9b90631.ogg",
      "t": "Re-rack it. Let's go."
     },
     {
-     "f": "rick/adf876868477.ogg",
+     "f": "rick/c73e6a53f0cd.ogg",
      "t": "Tighten that up. Re-rack."
     },
     {
-     "f": "rick/8ee4bf404d34.ogg",
+     "f": "rick/d7d272a05841.ogg",
      "t": "Re-rack! Make it pretty for me."
     }
    ],
    "slow": [
     {
-     "f": "rick/588a071265f8.ogg",
+     "f": "rick/fc45f37b6bcb.ogg",
      "t": "Any day now!"
     },
     {
-     "f": "rick/8e6950a1f09a.ogg",
+     "f": "rick/8d751020fdc5.ogg",
      "t": "Shoot already, my beer's getting warm!"
     },
     {
-     "f": "rick/09aa978119ef.ogg",
+     "f": "rick/99614b321093.ogg",
      "t": "Are you throwing or proposing?"
     },
     {
-     "f": "rick/7f08bd392109.ogg",
+     "f": "rick/9a283bf4a480.ogg",
      "t": "Tick tock, dumbass."
     },
     {
-     "f": "rick/fbb1118b48a6.ogg",
+     "f": "rick/dc069e035ab0.ogg",
      "t": "We don't have all night. Throw the damn ball."
     }
    ],
    "start": [
     {
-     "f": "rick/9c733210b4d0.ogg",
+     "f": "rick/9561a52b880e.ogg",
      "t": "Alright kiddo, let's see what you got."
     },
     {
-     "f": "rick/61788b7da241.ogg",
+     "f": "rick/8f4d42145deb.ogg",
      "t": "I was the champ of this garage before you could walk."
     },
     {
-     "f": "rick/cbc249d6e28f.ogg",
+     "f": "rick/9ff60be326f5.ogg",
      "t": "Your dad couldn't beat me either. Runs in the family, I guess."
     }
    ]
@@ -381,377 +381,377 @@
   "tyler": {
    "aiLastCup": [
     {
-     "f": "tyler/653c47604d1e.ogg",
+     "f": "tyler/5b5326d813e0.ogg",
      "t": "One more and you're done."
     },
     {
-     "f": "tyler/b9b7b4aa8c3b.ogg",
+     "f": "tyler/add1b2e69b38.ogg",
      "t": "Last cup. Say goodnight."
     },
     {
-     "f": "tyler/ea13cfdd8b19.ogg",
+     "f": "tyler/e1e6a1fb7fe8.ogg",
      "t": "Island time, baby. One left. Start crying."
     }
    ],
    "aiMake": [
     {
-     "f": "tyler/c1e7dd401e75.ogg",
+     "f": "tyler/0e9cf8ea04b2.ogg",
      "t": "Let's goooo! Too easy, bro!"
     },
     {
-     "f": "tyler/999b3e405f70.ogg",
+     "f": "tyler/3c9c009e4ee4.ogg",
      "t": "Somebody film this, I'm on fire!"
     },
     {
-     "f": "tyler/588861cc4a49.ogg",
+     "f": "tyler/e0dbe2b3b078.ogg",
      "t": "Drink up, buttercup!"
     },
     {
-     "f": "tyler/71518754ef9f.ogg",
+     "f": "tyler/795d4aafc736.ogg",
      "t": "Nothing but beer, baby!"
     },
     {
-     "f": "tyler/5bb1bd198e40.ogg",
+     "f": "tyler/9c08fe6b0bf0.ogg",
      "t": "Too easy. Is this your first time?"
     },
     {
-     "f": "tyler/d95c904eef79.ogg",
+     "f": "tyler/978e1f5bd337.ogg",
      "t": "Get used to that feeling."
     },
     {
-     "f": "tyler/fd5628d048fa.ogg",
+     "f": "tyler/4b3d3ac2d5df.ogg",
      "t": "Splash! Chug it, loser."
     },
     {
-     "f": "tyler/83159dbc76f5.ogg",
+     "f": "tyler/7555929a9037.ogg",
      "t": "Bottoms up, champ. You're gonna be doing a lot of that."
     },
     {
-     "f": "tyler/7e22ee243543.ogg",
+     "f": "tyler/219977076491.ogg",
      "t": "Did you see that? Of course you did. Now drink."
     },
     {
-     "f": "tyler/3063f2697ab1.ogg",
+     "f": "tyler/715fde6ee624.ogg",
      "t": "That's called skill. Look it up."
     },
     {
-     "f": "tyler/f3b4c413f17d.ogg",
+     "f": "tyler/8e9072b18b99.ogg",
      "t": "Cash that cup and cry about it."
     },
     {
-     "f": "tyler/828b541e6019.ogg",
+     "f": "tyler/51129e86aaa2.ogg",
      "t": "You're getting smoked in front of everybody."
     },
     {
-     "f": "tyler/2574ee25bef3.ogg",
+     "f": "tyler/5c4608564dd3.ogg",
      "t": "Drink! Drink! Drink!"
     },
     {
-     "f": "tyler/577406994de4.ogg",
+     "f": "tyler/4891d6b51f72.ogg",
      "t": "I could do this with my eyes closed. Wanna see?"
     }
    ],
    "aiMiss": [
     {
-     "f": "tyler/32a7129ad208.ogg",
+     "f": "tyler/98cb2c0d0c2f.ogg",
      "t": "The table's crooked, man."
     },
     {
-     "f": "tyler/05c52b82dd55.ogg",
+     "f": "tyler/82f6be3e793c.ogg",
      "t": "Somebody bumped the damn table!"
     },
     {
-     "f": "tyler/b2cf6966429f.ogg",
+     "f": "tyler/1380e02e8e98.ogg",
      "t": "I'm giving you a chance. You need it."
     },
     {
-     "f": "tyler/610c54f663ac.ogg",
+     "f": "tyler/e5cdbb34a445.ogg",
      "t": "Ugh, the light got in my eyes."
     },
     {
-     "f": "tyler/54cba71fc56b.ogg",
+     "f": "tyler/e85d8da2dd99.ogg",
      "t": "That's on purpose. Strategy."
     },
     {
-     "f": "tyler/a0f5bab4527d.ogg",
+     "f": "tyler/0b4a5f146417.ogg",
      "t": "Okay, that one slipped. Don't get excited."
     },
     {
-     "f": "tyler/9ec6b25a3df7.ogg",
+     "f": "tyler/efacb5645cb0.ogg",
      "t": "Who moved the cups? Seriously, who moved them?"
     },
     {
-     "f": "tyler/0f3e5b47e098.ogg",
+     "f": "tyler/9907990e73a0.ogg",
      "t": "Shut up. Nobody say anything."
     }
    ],
    "aiWin": [
     {
-     "f": "tyler/e4dc6ace41dc.ogg",
+     "f": "tyler/590034575804.ogg",
      "t": "Game! Sit your ass down."
     },
     {
-     "f": "tyler/fffaa5d69131.ogg",
+     "f": "tyler/0d9c5b24851c.ogg",
      "t": "Get off my table."
     },
     {
-     "f": "tyler/cf60f4bccd94.ogg",
+     "f": "tyler/fb42c5b128ee.ogg",
      "t": "That's how it's done in this garage."
     },
     {
-     "f": "tyler/7801fad707a1.ogg",
+     "f": "tyler/be8b4235fd4c.ogg",
      "t": "Next! Who's got next? This guy's done."
     },
     {
-     "f": "tyler/7a059fc61c70.ogg",
+     "f": "tyler/68efce97a15a.ogg",
      "t": "Thanks for the free beer, loser."
     }
    ],
    "ballsBackAi": [
     {
-     "f": "tyler/5d46658519cc.ogg",
+     "f": "tyler/a54639eddebe.ogg",
      "t": "Balls back, baby!"
     },
     {
-     "f": "tyler/cd3c2aaa9ed1.ogg",
+     "f": "tyler/51c6299b1c88.ogg",
      "t": "Run it back! Gimme those balls."
     },
     {
-     "f": "tyler/8e6c7f3928c7.ogg",
+     "f": "tyler/ffc01697f5cc.ogg",
      "t": "Two for two! Sit down."
     }
    ],
    "ballsBackPlayer": [
     {
-     "f": "tyler/a760bb42bdb5.ogg",
+     "f": "tyler/a2c753e15bc0.ogg",
      "t": "Seriously? Balls back. Whatever."
     },
     {
-     "f": "tyler/a0a112f35cb9.ogg",
+     "f": "tyler/759fcbc93ded.ogg",
      "t": "Fine, take your stupid balls back."
     }
    ],
    "playerLastCup": [
     {
-     "f": "tyler/9134f3a98824.ogg",
+     "f": "tyler/4769a8fb36c0.ogg",
      "t": "Okay. I'm locked in now."
     },
     {
-     "f": "tyler/3728ab657819.ogg",
+     "f": "tyler/b8c9a94d7d3c.ogg",
      "t": "Pressure's on you, buddy. One cup."
     },
     {
-     "f": "tyler/f428ec324565.ogg",
+     "f": "tyler/fadfe1db7063.ogg",
      "t": "I've come back from worse. Way worse."
     }
    ],
    "playerMake": [
     {
-     "f": "tyler/3059a79810b8.ogg",
+     "f": "tyler/5271e6b38d3b.ogg",
      "t": "Okay, okay. Lucky shot."
     },
     {
-     "f": "tyler/fa3571271ba4.ogg",
+     "f": "tyler/10e9de6949b7.ogg",
      "t": "Even a broken clock is right twice a day."
     },
     {
-     "f": "tyler/d20ed2c50628.ogg",
+     "f": "tyler/1b2b848fd86e.ogg",
      "t": "Alright, you got one. Don't get cocky."
     },
     {
-     "f": "tyler/d2b8dea3e182.ogg",
+     "f": "tyler/d69e1fed723e.ogg",
      "t": "Ugh. Fine. Whatever."
     },
     {
-     "f": "tyler/10296e7245fe.ogg",
+     "f": "tyler/dde048b2cd24.ogg",
      "t": "That had no business going in."
     },
     {
-     "f": "tyler/1263d849d39e.ogg",
+     "f": "tyler/205dd3d62daf.ogg",
      "t": "Wow, you finally hit one. You want a trophy?"
     },
     {
-     "f": "tyler/9d7b860a0ff6.ogg",
+     "f": "tyler/1187dcaa0c78.ogg",
      "t": "Enjoy it, that's the last one you're getting."
     },
     {
-     "f": "tyler/af56fc86d4b9.ogg",
+     "f": "tyler/b56955cadf9d.ogg",
      "t": "Oh, come on!"
     },
     {
-     "f": "tyler/f6c33ebe6560.ogg",
+     "f": "tyler/8c5adf0dbb3f.ogg",
      "t": "Pure luck. Everybody saw that."
     }
    ],
    "playerMiss": [
     {
-     "f": "tyler/b163708c458b.ogg",
+     "f": "tyler/36f1b44a9545.ogg",
      "t": "Bro. Bro! What was that?"
     },
     {
-     "f": "tyler/c59fa097ee2c.ogg",
+     "f": "tyler/a278948690e7.ogg",
      "t": "Dude, that was so bad I'm actually embarrassed for you."
     },
     {
-     "f": "tyler/5c0bff7b8eb2.ogg",
+     "f": "tyler/8258787c0d5e.ogg",
      "t": "Air ball! Holy shit, you missed the whole table."
     },
     {
-     "f": "tyler/d16715c0756b.ogg",
+     "f": "tyler/eeeeb781f94e.ogg",
      "t": "Were you aiming for the fridge, dumbass?"
     },
     {
-     "f": "tyler/92e8d7a13e88.ogg",
+     "f": "tyler/66a6ded76354.ogg",
      "t": "My grandma throws better than that, and she's dead."
     },
     {
-     "f": "tyler/8f5079abf4a7.ogg",
+     "f": "tyler/d8587be7988a.ogg",
      "t": "That's not even close. That's not even in the same zip code."
     },
     {
-     "f": "tyler/77492da9a62f.ogg",
+     "f": "tyler/0db0c306c445.ogg",
      "t": "Hey genius, the cups are over here!"
     },
     {
-     "f": "tyler/b9c6b267015a.ogg",
+     "f": "tyler/1915c02cc2b3.ogg",
      "t": "Did you close your eyes? Be honest."
     },
     {
-     "f": "tyler/db7fb1051198.ogg",
+     "f": "tyler/95a0891c66f6.ogg",
      "t": "That was embarrassing. For all of us."
     },
     {
-     "f": "tyler/368e8196bd50.ogg",
+     "f": "tyler/84aa8816a94c.ogg",
      "t": "Brick! Absolute brick!"
     },
     {
-     "f": "tyler/6a36165a4384.ogg",
+     "f": "tyler/ab2909820fcf.ogg",
      "t": "You throw like you've never seen a ball before."
     },
     {
-     "f": "tyler/2e8cbc6b287e.ogg",
+     "f": "tyler/04a4fb3daef1.ogg",
      "t": "That one's gonna be under the fridge till Christmas."
     },
     {
-     "f": "tyler/d39af07397fb.ogg",
+     "f": "tyler/ea7197614ca2.ogg",
      "t": "Somebody get this clown some glasses."
     },
     {
-     "f": "tyler/13d00f342216.ogg",
+     "f": "tyler/342c0c439a64.ogg",
      "t": "Wow. Just wow. That was pathetic."
     },
     {
-     "f": "tyler/c7aafeafcde5.ogg",
+     "f": "tyler/bb919bc6d546.ogg",
      "t": "Is your arm broken, or are you just bad?"
     },
     {
-     "f": "tyler/c455bde268a8.ogg",
+     "f": "tyler/7d4760980631.ogg",
      "t": "You suck at this. Like, genuinely."
     },
     {
-     "f": "tyler/ac29f006e5a2.ogg",
+     "f": "tyler/185a890297e8.ogg",
      "t": "I've seen better aim from a drunk raccoon."
     },
     {
-     "f": "tyler/78c6424f68da.ogg",
+     "f": "tyler/5b1c422f556a.ogg",
      "t": "Keep shooting like that and I'll never have to drink."
     },
     {
-     "f": "tyler/a927d7171da5.ogg",
+     "f": "tyler/5325ea838a92.ogg",
      "t": "That's the worst shot I've seen all year, and I've watched Kevin play."
     },
     {
-     "f": "tyler/3087ccc6d709.ogg",
+     "f": "tyler/f8650e89191d.ogg",
      "t": "Nice. Real nice. Go fetch it, bitch."
     }
    ],
    "playerRimOut": [
     {
-     "f": "tyler/3e96d8457198.ogg",
+     "f": "tyler/5bc79d51872a.ogg",
      "t": "Rimmed out! Even the cup thinks you're a loser."
     },
     {
-     "f": "tyler/1a795e770b01.ogg",
+     "f": "tyler/9913ffcc1b53.ogg",
      "t": "Ooh, so close. Still sucks to be you."
     },
     {
-     "f": "tyler/7b4c257326c2.ogg",
+     "f": "tyler/bd8f4fdd575d.ogg",
      "t": "The cup said hell no!"
     },
     {
-     "f": "tyler/d8ad2361f94f.ogg",
+     "f": "tyler/14e589748399.ogg",
      "t": "Rejected! Get that weak shit out of here."
     },
     {
-     "f": "tyler/5be34fa09fef.ogg",
+     "f": "tyler/e674dfd4e0f6.ogg",
      "t": "Almost doesn't count, sweetheart."
     }
    ],
    "playerWin": [
     {
-     "f": "tyler/89cb5f604cb4.ogg",
+     "f": "tyler/26a7aa4cfeea.ogg",
      "t": "Rematch. Right now. Rack 'em."
     },
     {
-     "f": "tyler/ad8a512dd09d.ogg",
+     "f": "tyler/b0c6d6c69810.ogg",
      "t": "You got lucky and you know it."
     },
     {
-     "f": "tyler/9acd0b0e0f42.ogg",
+     "f": "tyler/099b088dbfc5.ogg",
      "t": "No way. No way! Best two out of three."
     },
     {
-     "f": "tyler/d6906b02970f.ogg",
+     "f": "tyler/058d5a720eba.ogg",
      "t": "Fine. Good game. I hate you."
     }
    ],
    "rerack": [
     {
-     "f": "tyler/09cae95ab7fe.ogg",
+     "f": "tyler/a5365877a0ce.ogg",
      "t": "Re-rack it. Let's go."
     },
     {
-     "f": "tyler/6019157e7f4b.ogg",
+     "f": "tyler/9c09c2276855.ogg",
      "t": "Tighten that up. Re-rack."
     },
     {
-     "f": "tyler/3ebc171a60e1.ogg",
+     "f": "tyler/d7abc695b025.ogg",
      "t": "Re-rack! Make it pretty for me."
     }
    ],
    "slow": [
     {
-     "f": "tyler/8af01ab8d8d0.ogg",
+     "f": "tyler/1c22871aaa58.ogg",
      "t": "Any day now!"
     },
     {
-     "f": "tyler/cfb17330e135.ogg",
+     "f": "tyler/ec613fde41e9.ogg",
      "t": "Shoot already, my beer's getting warm!"
     },
     {
-     "f": "tyler/de6812ec8a98.ogg",
+     "f": "tyler/ef4cdfa0cd34.ogg",
      "t": "Are you throwing or proposing?"
     },
     {
-     "f": "tyler/34422c541ac2.ogg",
+     "f": "tyler/3d0fcc5671cd.ogg",
      "t": "Tick tock, dumbass."
     },
     {
-     "f": "tyler/62ea7a3654e9.ogg",
+     "f": "tyler/48aacda4472f.ogg",
      "t": "We don't have all night. Throw the damn ball."
     }
    ],
    "start": [
     {
-     "f": "tyler/535a48d72d60.ogg",
+     "f": "tyler/e3def17b04de.ogg",
      "t": "Let's go! Loser buys the next case."
     },
     {
-     "f": "tyler/76263a3e71be.ogg",
+     "f": "tyler/e268f778dfbc.ogg",
      "t": "Rack 'em up, bro. I'm feeling dangerous tonight."
     },
     {
-     "f": "tyler/ad7772c8d22c.ogg",
+     "f": "tyler/77299ac5b4aa.ogg",
      "t": "Hope you stretched, 'cause this is gonna hurt."
     }
    ]
@@ -759,377 +759,377 @@
   "mike": {
    "aiLastCup": [
     {
-     "f": "mike/2cf204fd369d.ogg",
+     "f": "mike/92b4d86b2a30.ogg",
      "t": "One more and you're done."
     },
     {
-     "f": "mike/75ff4b3e161a.ogg",
+     "f": "mike/f05cecd396cd.ogg",
      "t": "Last cup. Say goodnight."
     },
     {
-     "f": "mike/729d299ec74a.ogg",
+     "f": "mike/429beab7e05e.ogg",
      "t": "Island time, baby. One left. Start crying."
     }
    ],
    "aiMake": [
     {
-     "f": "mike/2a5df863c508.ogg",
+     "f": "mike/5bda4ad6a2e3.ogg",
      "t": "That's ten years of practice, rookie. Drink."
     },
     {
-     "f": "mike/4b8bcc9605fb.ogg",
+     "f": "mike/a3880a2e1510.ogg",
      "t": "Legend. Says it right on the table."
     },
     {
-     "f": "mike/6937d25cba9f.ogg",
+     "f": "mike/dd7ca570fd32.ogg",
      "t": "Drink up, buttercup!"
     },
     {
-     "f": "mike/427be00f92c9.ogg",
+     "f": "mike/96624a56125f.ogg",
      "t": "Nothing but beer, baby!"
     },
     {
-     "f": "mike/69986da124e4.ogg",
+     "f": "mike/840d379bdafa.ogg",
      "t": "Too easy. Is this your first time?"
     },
     {
-     "f": "mike/e02397da6414.ogg",
+     "f": "mike/43a0b7e28a85.ogg",
      "t": "Get used to that feeling."
     },
     {
-     "f": "mike/751aae743770.ogg",
+     "f": "mike/8b2bfd84f4f2.ogg",
      "t": "Splash! Chug it, loser."
     },
     {
-     "f": "mike/d225ec7a8626.ogg",
+     "f": "mike/db2eaf959202.ogg",
      "t": "Bottoms up, champ. You're gonna be doing a lot of that."
     },
     {
-     "f": "mike/4dacab1d025e.ogg",
+     "f": "mike/8989c721180d.ogg",
      "t": "Did you see that? Of course you did. Now drink."
     },
     {
-     "f": "mike/3ff62b394882.ogg",
+     "f": "mike/e28e93d1098c.ogg",
      "t": "That's called skill. Look it up."
     },
     {
-     "f": "mike/2908e22e95fd.ogg",
+     "f": "mike/f1bbc3490ac5.ogg",
      "t": "Cash that cup and cry about it."
     },
     {
-     "f": "mike/ac646dbc5975.ogg",
+     "f": "mike/6708692d901c.ogg",
      "t": "You're getting smoked in front of everybody."
     },
     {
-     "f": "mike/3a611790795a.ogg",
+     "f": "mike/5566c39088a0.ogg",
      "t": "Drink! Drink! Drink!"
     },
     {
-     "f": "mike/155f816ac65f.ogg",
+     "f": "mike/636c47423565.ogg",
      "t": "I could do this with my eyes closed. Wanna see?"
     }
    ],
    "aiMiss": [
     {
-     "f": "mike/3333abee9797.ogg",
+     "f": "mike/8dc71b1101af.ogg",
      "t": "The table's crooked, man."
     },
     {
-     "f": "mike/116cf7b4d674.ogg",
+     "f": "mike/f88ce5b61cdb.ogg",
      "t": "Somebody bumped the damn table!"
     },
     {
-     "f": "mike/a103c8997903.ogg",
+     "f": "mike/8055a2eb5bac.ogg",
      "t": "I'm giving you a chance. You need it."
     },
     {
-     "f": "mike/31de53642cab.ogg",
+     "f": "mike/74d002029ba6.ogg",
      "t": "Ugh, the light got in my eyes."
     },
     {
-     "f": "mike/87f1b8950f3b.ogg",
+     "f": "mike/08db2723cdf1.ogg",
      "t": "That's on purpose. Strategy."
     },
     {
-     "f": "mike/465f930f8b07.ogg",
+     "f": "mike/b721b4551fd0.ogg",
      "t": "Okay, that one slipped. Don't get excited."
     },
     {
-     "f": "mike/1aa0bf020421.ogg",
+     "f": "mike/74969156b7ed.ogg",
      "t": "Who moved the cups? Seriously, who moved them?"
     },
     {
-     "f": "mike/4dac82731eef.ogg",
+     "f": "mike/a1d770f4072a.ogg",
      "t": "Shut up. Nobody say anything."
     }
    ],
    "aiWin": [
     {
-     "f": "mike/8b284772e8f3.ogg",
+     "f": "mike/8bb5d5cf98bb.ogg",
      "t": "Game! Sit your ass down."
     },
     {
-     "f": "mike/8214d6df2cf8.ogg",
+     "f": "mike/d753a3c86c5f.ogg",
      "t": "Get off my table."
     },
     {
-     "f": "mike/ea918966ad79.ogg",
+     "f": "mike/1bcfa2e303b3.ogg",
      "t": "That's how it's done in this garage."
     },
     {
-     "f": "mike/c75664816496.ogg",
+     "f": "mike/a3a864fcecf0.ogg",
      "t": "Next! Who's got next? This guy's done."
     },
     {
-     "f": "mike/4347668ef598.ogg",
+     "f": "mike/a01d51a2d6e2.ogg",
      "t": "Thanks for the free beer, loser."
     }
    ],
    "ballsBackAi": [
     {
-     "f": "mike/fd9fd5807985.ogg",
+     "f": "mike/92df9c05868c.ogg",
      "t": "Balls back, baby!"
     },
     {
-     "f": "mike/adfe32632b70.ogg",
+     "f": "mike/f4aa5fda9cdb.ogg",
      "t": "Run it back! Gimme those balls."
     },
     {
-     "f": "mike/351b44041357.ogg",
+     "f": "mike/41ca3076c89f.ogg",
      "t": "Two for two! Sit down."
     }
    ],
    "ballsBackPlayer": [
     {
-     "f": "mike/d80feca3f64d.ogg",
+     "f": "mike/1eb25796bdec.ogg",
      "t": "Seriously? Balls back. Whatever."
     },
     {
-     "f": "mike/f2dce9e16df8.ogg",
+     "f": "mike/0fd6a1b97b35.ogg",
      "t": "Fine, take your stupid balls back."
     }
    ],
    "playerLastCup": [
     {
-     "f": "mike/a52c3e3ff19c.ogg",
+     "f": "mike/75ee21e09bf7.ogg",
      "t": "Okay. I'm locked in now."
     },
     {
-     "f": "mike/53bdc0545f90.ogg",
+     "f": "mike/a7bea4b1b5a9.ogg",
      "t": "Pressure's on you, buddy. One cup."
     },
     {
-     "f": "mike/2926f7eb2ef9.ogg",
+     "f": "mike/c2add961065e.ogg",
      "t": "I've come back from worse. Way worse."
     }
    ],
    "playerMake": [
     {
-     "f": "mike/c72afee7947d.ogg",
+     "f": "mike/51d236a9dd48.ogg",
      "t": "Okay, okay. Lucky shot."
     },
     {
-     "f": "mike/7a424175e6dd.ogg",
+     "f": "mike/2fb3915c791c.ogg",
      "t": "Even a broken clock is right twice a day."
     },
     {
-     "f": "mike/828c487fd0e4.ogg",
+     "f": "mike/41db27a7d55f.ogg",
      "t": "Alright, you got one. Don't get cocky."
     },
     {
-     "f": "mike/a7c7f6f490cc.ogg",
+     "f": "mike/ee91ecdb9e51.ogg",
      "t": "Ugh. Fine. Whatever."
     },
     {
-     "f": "mike/ddb6c1e28a64.ogg",
+     "f": "mike/160685706964.ogg",
      "t": "That had no business going in."
     },
     {
-     "f": "mike/97d59f1d935f.ogg",
+     "f": "mike/518b0bbeb5a3.ogg",
      "t": "Wow, you finally hit one. You want a trophy?"
     },
     {
-     "f": "mike/3a8ef696e18d.ogg",
+     "f": "mike/cda751e5e7b9.ogg",
      "t": "Enjoy it, that's the last one you're getting."
     },
     {
-     "f": "mike/6af092c722fa.ogg",
+     "f": "mike/1fd1423de2a7.ogg",
      "t": "Oh, come on!"
     },
     {
-     "f": "mike/ccf31173fbfa.ogg",
+     "f": "mike/2e2d29c5cac7.ogg",
      "t": "Pure luck. Everybody saw that."
     }
    ],
    "playerMiss": [
     {
-     "f": "mike/d0aa16103276.ogg",
+     "f": "mike/e62b8fd3f136.ogg",
      "t": "Pathetic. I've seen better from freshmen."
     },
     {
-     "f": "mike/3acd7b72d844.ogg",
+     "f": "mike/4d53513daf8f.ogg",
      "t": "You're not even worth warming up for."
     },
     {
-     "f": "mike/49ad44d4c600.ogg",
+     "f": "mike/b0e86ce9679e.ogg",
      "t": "Air ball! Holy shit, you missed the whole table."
     },
     {
-     "f": "mike/770bea3ff1f6.ogg",
+     "f": "mike/8b85f9f2f4f4.ogg",
      "t": "Were you aiming for the fridge, dumbass?"
     },
     {
-     "f": "mike/dc9ba4d1ffa7.ogg",
+     "f": "mike/b40261e0cf3f.ogg",
      "t": "My grandma throws better than that, and she's dead."
     },
     {
-     "f": "mike/26d03bea9238.ogg",
+     "f": "mike/84902e8c3680.ogg",
      "t": "That's not even close. That's not even in the same zip code."
     },
     {
-     "f": "mike/c2a46308cbeb.ogg",
+     "f": "mike/81c5c5493428.ogg",
      "t": "Hey genius, the cups are over here!"
     },
     {
-     "f": "mike/a8c1aa3e9282.ogg",
+     "f": "mike/53be506764fc.ogg",
      "t": "Did you close your eyes? Be honest."
     },
     {
-     "f": "mike/750f5d4eec60.ogg",
+     "f": "mike/eed4b9915b3b.ogg",
      "t": "That was embarrassing. For all of us."
     },
     {
-     "f": "mike/85fb404ca976.ogg",
+     "f": "mike/f996e7ff070e.ogg",
      "t": "Brick! Absolute brick!"
     },
     {
-     "f": "mike/1bc9c2d457ae.ogg",
+     "f": "mike/152a918c546a.ogg",
      "t": "You throw like you've never seen a ball before."
     },
     {
-     "f": "mike/8fce1f65bd42.ogg",
+     "f": "mike/e43fb7adba55.ogg",
      "t": "That one's gonna be under the fridge till Christmas."
     },
     {
-     "f": "mike/60a0a2e9fed1.ogg",
+     "f": "mike/9bca2933908b.ogg",
      "t": "Somebody get this clown some glasses."
     },
     {
-     "f": "mike/61f29fb865fe.ogg",
+     "f": "mike/df161682beaa.ogg",
      "t": "Wow. Just wow. That was pathetic."
     },
     {
-     "f": "mike/f5e31056d619.ogg",
+     "f": "mike/6b78c38f1c2a.ogg",
      "t": "Is your arm broken, or are you just bad?"
     },
     {
-     "f": "mike/3560b1c0ebf1.ogg",
+     "f": "mike/f6d4750f0338.ogg",
      "t": "You suck at this. Like, genuinely."
     },
     {
-     "f": "mike/1e580af064aa.ogg",
+     "f": "mike/5b9e28ed119c.ogg",
      "t": "I've seen better aim from a drunk raccoon."
     },
     {
-     "f": "mike/382e4fff466e.ogg",
+     "f": "mike/34ae1a33dc5a.ogg",
      "t": "Keep shooting like that and I'll never have to drink."
     },
     {
-     "f": "mike/7483ecff2ec0.ogg",
+     "f": "mike/a8d101973ad7.ogg",
      "t": "That's the worst shot I've seen all year, and I've watched Kevin play."
     },
     {
-     "f": "mike/4d7e0c5703c9.ogg",
+     "f": "mike/2be80807cc7c.ogg",
      "t": "Nice. Real nice. Go fetch it, bitch."
     }
    ],
    "playerRimOut": [
     {
-     "f": "mike/d971853642cd.ogg",
+     "f": "mike/47d399f4ed2a.ogg",
      "t": "Rimmed out! Even the cup thinks you're a loser."
     },
     {
-     "f": "mike/6142fb518fa0.ogg",
+     "f": "mike/5bdda18ebc50.ogg",
      "t": "Ooh, so close. Still sucks to be you."
     },
     {
-     "f": "mike/af999c34c077.ogg",
+     "f": "mike/fdfdae5ac0f0.ogg",
      "t": "The cup said hell no!"
     },
     {
-     "f": "mike/ff696a4a1796.ogg",
+     "f": "mike/d4dce9cfaee7.ogg",
      "t": "Rejected! Get that weak shit out of here."
     },
     {
-     "f": "mike/a3dfad05247f.ogg",
+     "f": "mike/863208a37a5d.ogg",
      "t": "Almost doesn't count, sweetheart."
     }
    ],
    "playerWin": [
     {
-     "f": "mike/cdd89387663d.ogg",
+     "f": "mike/2b29842f032f.ogg",
      "t": "Rematch. Right now. Rack 'em."
     },
     {
-     "f": "mike/24244616be8c.ogg",
+     "f": "mike/79169cf0695a.ogg",
      "t": "You got lucky and you know it."
     },
     {
-     "f": "mike/ed5df8dc6d5f.ogg",
+     "f": "mike/a95c101dae79.ogg",
      "t": "No way. No way! Best two out of three."
     },
     {
-     "f": "mike/f5bf44c8cfef.ogg",
+     "f": "mike/71b338e27683.ogg",
      "t": "Fine. Good game. I hate you."
     }
    ],
    "rerack": [
     {
-     "f": "mike/a82b4d824373.ogg",
+     "f": "mike/916f579f405e.ogg",
      "t": "Re-rack it. Let's go."
     },
     {
-     "f": "mike/1d4188dc8792.ogg",
+     "f": "mike/9882ea005cfe.ogg",
      "t": "Tighten that up. Re-rack."
     },
     {
-     "f": "mike/f65976655d87.ogg",
+     "f": "mike/3c1e625b1e33.ogg",
      "t": "Re-rack! Make it pretty for me."
     }
    ],
    "slow": [
     {
-     "f": "mike/8dfee7c0fe5e.ogg",
+     "f": "mike/25c2ef1b75aa.ogg",
      "t": "Any day now!"
     },
     {
-     "f": "mike/4a5e936d70bc.ogg",
+     "f": "mike/47e366ea8018.ogg",
      "t": "Shoot already, my beer's getting warm!"
     },
     {
-     "f": "mike/5ec475bd2fa6.ogg",
+     "f": "mike/bbe29dea962b.ogg",
      "t": "Are you throwing or proposing?"
     },
     {
-     "f": "mike/c8686a25f3c2.ogg",
+     "f": "mike/4d20cfa10596.ogg",
      "t": "Tick tock, dumbass."
     },
     {
-     "f": "mike/f47073f12530.ogg",
+     "f": "mike/360c148ef727.ogg",
      "t": "We don't have all night. Throw the damn ball."
     }
    ],
    "start": [
     {
-     "f": "mike/2d1e5a71f446.ogg",
+     "f": "mike/27427688bd68.ogg",
      "t": "Welcome to my house. You're gonna lose in it."
     },
     {
-     "f": "mike/61deefed1ac6.ogg",
+     "f": "mike/19bc82e386e7.ogg",
      "t": "I haven't lost on this table since college. You're not gonna be the first."
     },
     {
-     "f": "mike/aaf116185039.ogg",
+     "f": "mike/1f6977bea378.ogg",
      "t": "Take a good look at those cups. You're gonna be drinking all of 'em."
     }
    ]
@@ -1138,623 +1138,623 @@
  "crowd": {
   "make": [
    {
-    "f": "crowd/d64b8fe934b1.ogg",
+    "f": "crowd/a2b426d9e5ce.ogg",
     "t": "Let's go!",
     "v": 0
    },
    {
-    "f": "crowd/cf9adb05422d.ogg",
+    "f": "crowd/5bb0fcd46df1.ogg",
     "t": "Let's go!",
     "v": 3
    },
    {
-    "f": "crowd/c79f289ceb1a.ogg",
+    "f": "crowd/9a185b30fa44.ogg",
     "t": "Oh! No way!",
     "v": 1
    },
    {
-    "f": "crowd/34ccb3e88c32.ogg",
+    "f": "crowd/8a4bd9d2442f.ogg",
     "t": "Oh! No way!",
     "v": 4
    },
    {
-    "f": "crowd/bbd67e8ecafb.ogg",
+    "f": "crowd/f4a016567474.ogg",
     "t": "Drink!",
     "v": 2
    },
    {
-    "f": "crowd/bd618c62c51a.ogg",
+    "f": "crowd/e2d53116cd41.ogg",
     "t": "Drink!",
     "v": 5
    },
    {
-    "f": "crowd/efd9382ed169.ogg",
+    "f": "crowd/f2ef68d3ad46.ogg",
     "t": "Oh shit!",
     "v": 3
    },
    {
-    "f": "crowd/4293b917a8ce.ogg",
+    "f": "crowd/e3e804a1a496.ogg",
     "t": "Oh shit!",
     "v": 0
    },
    {
-    "f": "crowd/9d5b18923b91.ogg",
+    "f": "crowd/34b433fd9fc4.ogg",
     "t": "Yeah!",
     "v": 4
    },
    {
-    "f": "crowd/4b3b46050ee0.ogg",
+    "f": "crowd/effac4275083.ogg",
     "t": "Yeah!",
     "v": 1
    },
    {
-    "f": "crowd/c58b70c7d1ed.ogg",
+    "f": "crowd/d8c8a6f47c94.ogg",
     "t": "Get wrecked!",
     "v": 5
    },
    {
-    "f": "crowd/cc88f3dd2c2a.ogg",
+    "f": "crowd/5bca7f0bc006.ogg",
     "t": "Get wrecked!",
     "v": 2
    },
    {
-    "f": "crowd/1979ed30f230.ogg",
+    "f": "crowd/7eb80954eff9.ogg",
     "t": "Oh snap!",
     "v": 0
    },
    {
-    "f": "crowd/5a908f599a20.ogg",
+    "f": "crowd/4fdb68377e96.ogg",
     "t": "Oh snap!",
     "v": 3
    },
    {
-    "f": "crowd/141070f3c99f.ogg",
+    "f": "crowd/a9d3a2ba83c6.ogg",
     "t": "Holy shit!",
     "v": 1
    },
    {
-    "f": "crowd/beebfd3adf4e.ogg",
+    "f": "crowd/a79d5d54fd33.ogg",
     "t": "Holy shit!",
     "v": 4
    }
   ],
   "miss": [
    {
-    "f": "crowd/55629d392a68.ogg",
+    "f": "crowd/bfdf7dec4981.ogg",
     "t": "Oof!",
     "v": 0
    },
    {
-    "f": "crowd/66af3d6ca44c.ogg",
+    "f": "crowd/f8bdc8e82d34.ogg",
     "t": "Oof!",
     "v": 3
    },
    {
-    "f": "crowd/2bf67d7b5536.ogg",
+    "f": "crowd/67171aa32ce3.ogg",
     "t": "Oh, no.",
     "v": 1
    },
    {
-    "f": "crowd/07bcf7d86a40.ogg",
+    "f": "crowd/36bad0a53970.ogg",
     "t": "Oh, no.",
     "v": 4
    },
    {
-    "f": "crowd/9cc19c7c26bc.ogg",
+    "f": "crowd/5399e4f39d08.ogg",
     "t": "Brutal.",
     "v": 2
    },
    {
-    "f": "crowd/596da13b05b6.ogg",
+    "f": "crowd/85b36dc1bcd7.ogg",
     "t": "Brutal.",
     "v": 5
    },
    {
-    "f": "crowd/324bdda3842a.ogg",
+    "f": "crowd/7f03902be7f0.ogg",
     "t": "Yikes.",
     "v": 3
    },
    {
-    "f": "crowd/c398c6de5f5b.ogg",
+    "f": "crowd/92a54a5c19bd.ogg",
     "t": "Yikes.",
     "v": 0
    },
    {
-    "f": "crowd/c43ccdbef498.ogg",
+    "f": "crowd/3a2b75970ac1.ogg",
     "t": "Dude, that was awful.",
     "v": 4
    },
    {
-    "f": "crowd/cd759ab819e2.ogg",
+    "f": "crowd/3593fe59e847.ogg",
     "t": "Dude, that was awful.",
     "v": 1
    },
    {
-    "f": "crowd/1c6319f77673.ogg",
+    "f": "crowd/39aebd2cfd41.ogg",
     "t": "Ha! Terrible.",
     "v": 5
    },
    {
-    "f": "crowd/ab7c0c2e5fdc.ogg",
+    "f": "crowd/81930519090b.ogg",
     "t": "Ha! Terrible.",
     "v": 2
    }
   ],
   "heckle": [
    {
-    "f": "crowd/0acb6003b4a7.ogg",
+    "f": "crowd/bf363c03c399.ogg",
     "t": "You suck!",
     "v": 0
    },
    {
-    "f": "crowd/c7b43643dd4a.ogg",
+    "f": "crowd/fa1f7619b1ff.ogg",
     "t": "You suck!",
     "v": 3
    },
    {
-    "f": "crowd/bd13c42b56ab.ogg",
+    "f": "crowd/c0875f7c8cce.ogg",
     "t": "Air ball! Air ball!",
     "v": 1
    },
    {
-    "f": "crowd/f85ad00a9981.ogg",
+    "f": "crowd/042c4da5f320.ogg",
     "t": "Air ball! Air ball!",
     "v": 4
    },
    {
-    "f": "crowd/d56a9e42eca5.ogg",
+    "f": "crowd/70c85b525650.ogg",
     "t": "Somebody sub this guy out!",
     "v": 2
    },
    {
-    "f": "crowd/df898ebf1f8a.ogg",
+    "f": "crowd/c57087e87515.ogg",
     "t": "Somebody sub this guy out!",
     "v": 5
    },
    {
-    "f": "crowd/3b904ff104a3.ogg",
+    "f": "crowd/6219e1ac2db0.ogg",
     "t": "Wow, that was trash.",
     "v": 3
    },
    {
-    "f": "crowd/1f7c5354ff95.ogg",
+    "f": "crowd/fcd086546a70.ogg",
     "t": "Wow, that was trash.",
     "v": 0
    },
    {
-    "f": "crowd/ca412ddcf26e.ogg",
+    "f": "crowd/e6bc4aaba04c.ogg",
     "t": "Drink, loser!",
     "v": 4
    },
    {
-    "f": "crowd/e7719fb70705.ogg",
+    "f": "crowd/37aede574eff.ogg",
     "t": "Drink, loser!",
     "v": 1
    },
    {
-    "f": "crowd/81afbec0db47.ogg",
+    "f": "crowd/ba3a8bac2e84.ogg",
     "t": "Bury him!",
     "v": 5
    },
    {
-    "f": "crowd/9e2f99dc0c97.ogg",
+    "f": "crowd/a8481c24b3e8.ogg",
     "t": "Bury him!",
     "v": 2
    },
    {
-    "f": "crowd/ce71cf85914e.ogg",
+    "f": "crowd/2fd784166c54.ogg",
     "t": "Bro can't hit water from a boat.",
     "v": 0
    },
    {
-    "f": "crowd/43938db40c2a.ogg",
+    "f": "crowd/a8c4cb0c653f.ogg",
     "t": "Bro can't hit water from a boat.",
     "v": 3
    },
    {
-    "f": "crowd/e517427e4267.ogg",
+    "f": "crowd/9fe7c1a9d74d.ogg",
     "t": "That's so sad.",
     "v": 1
    },
    {
-    "f": "crowd/f1b631e40ca2.ogg",
+    "f": "crowd/71849155e9a4.ogg",
     "t": "That's so sad.",
     "v": 4
    }
   ],
   "chatter": [
    {
-    "f": "crowd/c559ca419c58.ogg",
+    "f": "crowd/d480eda74bcb.ogg",
     "t": "Who brought the chips?",
     "v": 0
    },
    {
-    "f": "crowd/2b209110da69.ogg",
+    "f": "crowd/20c91dc8310a.ogg",
     "t": "Dude, did you see the game last night?",
     "v": 1
    },
    {
-    "f": "crowd/67b4ef5a5f1a.ogg",
+    "f": "crowd/19f204d3a6de.ogg",
     "t": "Is there any more ice?",
     "v": 2
    },
    {
-    "f": "crowd/9f125b35c422.ogg",
+    "f": "crowd/7ea1a62bfb98.ogg",
     "t": "Hey, grab me one from the fridge.",
     "v": 3
    },
    {
-    "f": "crowd/cdd30291d3bf.ogg",
+    "f": "crowd/54fcd7386e89.ogg",
     "t": "Wait, whose turn is it?",
     "v": 4
    },
    {
-    "f": "crowd/423cac7e8af0.ogg",
+    "f": "crowd/1f3237aa9adb.ogg",
     "t": "I got next game!",
     "v": 5
    },
    {
-    "f": "crowd/3a107084173c.ogg",
+    "f": "crowd/5df7482e2f01.ogg",
     "t": "Somebody turn the music up.",
     "v": 0
    },
    {
-    "f": "crowd/961f7da2efe7.ogg",
+    "f": "crowd/7bc5ebae1e41.ogg",
     "t": "My truck's making that noise again.",
     "v": 1
    },
    {
-    "f": "crowd/aeae35b81e36.ogg",
+    "f": "crowd/efe347bd493e.ogg",
     "t": "Are you staying for the fire pit later?",
     "v": 2
    },
    {
-    "f": "crowd/13eb2c53f529.ogg",
+    "f": "crowd/b85d464d7b82.ogg",
     "t": "Who's winning?",
     "v": 3
    },
    {
-    "f": "crowd/923a7906fbcb.ogg",
+    "f": "crowd/274967e18293.ogg",
     "t": "Okay but hear me out.",
     "v": 4
    },
    {
-    "f": "crowd/f60390bf6e8d.ogg",
+    "f": "crowd/7735fa13c014.ogg",
     "t": "Bro, that's my cup.",
     "v": 5
    },
    {
-    "f": "crowd/05c64729865a.ogg",
+    "f": "crowd/12df8cee2cad.ogg",
     "t": "Yeah, he always does that.",
     "v": 0
    },
    {
-    "f": "crowd/4eab56e604ee.ogg",
+    "f": "crowd/d016cdd332bf.ogg",
     "t": "No way!",
     "v": 1
    },
    {
-    "f": "crowd/c18fe4b14fdd.ogg",
+    "f": "crowd/0393d5e74cc6.ogg",
     "t": "Is the pizza here yet?",
     "v": 2
    },
    {
-    "f": "crowd/7e8459d9563a.ogg",
+    "f": "crowd/2691238e2490.ogg",
     "t": "I'm telling you, it was this big.",
     "v": 3
    },
    {
-    "f": "crowd/17dadd2ebd34.ogg",
+    "f": "crowd/fd5ebe97a4d5.ogg",
     "t": "Did you text Jess?",
     "v": 4
    },
    {
-    "f": "crowd/02e2e5e46992.ogg",
+    "f": "crowd/932183694002.ogg",
     "t": "Who parked behind me?",
     "v": 5
    },
    {
-    "f": "crowd/a5ab4dda2096.ogg",
+    "f": "crowd/844c13932501.ogg",
     "t": "That's what I said!",
     "v": 0
    },
    {
-    "f": "crowd/f2acba5dbb10.ogg",
+    "f": "crowd/4d86b5da4afd.ogg",
     "t": "Hold on, I gotta hear this.",
     "v": 1
    },
    {
-    "f": "crowd/f8aa72f9ccf5.ogg",
+    "f": "crowd/7e15c04524e5.ogg",
     "t": "Somebody close the door, it's freezing.",
     "v": 2
    },
    {
-    "f": "crowd/5c2203e307ba.ogg",
+    "f": "crowd/93ce4043f073.ogg",
     "t": "Wait, are we out of beer already?",
     "v": 3
    },
    {
-    "f": "crowd/8ed04c1c2d69.ogg",
+    "f": "crowd/b9b54381e8a3.ogg",
     "t": "Pass me the bottle opener.",
     "v": 4
    },
    {
-    "f": "crowd/88c8a1b05305.ogg",
+    "f": "crowd/6cf712c54e81.ogg",
     "t": "Stop, stop, I'm dying.",
     "v": 5
    },
    {
-    "f": "crowd/a299727b1613.ogg",
+    "f": "crowd/2f3baad391e3.ogg",
     "t": "He did not say that.",
     "v": 0
    },
    {
-    "f": "crowd/d54e6e1a1d30.ogg",
+    "f": "crowd/9a69971f3214.ogg",
     "t": "Dude, I'm so full.",
     "v": 1
    },
    {
-    "f": "crowd/c87c02b10978.ogg",
+    "f": "crowd/24729fd60b01.ogg",
     "t": "Who invited Kevin?",
     "v": 2
    },
    {
-    "f": "crowd/2d7c57d3efe5.ogg",
+    "f": "crowd/81a537877594.ogg",
     "t": "So then the cop just walks up to the window.",
     "v": 3
    },
    {
-    "f": "crowd/316a8ea35a73.ogg",
+    "f": "crowd/774428adb4cd.ogg",
     "t": "I swear that dog understands English.",
     "v": 4
    },
    {
-    "f": "crowd/fc004df5647a.ogg",
+    "f": "crowd/8072fe1004f5.ogg",
     "t": "We're doing the lake this summer, right?",
     "v": 5
    },
    {
-    "f": "crowd/23857cddd553.ogg",
+    "f": "crowd/2aef1d4f356f.ogg",
     "t": "My boss emailed me at eleven last night. Eleven!",
     "v": 0
    },
    {
-    "f": "crowd/ec839250a3d4.ogg",
+    "f": "crowd/2a9a88fd43c3.ogg",
     "t": "You still got that old Mustang?",
     "v": 1
    },
    {
-    "f": "crowd/4fd60320cafb.ogg",
+    "f": "crowd/eb3fa094b484.ogg",
     "t": "No, the other Mike. Tall Mike.",
     "v": 2
    },
    {
-    "f": "crowd/00a6bb69dafd.ogg",
+    "f": "crowd/fd2a86c893c9.ogg",
     "t": "I haven't slept since Tuesday.",
     "v": 3
    },
    {
-    "f": "crowd/ab0a4748d6f5.ogg",
+    "f": "crowd/8cbeb0267c88.ogg",
     "t": "Is that my hoodie?",
     "v": 4
    },
    {
-    "f": "crowd/2d0a7706c939.ogg",
+    "f": "crowd/e471f712049b.ogg",
     "t": "Hey, you want a burger? Grill's still hot.",
     "v": 5
    },
    {
-    "f": "crowd/ce956235d0fa.ogg",
+    "f": "crowd/9f0ce6e5c43e.ogg",
     "t": "I need to get my oil changed.",
     "v": 0
    },
    {
-    "f": "crowd/2b592d8a624e.ogg",
+    "f": "crowd/1fec847ac7ad.ogg",
     "t": "Did anybody feed the dog?",
     "v": 1
    },
    {
-    "f": "crowd/c3cbfa8d0b64.ogg",
+    "f": "crowd/708760205333.ogg",
     "t": "Whose phone keeps buzzing?",
     "v": 2
    },
    {
-    "f": "crowd/9388372dc7c6.ogg",
+    "f": "crowd/7d8b5aa52d65.ogg",
     "t": "Remember when Danny fell off the roof?",
     "v": 3
    },
    {
-    "f": "crowd/a99913a53e2b.ogg",
+    "f": "crowd/31f93a45fc25.ogg",
     "t": "That was the best concert I've ever been to.",
     "v": 4
    },
    {
-    "f": "crowd/e750625404e5.ogg",
+    "f": "crowd/ad8f14e3482b.ogg",
     "t": "I'm not drunk, I'm just happy.",
     "v": 5
    },
    {
-    "f": "crowd/0b3cd44ae5f5.ogg",
+    "f": "crowd/4a2f2b61673c.ogg",
     "t": "Who took the last slice?",
     "v": 0
    },
    {
-    "f": "crowd/d692ab685ab4.ogg",
+    "f": "crowd/aefdf1bea801.ogg",
     "t": "Bro, you gotta try this IPA.",
     "v": 1
    },
    {
-    "f": "crowd/8ee445765fc0.ogg",
+    "f": "crowd/c8d005c5ca25.ogg",
     "t": "Fantasy league is killing me this year.",
     "v": 2
    },
    {
-    "f": "crowd/745a056fe712.ogg",
+    "f": "crowd/3f952b9aaa87.ogg",
     "t": "We should get a dart board in here.",
     "v": 3
    },
    {
-    "f": "crowd/b8d21bcf9e86.ogg",
+    "f": "crowd/f73a309f4177.ogg",
     "t": "She said yes! Finally!",
     "v": 4
    },
    {
-    "f": "crowd/933c2658d043.ogg",
+    "f": "crowd/03055811f3d1.ogg",
     "t": "I'm getting a new truck next month.",
     "v": 5
    },
    {
-    "f": "crowd/7688988b0c3c.ogg",
+    "f": "crowd/7848f10d606e.ogg",
     "t": "This garage is nicer than my apartment.",
     "v": 0
    },
    {
-    "f": "crowd/c600d1641642.ogg",
+    "f": "crowd/5089cb80d4c2.ogg",
     "t": "Wait, you guys went fishing without me?",
     "v": 1
    },
    {
-    "f": "crowd/899d2f6ff92e.ogg",
+    "f": "crowd/43b83e89a146.ogg",
     "t": "Turn it up, I love this song.",
     "v": 2
    },
    {
-    "f": "crowd/2ae789da0bee.ogg",
+    "f": "crowd/7f1a525a8747.ogg",
     "t": "Who's driving home tonight?",
     "v": 3
    },
    {
-    "f": "crowd/6811ae99c101.ogg",
+    "f": "crowd/2ac5c2d41f96.ogg",
     "t": "My mom keeps calling me.",
     "v": 4
    },
    {
-    "f": "crowd/9ad23f713f22.ogg",
+    "f": "crowd/d3840c6197f2.ogg",
     "t": "Hey, is the bathroom open?",
     "v": 5
    },
    {
-    "f": "crowd/0b0c7989cd84.ogg",
+    "f": "crowd/1f32c778173b.ogg",
     "t": "Ugh, I have work at seven.",
     "v": 0
    },
    {
-    "f": "crowd/2a4a499d2333.ogg",
+    "f": "crowd/e3a9db2e38fb.ogg",
     "t": "Did you see what Carl posted?",
     "v": 1
    },
    {
-    "f": "crowd/cb793206963e.ogg",
+    "f": "crowd/1ccddcf34623.ogg",
     "t": "That's a terrible idea. I'm in.",
     "v": 2
    },
    {
-    "f": "crowd/3df0b788be55.ogg",
+    "f": "crowd/2f605cfee451.ogg",
     "t": "We are not doing karaoke again.",
     "v": 3
    },
    {
-    "f": "crowd/02fec8bcc6d3.ogg",
+    "f": "crowd/0608262f5c5d.ogg",
     "t": "How long have you two been dating?",
     "v": 4
    },
    {
-    "f": "crowd/ba7f5f9ecd86.ogg",
+    "f": "crowd/cf8bd0e1ec1a.ogg",
     "t": "I bet you twenty bucks he chokes.",
     "v": 5
    },
    {
-    "f": "crowd/1d83333803cf.ogg",
+    "f": "crowd/b0e541c2890d.ogg",
     "t": "Someone grab more ice from the gas station.",
     "v": 0
    },
    {
-    "f": "crowd/0dbc99e10180.ogg",
+    "f": "crowd/aa0717194745.ogg",
     "t": "Look at this guy, he thinks he's a pro.",
     "v": 1
    },
    {
-    "f": "crowd/6dcc7e2d594b.ogg",
+    "f": "crowd/b2c5b64f662c.ogg",
     "t": "Okay, one more and then I'm going home.",
     "v": 2
    },
    {
-    "f": "crowd/7672954fdda7.ogg",
+    "f": "crowd/503ccff4f8ea.ogg",
     "t": "Who left the side door open?",
     "v": 3
    },
    {
-    "f": "crowd/282d5b13c9a9.ogg",
+    "f": "crowd/00ce97221f50.ogg",
     "t": "My knee's been killing me since the softball game.",
     "v": 4
    },
    {
-    "f": "crowd/0738460fc54d.ogg",
+    "f": "crowd/f33ca1246dd8.ogg",
     "t": "You remember Coach Davis?",
     "v": 5
    },
    {
-    "f": "crowd/79dd3f624137.ogg",
+    "f": "crowd/cd4235d98430.ogg",
     "t": "Wait, it's already midnight?",
     "v": 0
    },
    {
-    "f": "crowd/4b8ba201ae9a.ogg",
+    "f": "crowd/8d31c53b716b.ogg",
     "t": "Bro, I ran into your ex at the store.",
     "v": 1
    },
    {
-    "f": "crowd/1b146d3948a1.ogg",
+    "f": "crowd/198494cf86c3.ogg",
     "t": "I'm starving. Are there any wings left?",
     "v": 2
    },
    {
-    "f": "crowd/2b8f72efed73.ogg",
+    "f": "crowd/f9db2dff0add.ogg",
     "t": "Who brought the light beer? Seriously.",
     "v": 3
    },
    {
-    "f": "crowd/51aa6212f01b.ogg",
+    "f": "crowd/33fe588e2942.ogg",
     "t": "Dude, this is my song!",
     "v": 4
    },
    {
-    "f": "crowd/bc042b809ed0.ogg",
+    "f": "crowd/869be1bc62e5.ogg",
     "t": "I think I left my keys in your car.",
     "v": 5
    },
    {
-    "f": "crowd/58ba5aa364d3.ogg",
+    "f": "crowd/544fafb87965.ogg",
     "t": "How's the new job going?",
     "v": 0
    },
    {
-    "f": "crowd/1cdf2a10ca2c.ogg",
+    "f": "crowd/c3ba4eb53a5e.ogg",
     "t": "We should do this every weekend.",
     "v": 1
    },
    {
-    "f": "crowd/481a0f98e216.ogg",
+    "f": "crowd/99b76a47dea8.ogg",
     "t": "Nah, he's all talk.",
     "v": 2
    },
    {
-    "f": "crowd/05cd59ebdc28.ogg",
+    "f": "crowd/dd0290c9ccf8.ogg",
     "t": "That's crazy. That's actually crazy.",
     "v": 3
    },
    {
-    "f": "crowd/9ac21296ac8b.ogg",
+    "f": "crowd/1f3ad0d45744.ogg",
     "t": "Who's got a lighter?",
     "v": 4
    },
    {
-    "f": "crowd/d6ae391bd5ae.ogg",
+    "f": "crowd/056fe351b848.ogg",
     "t": "I'm telling you, the Bears are gonna be good this year.",
     "v": 5
    },
    {
-    "f": "crowd/a2b6d8170f16.ogg",
+    "f": "crowd/3f8d4f2dfde0.ogg",
     "t": "Can you believe it's November already?",
     "v": 0
    }

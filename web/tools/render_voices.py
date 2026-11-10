@@ -16,10 +16,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.normpath(os.path.join(HERE, '../../app/src/main/assets/game/voices'))
 
 # ---------------------------------------------------------------- opponents
+# Voices are blends of Kokoro speaker styles ("a:0.6+b:0.4"), which gives each
+# character a fuller, less stock timbre than any single preset.
 OPPONENTS = {
-    'rick': {'voice': 'am_onyx', 'speed': 0.95},
-    'tyler': {'voice': 'am_puck', 'speed': 1.08},
-    'mike': {'voice': 'am_fenrir', 'speed': 1.0},
+    'rick': {'voice': 'am_onyx:0.65+am_eric:0.35', 'speed': 0.96},
+    'tyler': {'voice': 'am_puck:0.55+am_liam:0.45', 'speed': 1.1},
+    'mike': {'voice': 'am_fenrir:0.6+am_michael:0.4', 'speed': 1.02},
 }
 
 SHARED = {
@@ -139,8 +141,9 @@ SPECIFIC = {
 
 # ---------------------------------------------------------------- crowd
 CROWD_VOICES = [
-    {'voice': 'af_bella', 'speed': 1.05}, {'voice': 'am_eric', 'speed': 1.0}, {'voice': 'af_sarah', 'speed': 1.08},
-    {'voice': 'am_adam', 'speed': 1.0}, {'voice': 'af_jessica', 'speed': 1.05}, {'voice': 'am_liam', 'speed': 1.08},
+    {'voice': 'af_heart:0.6+af_bella:0.4', 'speed': 1.06}, {'voice': 'am_eric:0.7+am_adam:0.3', 'speed': 1.04},
+    {'voice': 'af_sarah:0.6+af_nicole:0.4', 'speed': 1.08}, {'voice': 'am_adam:0.6+am_michael:0.4', 'speed': 1.02},
+    {'voice': 'af_jessica:0.5+af_heart:0.5', 'speed': 1.06}, {'voice': 'am_liam:0.6+am_puck:0.4', 'speed': 1.1},
 ]
 CROWD = {
     'make': ["Let's go!", "Oh! No way!", "Drink!", "Oh shit!", "Yeah!", "Get wrecked!", "Oh snap!", "Holy shit!"],
@@ -212,6 +215,23 @@ def plan():
 
 
 _k = None
+def _style(k, spec):
+    import numpy as np
+    parts = [p.split(':') for p in spec.split('+')]
+    return sum(k.get_voice_style(n) * float(w) for n, w in parts)
+
+
+def _breath(sr, rng):
+    """a short inhale: band-passed noise with a soft swell"""
+    import numpy as np
+    n = int(sr * rng.uniform(0.22, 0.32))
+    x = rng.normal(0, 1, n)
+    # crude band-pass: difference of moving averages
+    a = np.convolve(x, np.ones(6) / 6, 'same') - np.convolve(x, np.ones(40) / 40, 'same')
+    env = np.sin(np.linspace(0, np.pi, n)) ** 1.5
+    return (a * env * rng.uniform(0.012, 0.02)).astype('float32')
+
+
 def _render(args):
     rel, text, voice, speed, model, voices = args
     global _k
@@ -221,15 +241,25 @@ def _render(args):
     if _k is None:
         from kokoro_onnx import Kokoro
         _k = Kokoro(model, voices)
+    import numpy as np
     import soundfile as sf
-    samples, sr = _k.create(text, voice=voice, speed=speed, lang='en-us')
+    rng = np.random.default_rng(int(hashlib.sha1(rel.encode()).hexdigest()[:8], 16))
+    sp = speed * rng.uniform(0.96, 1.04)
+    samples, sr = _k.create(text, voice=_style(_k, voice), speed=sp, lang='en-us')
+    samples = np.asarray(samples, dtype='float32')
+    if rng.random() < 0.35:
+        samples = np.concatenate([_breath(sr, rng), np.zeros(int(sr * 0.05), 'float32'), samples])
     os.makedirs(os.path.dirname(dst), exist_ok=True)
     with tempfile.NamedTemporaryFile(suffix='.wav', delete=False) as tf:
         sf.write(tf.name, samples, sr)
-        # trim silence, normalise loudness, encode Opus
-        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', tf.name, '-af',
-                        'silenceremove=start_periods=1:start_threshold=-50dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse,loudnorm=I=-16:TP=-1.5',
-                        '-ar', '48000', '-ac', '1', '-c:a', 'libopus', '-b:a', '28k', dst], check=True)
+        # trim, warm up the body, add a little presence and saturation, compress like a live voice
+        af = ','.join([
+            'silenceremove=start_periods=1:start_threshold=-55dB,areverse,silenceremove=start_periods=1:start_threshold=-50dB,areverse',
+            'highpass=f=85', 'equalizer=f=180:t=q:w=1:g=2.5', 'equalizer=f=3200:t=q:w=1.2:g=2', 'equalizer=f=7500:t=q:w=1:g=-3',
+            'asoftclip=type=tanh:threshold=0.85', 'acompressor=threshold=-20dB:ratio=3:attack=5:release=120:makeup=2',
+            'loudnorm=I=-16:TP=-1.5'])
+        subprocess.run(['ffmpeg', '-v', 'error', '-y', '-i', tf.name, '-af', af,
+                        '-ar', '48000', '-ac', '1', '-c:a', 'libopus', '-b:a', '32k', dst], check=True)
         os.unlink(tf.name)
     return rel, 'ok'
 

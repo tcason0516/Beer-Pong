@@ -129,7 +129,7 @@ export class Game {
   _setCam(kind, snap = false) {
     const P = {
       title: [new THREE.Vector3(1.6, 1.75, 2.0), new THREE.Vector3(0, 0.8, -0.5)],
-      player: [new THREE.Vector3(0, 1.55, 1.32), new THREE.Vector3(0, 0.86, -0.8)],
+      player: [new THREE.Vector3(0, 1.58, 1.34), new THREE.Vector3(0, 0.92, -0.8)],
       ai: [new THREE.Vector3(0.0, 1.6, 1.85), new THREE.Vector3(0, 0.95, -0.35)],
       over: [new THREE.Vector3(-1.2, 1.7, 1.9), new THREE.Vector3(0, 0.8, 0)],
     }[kind];
